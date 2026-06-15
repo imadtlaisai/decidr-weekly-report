@@ -16,7 +16,7 @@
   "funnel": [
     { "label": "Contacts", "value": "266", "color": "purple", "conv": "+46% vs last week", "convColor": "green", "alt": true },
     { "label": "MQL", "value": "85", "color": "blue", "conv": "47% of contacts", "convColor": "blue" },
-    { "label": "SQL", "value": "4", "color": "green", "conv": "real (1 junk excluded)", "convColor": "green", "alt": true },
+    { "label": "SQL", "value": "5", "color": "green", "conv": "5 SQL this week", "convColor": "green", "alt": true },
     { "label": "Opportunities", "value": "2", "color": "amber", "conv": "both DecidrOS · AU", "convColor": "amber" }
   ],
 
@@ -44,7 +44,7 @@
     "rows": [
       { "label": "Contacts (ex-sub)", "values": ["182", "182"], "badge": "gray", "badgeText": "flat" },
       { "label": "MQL+", "values": ["99", "85"], "badge": "warn", "badgeText": "−14%" },
-      { "label": "SQL+", "values": ["3", "4"], "badge": "up", "badgeText": "↑" },
+      { "label": "SQL+", "values": ["3", "5"], "badge": "up", "badgeText": "↑" },
       { "label": "Opportunities", "values": ["2", "2"], "badge": "gray", "badgeText": "flat" }
     ]
   },
@@ -144,7 +144,7 @@
     "left": {
       "titleBadge": "blue",
       "titleBadgeLabel": "DecidrOS",
-      "titleSuffix": "— 4 SQL+ (real)",
+      "titleSuffix": "— 5 SQL+",
       "contacts": [
         { "name": "Heath Hebenton", "detail": "Finextra Wealth · Financial Advisor · AU · FB AI Roadmap → <strong style=\"color:var(--amber);font-weight:500;\">Opportunity ✓</strong>" },
         { "name": "Lori K", "detail": "LTAK Group of Companies · AU · FB AI Roadmap → <strong style=\"color:var(--amber);font-weight:500;\">Opportunity ✓</strong>" },
