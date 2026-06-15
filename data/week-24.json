@@ -45,7 +45,10 @@
       { "label": "Contacts (ex-sub)", "values": ["182", "182"], "badge": "gray", "badgeText": "flat" },
       { "label": "MQL+", "values": ["99", "85"], "badge": "warn", "badgeText": "−14%" },
       { "label": "SQL+", "values": ["3", "5"], "badge": "up", "badgeText": "↑" },
-      { "label": "Opportunities", "values": ["2", "2"], "badge": "gray", "badgeText": "flat" }
+      { "label": "Opportunities", "values": ["2", "2"], "badge": "gray", "badgeText": "flat" },
+      { "label": "Meta leads", "values": ["—", "180"], "badge": "gray", "badgeText": "—" },
+      { "label": "LinkedIn leads", "values": ["—", "34"], "badge": "gray", "badgeText": "—" },
+      { "label": "Google conv.", "values": ["—", "17"], "badge": "gray", "badgeText": "—" }
     ]
   },
 

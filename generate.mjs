@@ -24,6 +24,66 @@ const outPath = arg('out') || (week ? `out/report-week-${week}.html` : 'out/repo
 
 const data = JSON.parse(readFileSync(resolve(dataPath), 'utf8'));
 
+// ---- trend auto-builder --------------------------------------------------
+function extractMetrics(d) {
+  return {
+    contacts:      d.funnel?.[0]?.value ?? '—',
+    mql:           d.funnel?.[1]?.value ?? '—',
+    sql:           d.funnel?.[2]?.value ?? '—',
+    opps:          d.funnel?.[3]?.value ?? '—',
+    metaLeads:     d.campaigns?.metrics?.find(m => /lead/i.test(m.label))?.value ?? '—',
+    linkedinLeads: d.linkedin?.metrics?.find(m => /lead/i.test(m.label))?.value ?? '—',
+    googleConv:    d.google?.metrics?.find(m => /conv/i.test(m.label))?.value ?? '—',
+  };
+}
+
+function trendBadge(vals) {
+  const nums = vals.map(v => parseFloat(String(v).replace(/[^0-9.-]/g, ''))).filter(n => !isNaN(n) && n !== 0 || v !== '—');
+  const clean = vals.map(v => parseFloat(String(v).replace(/[^0-9.-]/g, ''))).filter(n => !isNaN(n));
+  if (clean.length < 2) return { badge: 'gray', badgeText: '—' };
+  const [prev, curr] = [clean[clean.length - 2], clean[clean.length - 1]];
+  if (curr > prev) return { badge: 'up', badgeText: '↑' };
+  if (curr < prev) return { badge: 'warn', badgeText: `${Math.round(((curr - prev) / prev) * 100)}%` };
+  return { badge: 'gray', badgeText: 'flat' };
+}
+
+function buildTrend(d, wk) {
+  const wNum = parseInt(wk || '0');
+  const loaded = [];
+  if (wNum > 0) {
+    for (let back = 3; back >= 1; back--) {
+      const w = wNum - back;
+      if (w <= 0) continue;
+      try {
+        const prev = JSON.parse(readFileSync(resolve(`data/week-${w}.json`), 'utf8'));
+        loaded.push({ w, d: prev });
+      } catch {}
+    }
+  }
+  loaded.push({ w: wNum || 0, d });
+
+  // only current week available — fall back to manually specified trend in JSON
+  if (loaded.length === 1) return d.trend;
+
+  const headers = loaded.map(({ w }) => `Wk ${w}`);
+  const metrics = loaded.map(({ d: wd }) => extractMetrics(wd));
+  const row = (label, key) => ({ label, values: metrics.map(m => m[key]), ...trendBadge(metrics.map(m => m[key])) });
+  return {
+    headers,
+    rows: [
+      row('Contacts', 'contacts'),
+      row('MQL+', 'mql'),
+      row('SQL+', 'sql'),
+      row('Opportunities', 'opps'),
+      row('Meta leads', 'metaLeads'),
+      row('LinkedIn leads', 'linkedinLeads'),
+      row('Google conv.', 'googleConv'),
+    ],
+  };
+}
+
+data._trend = buildTrend(data, week);
+
 // ---- helpers -------------------------------------------------------------
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 // color helper: named CSS var or raw hex/color
@@ -91,7 +151,7 @@ function funnelSection(d) {
           </div>`).join('') : '';
   const sbpBars = sbp ? sbp.bars.map(b => bar({ ...b, sm: true })).join('') : '';
 
-  const tr = d.trend;
+  const tr = d._trend ?? d.trend;
   const trendHeaders = tr ? tr.headers.map(h => `<span style="flex:1;text-align:right;">${esc(h)}</span>`).join('') : '';
   const trendColor = { up: 'green', warn: 'amber', gray: 'text-3', red: 'red' };
   const trendRows = tr ? tr.rows.map(r => {
