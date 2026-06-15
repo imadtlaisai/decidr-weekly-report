@@ -93,12 +93,16 @@ function funnelSection(d) {
 
   const tr = d.trend;
   const trendHeaders = tr ? tr.headers.map(h => `<span style="flex:1;text-align:right;">${esc(h)}</span>`).join('') : '';
-  const trendRows = tr ? tr.rows.map(r => `
-        <div class="wow" style="grid-template-columns:1.3fr ${tr.headers.map(() => '1fr').join(' ')} 72px;">
+  const trendColor = { up: 'green', warn: 'amber', gray: 'text-3', red: 'red' };
+  const trendRows = tr ? tr.rows.map(r => {
+    const tc = trendColor[r.badge] || 'text-2';
+    return `
+        <div class="wow" style="grid-template-columns:1.3fr ${tr.headers.map(() => '1fr').join(' ')} 56px;">
           <span style="font-weight:500;">${esc(r.label)}</span>
           ${r.values.map(v => `<span style="color:var(--text-2);text-align:right;">${esc(v)}</span>`).join('')}
-          <span class="badge badge-${r.badge}">${esc(r.badgeText)}</span>
-        </div>`).join('') : '';
+          <span style="font-size:12px;font-weight:600;color:var(--${tc});text-align:right;">${esc(r.badgeText)}</span>
+        </div>`;
+  }).join('') : '';
 
   const cards = `
     <div class="mg2">
