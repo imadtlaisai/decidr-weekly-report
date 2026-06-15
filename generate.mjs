@@ -227,7 +227,8 @@ function campaignSection(d) {
 function metaSection(d) {
   if (!d.campaigns) return '';
   const cols = d.campaigns.columns || { c3: 'MQL%', c4: 'Spend', c5: 'Cost / lead' };
-  const metrics = d.campaigns.metrics ? `<div class="mg3">${d.campaigns.metrics.map(mt => `<div class="metric"><p class="metric-label">${esc(mt.label)}</p><p class="metric-value" style="color:${col(mt.color)};">${esc(mt.value)}</p><p class="metric-sub">${esc(mt.sub)}</p></div>`).join('')}</div>` : '';
+  const metricGrid = d.campaigns.metrics?.length === 4 ? 'mg4' : 'mg3';
+  const metrics = d.campaigns.metrics ? `<div class="${metricGrid}">${d.campaigns.metrics.map(mt => `<div class="metric"><p class="metric-label">${esc(mt.label)}</p><p class="metric-value" style="color:${col(mt.color)};">${esc(mt.value)}</p><p class="metric-sub">${esc(mt.sub)}</p></div>`).join('')}</div>` : '';
   const table = `
     <div class="card">
       <table>
@@ -262,6 +263,7 @@ function spendSection(d) {
   if (!d.spend) return '';
   if (d.spend.placeholder) return section('Paid media — spend & cost per lead', pendingCard(d.spend.note));
   const s = d.spend;
+  const spendGrid = s.metrics?.length === 4 ? 'mg4' : 'mg3';
   const metrics = s.metrics.map(m => `<div class="metric"><p class="metric-label">${esc(m.label)}</p><p class="metric-value" style="color:${col(m.color)};">${esc(m.value)}</p><p class="metric-sub">${esc(m.sub)}</p></div>`).join('');
   const rows = s.rows.map((r, i) => `
           <tr${r.bold ? '' : (i % 2 ? ' class="alt"' : '')}>
@@ -273,7 +275,7 @@ function spendSection(d) {
             <td class="r ${r.cpmqlClass || ''}">${esc(r.cpmql)}</td>
           </tr>`).join('');
   return section('Paid media — spend & cost per lead', `
-    <div class="mg3">${metrics}</div>
+    <div class="${spendGrid}">${metrics}</div>
     <div class="card">
       <table>
         <thead><tr><th style="width:185px;">Platform</th><th class="r">Spend</th><th class="r">Leads</th><th class="r">Cost / lead</th><th class="r">MQL+</th><th class="r">Cost / MQL</th></tr></thead>

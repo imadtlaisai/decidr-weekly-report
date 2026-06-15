@@ -65,7 +65,8 @@
     "metrics": [
       { "label": "Meta spend", "value": "$12,746", "color": "blue", "sub": "44% of paid media" },
       { "label": "Leads (HubSpot)", "value": "180", "color": "green", "sub": "FB platform: 227" },
-      { "label": "Cost / lead", "value": "$71", "color": "amber", "sub": "spend ÷ HubSpot leads" }
+      { "label": "Cost / lead", "value": "$71", "color": "amber", "sub": "spend ÷ HubSpot leads" },
+      { "label": "MQL rate", "value": "40%", "color": "amber", "sub": "52 of 180 contacts" }
     ],
     "rows": [
       { "name": "AI Roadmap — Demo (Jun 1)", "channelBadge": "amber", "channelLabel": "FB · demo", "contacts": "13", "mql": "100%", "mqlClass": "good", "extra1": "$2,530", "extra2": "$195", "bold": true },
@@ -224,7 +225,8 @@
     "metrics": [
       { "label": "Total paid spend", "value": "$28,764", "color": "purple", "sub": "FB + Google + LinkedIn" },
       { "label": "Paid leads", "value": "209", "color": "blue", "sub": "Paid Social contacts" },
-      { "label": "Blended cost / lead", "value": "$138", "color": "amber", "sub": "all paid spend ÷ leads" }
+      { "label": "Blended cost / lead", "value": "$138", "color": "amber", "sub": "all paid spend ÷ leads" },
+      { "label": "Blended MQL rate", "value": "34%", "color": "amber", "sub": "70 MQL+ of 209 leads" }
     ],
     "rows": [
       { "platform": "Facebook", "spend": "$12,746", "leads": "180", "cpl": "$71", "cplClass": "good", "mql": "52", "cpmql": "$245", "cpmqlClass": "good" },
