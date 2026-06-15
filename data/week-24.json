@@ -1,0 +1,232 @@
+{
+  "_comment": "Decidr Weekly Marketing Report — data for one week. Fields marked \"placeholder\": true render as 'pending input' in the output (GA4, content, what's-next, Q2 targets need manual/Supermetrics input). Everything else (funnel, products, channels, campaigns, geo, platform, SQL contacts, observations) was pulled live from HubSpot for Week 24 (8–14 Jun 2026).",
+
+  "meta": {
+    "logo": "Decidr",
+    "title": "Weekly marketing report",
+    "dateRange": "8–14 Jun 2026",
+    "preparedFor": "CMO",
+    "weekBadge": "Week 24, 2026",
+    "products": "DecidrOS · Sugarworks · Partnership",
+    "footerLeft": "Decidr marketing · 8–14 Jun 2026",
+    "footerRight": "Confidential — for internal use",
+    "titleTag": "Decidr — Weekly Marketing Report · 8–14 Jun 2026"
+  },
+
+  "funnel": [
+    { "label": "Contacts", "value": "266", "color": "purple", "conv": "+46% vs last week", "convColor": "green", "alt": true },
+    { "label": "MQL", "value": "85", "color": "blue", "conv": "47% of contacts", "convColor": "blue" },
+    { "label": "SQL", "value": "4", "color": "green", "conv": "real (1 junk excluded)", "convColor": "green", "alt": true },
+    { "label": "Opportunities", "value": "2", "color": "amber", "conv": "both DecidrOS · AU", "convColor": "amber" }
+  ],
+
+  "highlight": {
+    "type": "green",
+    "html": "<strong>Steady week, quality concentrated in DecidrOS.</strong> 266 new contacts (182 on the qualified track + 84 newsletter subscribers). DecidrOS converted at ~72% to MQL while Sugarworks lagged at 19%. Two opportunities progressed — Heath Hebenton (Finextra Wealth) and Lori K (LTAK) — both from the Facebook \"AI Roadmap\" demo campaign in Australia."
+  },
+
+  "sqlByProduct": {
+    "metrics": [
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": "5", "color": "blue", "sub": "SQL+ (incl. 2 opps)" },
+      { "badge": "green", "badgeLabel": "Sugarworks", "value": "0", "color": "green", "sub": "no SQL this week" },
+      { "label": "Opportunities", "value": "2", "color": "amber", "sub": "DecidrOS · AU" }
+    ],
+    "bars": [
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": 62, "display": "62", "color": "blue", "max": 62 },
+      { "badge": "green", "badgeLabel": "Sugarworks", "value": 18, "display": "18", "color": "green", "max": 62 }
+    ],
+    "note": "MQL+ by product. DecidrOS ~72% MQL rate (62 of 86 ex-sub). Sugarworks 19% (18 of 94 ex-sub) — lead quality is the watch item this week."
+  },
+
+  "trend": {
+    "headers": ["Wk 23", "Wk 24"],
+    "note": "Only Wk 23–24 shown: the HubSpot org was created 20 May 2026, so earlier weeks reflect setup/import, not organic flow.",
+    "rows": [
+      { "label": "Contacts (ex-sub)", "values": ["182", "182"], "badge": "gray", "badgeText": "flat" },
+      { "label": "MQL+", "values": ["99", "85"], "badge": "warn", "badgeText": "−14%" },
+      { "label": "SQL+", "values": ["3", "4"], "badge": "up", "badgeText": "↑" },
+      { "label": "Opportunities", "values": ["2", "2"], "badge": "gray", "badgeText": "flat" }
+    ]
+  },
+
+  "channels": {
+    "bars": [
+      { "badge": "blue", "label": "Paid Social", "value": 209, "display": "209", "extra": "79% of total", "color": "blue", "max": 209 },
+      { "badge": "gray", "label": "Direct Traffic", "value": 29, "display": "29", "extra": "11% of total", "color": "#9E9B94", "max": 209 },
+      { "badge": "gray", "label": "Offline / Sales", "value": 28, "display": "28", "extra": "11% of total", "color": "#9E9B94", "max": 209 }
+    ]
+  },
+
+  "campaigns": {
+    "_note": "Facebook lead-gen campaigns (the Paid Social volume engine). Contacts/MQL from HubSpot by campaign; Spend from Facebook Ads; Cost/lead = FB spend ÷ HubSpot contacts. LinkedIn & Google campaigns are in their own sections below.",
+    "metrics": [
+      { "label": "Meta spend", "value": "$12,746", "color": "blue", "sub": "44% of paid media" },
+      { "label": "Leads (HubSpot)", "value": "180", "color": "green", "sub": "FB platform: 227" },
+      { "label": "Cost / lead", "value": "$71", "color": "amber", "sub": "spend ÷ HubSpot leads" }
+    ],
+    "rows": [
+      { "name": "AI Roadmap — Demo (Jun 1)", "channelBadge": "amber", "channelLabel": "FB · demo", "contacts": "13", "mql": "100%", "mqlClass": "good", "extra1": "$2,530", "extra2": "$195", "bold": true },
+      { "name": "Event Online — Sydney", "channelBadge": "purple", "channelLabel": "FB · event", "contacts": "33", "mql": "33%", "mqlClass": "mid", "extra1": "$3,543", "extra2": "$107" },
+      { "name": "AI Readiness Report — AU (Aug 18)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "39", "mql": "23%", "mqlClass": "bad", "extra1": "$1,642", "extra2": "$42" },
+      { "name": "Mercha Case Study — AU", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "19", "mql": "37%", "mqlClass": "mid", "extra1": "$789", "extra2": "$42" },
+      { "name": "AI Readiness Report — USA (Apr)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "18", "mql": "39%", "mqlClass": "mid", "extra1": "$637", "extra2": "$35" },
+      { "name": "Global AI Readiness — USA", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "19", "mql": "~5%", "mqlClass": "bad", "extra1": "$1,152", "extra2": "$61" },
+      { "name": "AI Readiness Report — Singapore", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "28", "mql": "~4%", "mqlClass": "bad", "extra1": "$1,292", "extra2": "$46" },
+      { "name": "Global AI Readiness — AUS", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "9", "mql": "~11%", "mqlClass": "mid", "extra1": "$1,161", "extra2": "$129" }
+    ],
+    "columns": { "c3": "MQL%", "c4": "Spend", "c5": "Cost / lead" }
+  },
+
+  "linkedin": {
+    "metrics": [
+      { "label": "LinkedIn spend", "value": "$13,179", "color": "blue", "sub": "46% of paid media" },
+      { "label": "Leads (platform)", "value": "34", "color": "green", "sub": "HubSpot attributed 29" },
+      { "label": "Cost / lead", "value": "$388", "color": "amber", "sub": "spend ÷ platform leads" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "Leads", "Cost / lead"],
+      "widths": ["230px", "", "", ""],
+      "rows": [
+        [{ "v": "Morning Tea w/ Attention Experts (Jun 17)" }, "$3,021", "9", { "v": "$336", "cls": "mid" }],
+        [{ "v": "DecidrOS Mercha Case Study — SME" }, "$2,056", "1", { "v": "$2,056", "cls": "bad" }],
+        [{ "v": "DecidrOS Mercha Case Study — RM" }, "$1,855", "2", { "v": "$928", "cls": "bad" }],
+        [{ "v": "Global AI Readiness Index — USA (doc ads)" }, "$1,371", "1", { "v": "$1,371", "cls": "bad" }],
+        [{ "v": "AI Readiness Index — AUS (doc ads)" }, "$1,205", "5", { "v": "$241", "cls": "mid" }],
+        [{ "v": "Global AI Readiness Index — AUS (doc ads)" }, "$1,145", "12", { "v": "$95", "cls": "good" }],
+        [{ "v": "AI Readiness Index — Singapore (doc ads)" }, "$602", "3", { "v": "$201", "cls": "mid" }],
+        [{ "v": "AI Readiness Index — USA 500+ (doc ads)" }, "$597", "1", { "v": "$597", "cls": "bad" }],
+        [{ "v": "Awareness — AI Roadmap video + Education", "bold": true }, "$1,328", "0", { "v": "n/a" }]
+      ],
+      "note": "Best efficiency: Global AI Readiness doc ads AUS at $95/lead. $1,328 went to AI Roadmap video/single-image + Education awareness campaigns with no direct-response leads. Platform counts 34 leads vs 29 HubSpot contacts (dedup + sync). Currency: AUD assumed."
+    }
+  },
+
+  "google": {
+    "metrics": [
+      { "label": "Google spend", "value": "$2,839", "color": "amber", "sub": "10% of paid media" },
+      { "label": "Clicks", "value": "3,477", "color": "blue", "sub": "2,538 GA4 sessions" },
+      { "label": "HubSpot leads", "value": "0", "color": "red", "sub": "no lead capture" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "Clicks", "Conv. (GA4)"],
+      "widths": ["260px", "", "", ""],
+      "rows": [
+        [{ "v": "Leads | DecidrOS PMax" }, "$1,081", "219", "6"],
+        [{ "v": "PMax — AI Readiness Index Report" }, "$560", "49", "7"],
+        [{ "v": "DecidrOS | Search | AUS" }, "$547", "84", { "v": "0", "cls": "bad" }],
+        [{ "v": "Decidr | Search | Operational AI & knowledge security" }, "$323", "3,025", { "v": "3", "cls": "mid" }],
+        [{ "v": "AU Search — Decidr Brand (High Intent)" }, "$308", "96", "1"],
+        [{ "v": "Decidr Sugarwork Brand | Search | AUS" }, "$19", "4", { "v": "0", "cls": "bad" }]
+      ],
+      "note": "Google drove 3,477 clicks / 2,538 GA4 sessions and 17 GA4 conversions, but 0 HubSpot-attributed contacts this week — paid-search lead capture is the gap. The 'Operational AI' search term burned 3,025 clicks for $323 with only 3 conversions — review match types / traffic quality. Currency: AUD assumed."
+    }
+  },
+
+  "geography": {
+    "bars": [
+      { "label": "Australia", "value": 51, "display": "51", "color": "blue", "max": 51 },
+      { "label": "United States", "value": 12, "display": "12", "color": "purple", "max": 51 },
+      { "label": "Singapore", "value": 6, "display": "6", "color": "green", "max": 51 },
+      { "label": "Other", "value": 5, "display": "5", "color": "#9E9B94", "max": 51 }
+    ],
+    "note": "192 of 266 contacts missing country — mainly Facebook Lead Ads. Known-country share is AU-dominant."
+  },
+
+  "platformCompare": {
+    "cards": [
+      { "platform": "LinkedIn · 29 contacts", "rate": "62%", "rateColor": "green", "metaHtml": "MQL rate<br><strong style=\"font-size:16px;\">18</strong> MQL+ · higher quality<br><span style=\"color:var(--green);\">low volume, clean fit</span>" },
+      { "platform": "Facebook · 180 contacts", "rate": "40%", "rateColor": "amber", "metaHtml": "MQL rate<br><strong style=\"font-size:16px;\">52</strong> MQL+ · all SQLs<br><span style=\"color:var(--amber);\">volume engine, mixed fit</span>" }
+    ],
+    "note": "LinkedIn delivers higher MQL rate at low volume; Facebook drives the volume and all 4 SQLs + 2 opportunities this week."
+  },
+
+  "sqlContacts": {
+    "left": {
+      "titleBadge": "blue",
+      "titleBadgeLabel": "DecidrOS",
+      "titleSuffix": "— 4 SQL+ (real)",
+      "contacts": [
+        { "name": "Heath Hebenton", "detail": "Finextra Wealth · Financial Advisor · AU · FB AI Roadmap → <strong style=\"color:var(--amber);font-weight:500;\">Opportunity ✓</strong>" },
+        { "name": "Lori K", "detail": "LTAK Group of Companies · AU · FB AI Roadmap → <strong style=\"color:var(--amber);font-weight:500;\">Opportunity ✓</strong>" },
+        { "name": "Ashwin Tyagi", "detail": "Immigration Hotspot · Founder · AU · FB AI Roadmap · SQL" },
+        { "name": "Carmen Smith", "detail": "XWG · Executive · FB AI Roadmap · SQL" }
+      ]
+    },
+    "right": {
+      "titleBadge": "green",
+      "titleBadgeLabel": "Sugarworks",
+      "titleSuffix": "— 0 SQL this week",
+      "contacts": [
+        { "name": "No Sugarworks SQLs", "detail": "76 new leads, 18 reached MQL (19%) — none progressed to SQL. Lead quality / targeting review flagged." }
+      ],
+      "oppsTitle": "2 Opportunities this week",
+      "opps": [
+        { "name": "Heath Hebenton", "detail": "Finextra Wealth · AU · DecidrOS" },
+        { "name": "Lori K", "detail": "LTAK Group · AU · DecidrOS" }
+      ]
+    }
+  },
+
+  "website": {
+    "_source": "GA4 'Decidr website' (property 413653683) via Supermetrics, 8–14 Jun 2026. Bounce/rates session-weighted; durations in M:SS. Totals include small channels (Unassigned/Display/Organic Video/AI Assistant) not shown as rows.",
+    "metrics": [
+      { "label": "Total sessions", "value": "6,995", "color": "purple", "sub": "Paid 5,442 · Organic 1,553" },
+      { "label": "Paid sessions", "value": "5,442", "color": "blue", "sub": "78% of traffic" },
+      { "label": "Organic sessions", "value": "1,553", "color": "green", "sub": "22% of traffic" }
+    ],
+    "rows": [
+      { "channel": "Paid total", "bold": true, "alt": true, "sessions": "5,442", "bounce": "62.1%", "bounceClass": "mid", "duration": "2:45", "durClass": "mid", "events": "72", "rate": "1.32%", "rateClass": "mid" },
+      { "channel": "Paid Social", "indent": true, "sessions": "2,627", "bounce": "81.4%", "bounceClass": "bad", "duration": "3:54", "durClass": "good", "events": "51", "rate": "1.07%", "rateClass": "mid" },
+      { "channel": "Paid Search", "indent": true, "sessions": "2,538", "bounce": "42.9%", "bounceClass": "good", "duration": "1:42", "durClass": "mid", "events": "6", "rate": "0.16%", "rateClass": "bad" },
+      { "channel": "Cross-network (PMax)", "indent": true, "sessions": "271", "bounce": "56.5%", "bounceClass": "mid", "duration": "1:36", "durClass": "mid", "events": "15", "rate": "4.80%", "rateClass": "good" },
+      { "channel": "Organic total", "bold": true, "alt": true, "sessions": "1,553", "bounce": "50.7%", "bounceClass": "mid", "duration": "2:08", "durClass": "mid", "events": "72", "rate": "4.64%", "rateClass": "good" },
+      { "channel": "Direct", "indent": true, "sessions": "617", "bounce": "52.0%", "bounceClass": "mid", "duration": "1:30", "durClass": "mid", "events": "3", "rate": "0.32%", "rateClass": "bad" },
+      { "channel": "Organic Search", "indent": true, "sessions": "434", "bounce": "50.7%", "bounceClass": "mid", "duration": "2:23", "durClass": "mid", "events": "12", "rate": "1.15%", "rateClass": "mid" },
+      { "channel": "Referral", "indent": true, "sessions": "253", "bounce": "41.9%", "bounceClass": "good", "duration": "2:09", "durClass": "mid", "events": "6", "rate": "1.19%", "rateClass": "mid" },
+      { "channel": "Organic Social", "indent": true, "sessions": "114", "bounce": "50.9%", "bounceClass": "mid", "duration": "3:54", "durClass": "good", "events": "8", "rate": "1.75%", "rateClass": "mid" },
+      { "channel": "Email", "indent": true, "sessions": "102", "bounce": "52.0%", "bounceClass": "mid", "duration": "3:30", "durClass": "good", "events": "43", "rate": "21.57%", "rateClass": "good" }
+    ]
+  },
+
+  "observations": [
+    { "color": "green", "html": "<strong>DecidrOS quality is strong — ~72% MQL rate.</strong> 62 of 86 qualified-track DecidrOS contacts reached MQL, with 5 SQL+ and both opportunities. The DecidrOS funnel is healthy." },
+    { "color": "amber", "html": "<strong>Sugarworks lead quality is the watch item — 19% MQL rate.</strong> 76 new Sugarworks leads but only 18 reached MQL and none progressed to SQL. Audience / targeting review recommended." },
+    { "color": "green", "html": "<strong>\"AI Roadmap\" demo campaign converts at 100% MQL.</strong> Every demo-request lead from this Facebook AU campaign qualified, and it produced both opportunities (Heath Hebenton, Lori K). Highest-intent source this week." },
+    { "color": "green", "html": "<strong>LinkedIn out-qualifies Facebook.</strong> LinkedIn 62% MQL rate (18 of 29) vs Facebook 40% (52 of 180). LinkedIn is the cleaner-fit, lower-volume channel; Facebook is the volume engine." },
+    { "color": "amber", "html": "<strong>FB Singapore AI Readiness underperforms — 28 contacts, 11% MQL.</strong> Consistent with low-fit geo targeting. Audience / geo review and possible budget reallocation worth considering." },
+    { "color": "teal", "html": "<strong>Channel concentration: Paid Social is 79% of volume (209 of 266).</strong> Only Direct (29) and Offline (28) contribute otherwise. Diversifying source mix would reduce single-channel risk." },
+    { "color": "amber", "html": "<strong>Paid media: $28.8k spent, $138 blended cost / lead.</strong> LinkedIn runs ~6× Facebook per lead ($455 vs $71); Google spent $2.8k with no HubSpot-attributed leads — paid-search lead capture is the clearest efficiency fix." },
+    { "color": "amber", "html": "<strong>Attribution gap: 192 of 266 contacts have no country.</strong> Mainly Facebook Lead Ads. Capturing country on-form would sharpen geo reporting." }
+  ],
+
+  "content": {
+    "placeholder": true,
+    "note": "Narrative — fill in what marketing shipped last week (case studies, blogs, newsletters, partnership assets, download counts). Not derivable from HubSpot/GA4."
+  },
+
+  "whatsNext": {
+    "placeholder": true,
+    "note": "Narrative — list this week's planned launches, events, and campaigns."
+  },
+
+  "q2": {
+    "placeholder": true,
+    "note": "Q2 targets: 2,000 MQL / 600 SQL. Actuals pending an agreed source — create-date counts are unreliable (org created 20 May 2026; a 25 May bulk migration of ~10k historical records inflates raw totals to 2,301 MQL / 371 SQL, while June-organic is only ~184 MQL). Define a HubSpot saved report that isolates genuine Q2 marketing-generated MQL/SQL, then fill in actuals."
+  },
+
+  "spend": {
+    "_source": "Facebook Ads, Google Ads, LinkedIn Ads via Supermetrics, 8–14 Jun 2026. Amounts in ad-account currency (AUD assumed — confirm). Cost/lead = spend ÷ HubSpot contacts for the channel; Cost/MQL = spend ÷ MQL+ contacts.",
+    "metrics": [
+      { "label": "Total paid spend", "value": "$28,764", "color": "purple", "sub": "FB + Google + LinkedIn" },
+      { "label": "Paid leads", "value": "209", "color": "blue", "sub": "Paid Social contacts" },
+      { "label": "Blended cost / lead", "value": "$138", "color": "amber", "sub": "all paid spend ÷ leads" }
+    ],
+    "rows": [
+      { "platform": "Facebook", "spend": "$12,746", "leads": "180", "cpl": "$71", "cplClass": "good", "mql": "52", "cpmql": "$245", "cpmqlClass": "good" },
+      { "platform": "LinkedIn", "spend": "$13,179", "leads": "29", "cpl": "$455", "cplClass": "bad", "mql": "18", "cpmql": "$732", "cpmqlClass": "mid" },
+      { "platform": "Google (Paid Search)", "spend": "$2,839", "leads": "—", "cpl": "n/a", "mql": "—", "cpmql": "n/a" },
+      { "platform": "Total paid media", "spend": "$28,764", "leads": "209", "cpl": "$138", "mql": "70", "cpmql": "$411", "bold": true }
+    ],
+    "note": "Google drove 3,477 clicks / 2,538 GA4 sessions this week but no HubSpot-attributed leads — paid-search lead capture is the gap. LinkedIn costs ~6× Facebook per lead ($455 vs $71) but delivers higher MQL quality."
+  }
+}
