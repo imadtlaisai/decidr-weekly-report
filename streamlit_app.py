@@ -48,5 +48,24 @@ with st.sidebar:
     )
 
 html = labels[choice].read_text(encoding="utf-8")
+
+# Override section heading styles for better readability.
+_style = (
+    "<style>"
+    ".section-label{"
+    "font-size:15px!important;"
+    "color:#000!important;"
+    "font-weight:700!important;"
+    "letter-spacing:.04em!important;"
+    "}"
+    ".card-title{"
+    "font-size:13px!important;"
+    "color:#000!important;"
+    "font-weight:700!important;"
+    "}"
+    "</style>"
+)
+html = html.replace("</head>", _style + "</head>", 1)
+
 # The report is a long single page (~8 print pages); give the iframe room + internal scroll.
 components.html(html, height=6200, scrolling=True)
