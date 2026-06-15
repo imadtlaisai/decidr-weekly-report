@@ -332,7 +332,7 @@ const CSS = `
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-  @media print{body{background:#fff;}.section{break-inside:avoid;}.card{break-inside:avoid;}}
+  @media print{body{background:#fff;}.section{break-inside:avoid;animation:none!important;opacity:1!important;transform:none!important;}.card{break-inside:avoid;}}
   .wrap{max-width:900px;margin:0 auto;padding:48px 24px 80px;}
   .report-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px;padding-bottom:28px;border-bottom:1.5px solid var(--border-strong);}
   .report-logo{font-size:13px;font-weight:600;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;}
