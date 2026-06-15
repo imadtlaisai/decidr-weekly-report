@@ -107,8 +107,8 @@
   "google": {
     "metrics": [
       { "label": "Google spend", "value": "$2,839", "color": "amber", "sub": "10% of paid media" },
-      { "label": "Clicks", "value": "3,477", "color": "blue", "sub": "2,538 GA4 sessions" },
-      { "label": "Total conversions", "value": "17", "color": "blue", "sub": "GA4 conversions" }
+      { "label": "Total conversions", "value": "17", "color": "blue", "sub": "GA4 conversions" },
+      { "label": "Cost / conversion", "value": "$167", "color": "amber", "sub": "spend ÷ GA4 conversions" }
     ],
     "table": {
       "headers": ["Campaign", "Spend", "Clicks", "Conv. (GA4)"],
