@@ -111,15 +111,15 @@
       { "label": "Cost / conversion", "value": "$167", "color": "amber", "sub": "spend ÷ GA4 conversions" }
     ],
     "table": {
-      "headers": ["Campaign", "Spend", "Clicks", "Conv. (GA4)"],
+      "headers": ["Campaign", "Spend", "Conv. (GA4)", "Cost / conv."],
       "widths": ["260px", "", "", ""],
       "rows": [
-        [{ "v": "Leads | DecidrOS PMax" }, "$1,081", "219", "6"],
-        [{ "v": "PMax — AI Readiness Index Report" }, "$560", "49", "7"],
-        [{ "v": "DecidrOS | Search | AUS" }, "$547", "84", { "v": "0", "cls": "bad" }],
-        [{ "v": "Decidr | Search | Operational AI & knowledge security" }, "$323", "3,025", { "v": "3", "cls": "mid" }],
-        [{ "v": "AU Search — Decidr Brand (High Intent)" }, "$308", "96", "1"],
-        [{ "v": "Decidr Sugarwork Brand | Search | AUS" }, "$19", "4", { "v": "0", "cls": "bad" }]
+        [{ "v": "Leads | DecidrOS PMax" }, "$1,081", "6", { "v": "$180", "cls": "mid" }],
+        [{ "v": "PMax — AI Readiness Index Report" }, "$560", "7", { "v": "$80", "cls": "good" }],
+        [{ "v": "DecidrOS | Search | AUS" }, "$547", { "v": "0", "cls": "bad" }, "n/a"],
+        [{ "v": "Decidr | Search | Operational AI & knowledge security" }, "$323", { "v": "3", "cls": "mid" }, { "v": "$108", "cls": "mid" }],
+        [{ "v": "AU Search — Decidr Brand (High Intent)" }, "$308", "1", "$308"],
+        [{ "v": "Decidr Sugarwork Brand | Search | AUS" }, "$19", { "v": "0", "cls": "bad" }, "n/a"]
       ],
       "note": "Google drove 3,477 clicks / 2,538 GA4 sessions and 17 GA4 conversions, but 0 HubSpot-attributed contacts this week — paid-search lead capture is the gap. The 'Operational AI' search term burned 3,025 clicks for $323 with only 3 conversions — review match types / traffic quality. Currency: AUD assumed."
     }
