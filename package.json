@@ -1,0 +1,9 @@
+{
+  "name": "decidr-weekly-report",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Decidr weekly marketing report generator + static dashboard",
+  "scripts": {
+    "build": "node generate.mjs --week 24 && mkdir -p public && cp out/report-week-*.html public/ && cp out/report-week-24.html public/index.html"
+  }
+}
