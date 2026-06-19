@@ -312,7 +312,7 @@
   },
   "creatives": {
     "label": "Top performing creatives — Meta",
-    "note": "Top 6 Meta ads by leads, 8–14 Jun. Images downloaded locally and embedded (base64) — self-contained, no expiring CDN links. Leads = on-Facebook + website leads; Cost/lead = spend ÷ leads. Currency: AUD assumed.",
+    "note": "Top 6 Meta lead creatives, 8–14 Jun — event creatives excluded; includes 2 AI Roadmap demo ads. Leads = on-Facebook + website leads; Cost/lead = spend ÷ leads. Images downloaded + embedded. Currency: AUD assumed.",
     "items": [
       {
         "name": "AI Readiness Index — Video Ad",
@@ -323,28 +323,12 @@
         "img": "assets/creatives/week-24/ad1-video.jpg"
       },
       {
-        "name": "Attention Experts Online — Ad 4",
-        "tag": "Static",
-        "leads": "29",
-        "cpl": "$43",
-        "spend": "$1,239",
-        "img": "assets/creatives/week-24/ad2-ae-ad4.jpg"
-      },
-      {
         "name": "AI Readiness Index — Static · Singapore Ad 2",
         "tag": "Static",
         "leads": "26",
         "cpl": "$45",
         "spend": "$1,169",
         "img": "assets/creatives/week-24/ad3-sg-ad2.jpg"
-      },
-      {
-        "name": "Attention Experts Online — Ad 9",
-        "tag": "Static",
-        "leads": "21",
-        "cpl": "$56",
-        "spend": "$1,181",
-        "img": "assets/creatives/week-24/ad4-ae-ad9.jpg"
       },
       {
         "name": "AI Readiness Index — Static · USA Ad 6",
@@ -361,6 +345,22 @@
         "cpl": "$35",
         "spend": "$557",
         "img": "assets/creatives/week-24/ad6-mercha-v6.jpg"
+      },
+      {
+        "name": "AI Roadmap — Ad 2 (demo)",
+        "tag": "AI Roadmap",
+        "leads": "4",
+        "cpl": "$160",
+        "spend": "$640",
+        "img": "assets/creatives/week-24/roadmap/rm1-ad2.jpg"
+      },
+      {
+        "name": "AI Roadmap — Ad 5 (demo)",
+        "tag": "AI Roadmap",
+        "leads": "3",
+        "cpl": "$84",
+        "spend": "$251",
+        "img": "assets/creatives/week-24/roadmap/rm2-ad5.jpg"
       }
     ]
   },
