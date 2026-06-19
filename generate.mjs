@@ -259,6 +259,29 @@ function metaSection(d) {
   return section('Meta Ads — campaigns & cost per lead', metrics + table);
 }
 
+function creativesSection(d) {
+  if (!d.creatives || !d.creatives.items) return '';
+  const cards = d.creatives.items.map((c, i) => `
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+        <div style="position:relative;background:var(--surface2);">
+          <img src="${esc(c.thumb)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" style="width:100%;height:140px;object-fit:cover;display:block;">
+          ${i === 0 ? '<span class="badge badge-green" style="position:absolute;top:8px;left:8px;">★ Top</span>' : ''}
+          ${c.tag ? `<span class="badge badge-gray" style="position:absolute;top:8px;right:8px;">${esc(c.tag)}</span>` : ''}
+        </div>
+        <div style="padding:10px 12px;">
+          <div style="font-size:12px;font-weight:500;line-height:1.35;margin-bottom:9px;height:33px;overflow:hidden;">${esc(c.name)}</div>
+          <div style="display:flex;gap:6px;border-top:1px solid var(--border);padding-top:9px;">
+            <div style="text-align:center;flex:1;"><div style="font-size:15px;font-weight:600;color:var(--green);">${esc(c.leads)}</div><div style="font-size:10px;color:var(--text-3);">leads</div></div>
+            <div style="text-align:center;flex:1;"><div style="font-size:15px;font-weight:600;color:var(--amber);">${esc(c.cpl)}</div><div style="font-size:10px;color:var(--text-3);">cost/lead</div></div>
+            <div style="text-align:center;flex:1;"><div style="font-size:15px;font-weight:600;color:var(--text-2);">${esc(c.spend)}</div><div style="font-size:10px;color:var(--text-3);">spend</div></div>
+          </div>
+        </div>
+      </div>`).join('');
+  const grid = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">${cards}</div>`;
+  const note = d.creatives.note ? `<p style="font-size:11px;color:var(--text-3);margin-top:10px;">${esc(d.creatives.note)}</p>` : '';
+  return section(d.creatives.label || 'Top performing creatives — Meta', grid + note);
+}
+
 function spendSection(d) {
   if (!d.spend) return '';
   if (d.spend.placeholder) return section('Paid media — spend & cost per lead', pendingCard(d.spend.note));
@@ -501,6 +524,7 @@ ${funnelSection(data)}
 ${campaignSection(data)}
 ${spendSection(data)}
 ${metaSection(data)}
+${creativesSection(data)}
 ${genericSection('LinkedIn Ads — campaigns & cost per lead', data.linkedin)}
 ${genericSection('Google Ads — campaigns & spend', data.google)}
 ${sqlContactsSection(data)}
