@@ -977,5 +977,59 @@
       }
     ],
     "note": "Google drove 3,477 clicks / 2,538 GA4 sessions this week but no HubSpot-attributed leads — paid-search lead capture is the gap. LinkedIn costs ~6× Facebook per lead ($455 vs $71) but delivers higher MQL quality."
+  },
+  "creativesRoadmap": {
+    "label": "Top AI Roadmap creatives — Meta",
+    "note": "Top 6 Meta ads in the AI Roadmap demo campaign, 8–14 Jun, ranked by leads (demo-request / website leads). Cost/lead = spend ÷ leads. Images downloaded + embedded. Currency: AUD assumed.",
+    "items": [
+      {
+        "name": "AI Roadmap — Ad 2",
+        "tag": "Demo",
+        "leads": "4",
+        "cpl": "$160",
+        "spend": "$640",
+        "img": "assets/creatives/week-24/roadmap/rm1-ad2.jpg"
+      },
+      {
+        "name": "AI Roadmap — Ad 5",
+        "tag": "Demo",
+        "leads": "3",
+        "cpl": "$84",
+        "spend": "$251",
+        "img": "assets/creatives/week-24/roadmap/rm2-ad5.jpg"
+      },
+      {
+        "name": "AI Roadmap — Ad 6",
+        "tag": "Demo",
+        "leads": "2",
+        "cpl": "$117",
+        "spend": "$234",
+        "img": "assets/creatives/week-24/roadmap/rm3-ad6.jpg"
+      },
+      {
+        "name": "AI Roadmap — Ad 1",
+        "tag": "Demo",
+        "leads": "1",
+        "cpl": "$107",
+        "spend": "$107",
+        "img": "assets/creatives/week-24/roadmap/rm4-ad1.jpg"
+      },
+      {
+        "name": "AI Roadmap — Ad 3",
+        "tag": "Demo",
+        "leads": "1",
+        "cpl": "$42",
+        "spend": "$42",
+        "img": "assets/creatives/week-24/roadmap/rm5-ad3.jpg"
+      },
+      {
+        "name": "AI Roadmap — Ad 4",
+        "tag": "Demo",
+        "leads": "1",
+        "cpl": "$31",
+        "spend": "$31",
+        "img": "assets/creatives/week-24/roadmap/rm6-ad4.jpg"
+      }
+    ]
   }
 }

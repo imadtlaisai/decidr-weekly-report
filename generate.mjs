@@ -259,9 +259,9 @@ function metaSection(d) {
   return section('Meta Ads — campaigns & cost per lead', metrics + table);
 }
 
-function creativesSection(d) {
-  if (!d.creatives || !d.creatives.items) return '';
-  const cards = d.creatives.items.map((c, i) => {
+function creativesSection(block) {
+  if (!block || !block.items) return '';
+  const cards = block.items.map((c, i) => {
     // Prefer a locally-downloaded image, base64-inlined so the report is self-contained
     // and never depends on expiring FB/IG CDN URLs. Fall back to a remote thumb if present.
     let src = c.thumb || '';
@@ -287,8 +287,8 @@ function creativesSection(d) {
       </div>`;
   }).join('');
   const grid = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">${cards}</div>`;
-  const note = d.creatives.note ? `<p style="font-size:11px;color:var(--text-3);margin-top:10px;">${esc(d.creatives.note)}</p>` : '';
-  return section(d.creatives.label || 'Top performing creatives — Meta', grid + note);
+  const note = block.note ? `<p style="font-size:11px;color:var(--text-3);margin-top:10px;">${esc(block.note)}</p>` : '';
+  return section(block.label || 'Top performing creatives — Meta', grid + note);
 }
 
 function spendSection(d) {
@@ -533,7 +533,8 @@ ${funnelSection(data)}
 ${campaignSection(data)}
 ${spendSection(data)}
 ${metaSection(data)}
-${creativesSection(data)}
+${creativesSection(data.creatives)}
+${creativesSection(data.creativesRoadmap)}
 ${genericSection('LinkedIn Ads — campaigns & cost per lead', data.linkedin)}
 ${genericSection('Google Ads — campaigns & spend', data.google)}
 ${sqlContactsSection(data)}
