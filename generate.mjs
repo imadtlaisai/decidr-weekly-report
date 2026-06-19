@@ -261,10 +261,18 @@ function metaSection(d) {
 
 function creativesSection(d) {
   if (!d.creatives || !d.creatives.items) return '';
-  const cards = d.creatives.items.map((c, i) => `
+  const cards = d.creatives.items.map((c, i) => {
+    // Prefer a locally-downloaded image, base64-inlined so the report is self-contained
+    // and never depends on expiring FB/IG CDN URLs. Fall back to a remote thumb if present.
+    let src = c.thumb || '';
+    if (c.img) {
+      try { src = `data:image/jpeg;base64,${readFileSync(resolve(c.img)).toString('base64')}`; }
+      catch { /* file missing — keep remote fallback */ }
+    }
+    return `
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
         <div style="position:relative;background:var(--surface2);">
-          <img src="${esc(c.thumb)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" style="width:100%;height:140px;object-fit:cover;display:block;">
+          <img src="${esc(src)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" style="width:100%;height:140px;object-fit:cover;display:block;">
           ${i === 0 ? '<span class="badge badge-green" style="position:absolute;top:8px;left:8px;">★ Top</span>' : ''}
           ${c.tag ? `<span class="badge badge-gray" style="position:absolute;top:8px;right:8px;">${esc(c.tag)}</span>` : ''}
         </div>
@@ -276,7 +284,8 @@ function creativesSection(d) {
             <div style="text-align:center;flex:1;"><div style="font-size:15px;font-weight:600;color:var(--text-2);">${esc(c.spend)}</div><div style="font-size:10px;color:var(--text-3);">spend</div></div>
           </div>
         </div>
-      </div>`).join('');
+      </div>`;
+  }).join('');
   const grid = `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">${cards}</div>`;
   const note = d.creatives.note ? `<p style="font-size:11px;color:var(--text-3);margin-top:10px;">${esc(d.creatives.note)}</p>` : '';
   return section(d.creatives.label || 'Top performing creatives — Meta', grid + note);
