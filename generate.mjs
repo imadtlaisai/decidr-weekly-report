@@ -437,10 +437,10 @@ const CSS = `
   .report-title{font-size:26px;font-weight:600;color:var(--text);margin:6px 0 4px;letter-spacing:-.3px;}
   .report-date{font-size:13px;color:var(--text-2);}
   .section{margin-bottom:36px;animation:fadeUp .5s ease both;}
-  .section-label{font-size:10px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .section-label{font-size:16px;font-weight:700;color:#000;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
   .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
   .card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:18px 20px;margin-bottom:10px;}
-  .card-title{font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em;}
+  .card-title{font-size:13px;font-weight:700;color:#000;margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em;}
   .mg4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
   .mg3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
   .mg2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
