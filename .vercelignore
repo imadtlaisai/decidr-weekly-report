@@ -1,0 +1,5 @@
+# These are for Streamlit Cloud only — exclude them so Vercel doesn't
+# detect a Python project and instead runs the static Node build.
+streamlit_app.py
+requirements.txt
+*.py
