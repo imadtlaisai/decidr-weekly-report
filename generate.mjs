@@ -272,7 +272,7 @@ function creativesSection(block) {
     return `
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
         <div style="position:relative;background:var(--surface2);">
-          <img src="${esc(src)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" style="width:100%;height:140px;object-fit:cover;display:block;">
+          <img src="${esc(src)}" alt="${esc(c.name)}" loading="lazy" referrerpolicy="no-referrer" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
           ${i === 0 ? '<span class="badge badge-green" style="position:absolute;top:8px;left:8px;">★ Top</span>' : ''}
           ${c.tag ? `<span class="badge badge-gray" style="position:absolute;top:8px;right:8px;">${esc(c.tag)}</span>` : ''}
         </div>
