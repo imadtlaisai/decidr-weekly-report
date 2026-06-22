@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decidr — Weekly Marketing Reports</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:#F7F6F3;color:#1A1916;height:100vh;display:flex;flex-direction:column;overflow:hidden;}
+
+  .nav{
+    display:flex;align-items:center;gap:10px;
+    padding:10px 20px;
+    background:#fff;
+    border-bottom:1px solid rgba(0,0,0,0.09);
+    position:relative;z-index:10;
+    flex-shrink:0;
+    flex-wrap:wrap;
+    row-gap:8px;
+  }
+  .nav-brand{
+    font-size:12px;font-weight:600;color:#9E9B94;
+    letter-spacing:.07em;text-transform:uppercase;
+    margin-right:4px;
+  }
+  .nav-divider{
+    width:1px;height:16px;background:rgba(0,0,0,0.12);
+    margin:0 4px;flex-shrink:0;
+  }
+  .nav-label{font-size:12px;color:#9E9B94;margin-right:2px;}
+
+  .week-btn{
+    padding:4px 13px;
+    border-radius:20px;
+    border:1.5px solid rgba(0,0,0,0.12);
+    background:transparent;
+    font-family:'DM Sans',sans-serif;
+    font-size:12px;font-weight:500;
+    color:#6B6860;
+    cursor:pointer;
+    transition:border-color .12s,color .12s,background .12s;
+    white-space:nowrap;
+  }
+  .week-btn:hover{border-color:#1A56E8;color:#1A56E8;}
+  .week-btn.active{background:#1A56E8;border-color:#1A56E8;color:#fff;}
+
+  .nav-spacer{flex:1;}
+  .nav-note{font-size:11px;color:#C8C5BE;}
+
+  iframe{
+    flex:1;
+    width:100%;
+    border:none;
+    display:block;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav-brand">Decidr</span>
+  <div class="nav-divider"></div>
+  <span class="nav-label">Week</span>
+  <button class="week-btn" onclick="loadWeek(24,this)" id="btn-24">24</button>
+  <button class="week-btn active" onclick="loadWeek(25,this)" id="btn-25">25</button>
+  <div class="nav-spacer"></div>
+  <span class="nav-note">Confidential — internal use only</span>
+</nav>
+
+<iframe id="report-frame" src="out/report-week-25.html" title="Decidr weekly marketing report"></iframe>
+
+<script>
+  function loadWeek(num, btn) {
+    document.getElementById('report-frame').src = 'out/report-week-' + num + '.html';
+    document.querySelectorAll('.week-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    history.replaceState(null, '', '?week=' + num);
+  }
+
+  // Restore week from URL query param on load
+  (function(){
+    var params = new URLSearchParams(location.search);
+    var w = parseInt(params.get('week'), 10);
+    if (w) {
+      var btn = document.getElementById('btn-' + w);
+      if (btn) loadWeek(w, btn);
+    }
+  })();
+</script>
+
+</body>
+</html>
