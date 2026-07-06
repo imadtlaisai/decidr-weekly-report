@@ -19,7 +19,7 @@
   ],
   "highlight": {
     "type": "amber",
-    "html": "<strong>Subscriber-heavy week — quality concentrated in DecidrOS + AI Roadmap.</strong> 301 new contacts, but 276 are newsletter subscribers from a large Offline import; only 25 sit on the qualified track (14 MQL+, 6 SQL+, 1 opp). DecidrOS converted cleanly (9 of 18 ex-sub to MQL+, 3 SQLs); Sugarworks added a single lead. The Facebook \"AI Roadmap\" demo campaign was the standout again — 5 leads, all 5 qualified (100% MQL), producing all three DecidrOS SQLs (Lou J, Rick Mooney, Jai T). One opportunity (Steve Canning) was sales-created in-CRM."
+    "html": "<strong>Subscriber-heavy week — quality concentrated in DecidrOS + AI Roadmap.</strong> 301 new contacts, but 276 are newsletter subscribers from a large Offline import; only 25 sit on the qualified track (14 MQL+, 6 SQL+, 1 opp). DecidrOS converted cleanly (9 of 18 ex-sub to MQL+, 3 SQLs); Sugarworks added a single lead. The Facebook \"AI Roadmap\" demo campaign was the standout again — 6 leads (5 synced to HubSpot, all qualified), producing all three DecidrOS SQLs (Lou J, Rick Mooney, Jai T). One opportunity (Steve Canning) was sales-created in-CRM."
   },
   "sqlByProduct": {
     "metrics": [
@@ -45,21 +45,21 @@
     "_note": "Facebook lead-gen campaigns (the Paid Social volume engine). Contacts/MQL from HubSpot by campaign; Spend from Meta Ads; Cost/lead = spend ÷ HubSpot contacts.",
     "metrics": [
       { "label": "Meta spend", "value": "$7,883", "color": "blue", "sub": "88% of paid media" },
-      { "label": "Leads (HubSpot)", "value": "93", "color": "green", "sub": "FB Paid Social contacts" },
-      { "label": "Cost / lead", "value": "$85", "color": "amber", "sub": "spend ÷ FB contacts" },
-      { "label": "MQL rate", "value": "11%", "color": "amber", "sub": "10 of 93 (50% of 20 ex-sub)" }
+      { "label": "Leads", "value": "94", "color": "green", "sub": "FB leads (AI Roadmap 6 · Meta)" },
+      { "label": "Cost / lead", "value": "$84", "color": "amber", "sub": "spend ÷ FB leads" },
+      { "label": "MQL rate", "value": "11%", "color": "amber", "sub": "10 MQL+ of 94" }
     ],
     "rows": [
-      { "name": "AI Roadmap — Demo (Jun 1)", "channelBadge": "amber", "channelLabel": "FB · demo", "contacts": "5", "mql": "100%", "mqlClass": "good", "extra1": "$1,639", "extra2": "$328", "bold": true },
-      { "name": "Event — Boardroom Lunch, Sydney", "channelBadge": "purple", "channelLabel": "FB · event", "contacts": "36", "mql": "14%", "mqlClass": "mid", "extra1": "$2,933", "extra2": "$81" },
-      { "name": "AI Readiness Report — AU (Aug 18)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "24", "mql": "0%", "mqlClass": "bad", "extra1": "$1,323", "extra2": "$55" },
-      { "name": "Mercha Case Study — AU (Continued)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "23", "mql": "0%", "mqlClass": "bad", "extra1": "$1,399", "extra2": "$61" },
-      { "name": "AI Readiness Report — USA", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "2", "mql": "0%", "mqlClass": "bad", "extra1": "$124", "extra2": "$62" },
-      { "name": "AI Readiness Report — Singapore", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "2", "mql": "0%", "mqlClass": "bad", "extra1": "$115", "extra2": "$57" },
-      { "name": "Technology Partners — Demo (Jul 1)", "channelBadge": "amber", "channelLabel": "FB · demo", "contacts": "1", "mql": "0%", "mqlClass": "bad", "extra1": "$350", "extra2": "$350" }
+      { "name": "AI Roadmap — Demo (Jun 1)", "channelBadge": "amber", "channelLabel": "FB · demo", "contacts": "6", "mql": "83%", "mqlClass": "good", "extra1": "$1,639", "extra2": "$273", "extra3": "$328", "extra3Class": "good", "bold": true },
+      { "name": "Event — Boardroom Lunch, Sydney", "channelBadge": "purple", "channelLabel": "FB · event", "contacts": "36", "mql": "14%", "mqlClass": "mid", "extra1": "$2,933", "extra2": "$81", "extra3": "$587", "extra3Class": "mid" },
+      { "name": "AI Readiness Report — AU (Aug 18)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "24", "mql": "0%", "mqlClass": "bad", "extra1": "$1,323", "extra2": "$55", "extra3": "n/a" },
+      { "name": "Mercha Case Study — AU (Continued)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "23", "mql": "0%", "mqlClass": "bad", "extra1": "$1,399", "extra2": "$61", "extra3": "n/a" },
+      { "name": "AI Readiness Report — USA", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "2", "mql": "0%", "mqlClass": "bad", "extra1": "$124", "extra2": "$62", "extra3": "n/a" },
+      { "name": "AI Readiness Report — Singapore", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "2", "mql": "0%", "mqlClass": "bad", "extra1": "$115", "extra2": "$57", "extra3": "n/a" },
+      { "name": "Technology Partners — Demo (Jul 1)", "channelBadge": "amber", "channelLabel": "FB · demo", "contacts": "1", "mql": "0%", "mqlClass": "bad", "extra1": "$350", "extra2": "$350", "extra3": "n/a" }
     ],
-    "columns": { "c3": "MQL%", "c4": "Spend", "c5": "Cost / lead" },
-    "note": "AI Roadmap was again the only high-intent source (5/5 MQL, all 3 DecidrOS SQLs). The Boardroom Lunch event drove the most volume (36) at 14% MQL. AI Readiness AU + Mercha generated 49 contacts but 0 MQL this week. Currency: AUD."
+    "columns": { "c3": "MQL%", "c4": "Spend", "c5": "Cost / lead", "c6": "Cost / MQL" },
+    "note": "AI Roadmap again the only high-intent source — 6 Meta leads (5 synced to HubSpot, all qualified), all 3 DecidrOS SQLs, at $328 / MQL. Boardroom Lunch drove the most volume (36) at 14% MQL and $587 / MQL. AI Readiness AU + Mercha generated 47 contacts but 0 MQL. Cost/MQL = spend ÷ MQL+ contacts. Currency: AUD."
   },
   "creatives": {
     "placeholder": true,
@@ -145,7 +145,7 @@
   "observations": [
     { "color": "amber", "html": "<strong>Subscriber-heavy, quality-light week.</strong> 301 new contacts but 276 are newsletter subscribers from an Offline import; only 25 on the qualified track (14 MQL+, 6 SQL+, 1 opp). Judge the week on the qualified 25, not the headline 301." },
     { "color": "green", "html": "<strong>DecidrOS quality held — ~50% MQL+ rate.</strong> 9 of 18 ex-subscriber DecidrOS contacts reached MQL+, producing all 3 SQLs. The DecidrOS funnel is small but clean." },
-    { "color": "green", "html": "<strong>\"AI Roadmap\" FB demo converts at 100% again.</strong> 5 leads, all 5 qualified, all 3 DecidrOS SQLs (Lou J, Rick Mooney, Jai T) for $1,639. Highest-intent source and the clearest place to scale." },
+    { "color": "green", "html": "<strong>\"AI Roadmap\" FB demo the highest-intent source again.</strong> 6 leads (5 in HubSpot, all qualified), all 3 DecidrOS SQLs (Lou J, Rick Mooney, Jai T) for $1,639 — $328 / MQL. Highest-intent source and the clearest place to scale." },
     { "color": "amber", "html": "<strong>AI Readiness + Mercha FB campaigns: 49 contacts, 0 MQL.</strong> AI Readiness AU (24) and Mercha AU Continued (23) drove volume but nothing qualified — ~$2.7k spend with no MQL. Quality / targeting review." },
     { "color": "amber", "html": "<strong>Paid media pulled back sharply — $8,979 total.</strong> Meta $7,883 (88%), LinkedIn $700, Google $397. LinkedIn (was ~$13k/wk) and Google are nearly dark. Blended $90/lead, but with 80% subscribers the cost per <em>qualified</em> lead is far higher." },
     { "color": "teal", "html": "<strong>Sales-created pipeline: 1 opp + 2 SQLs in-CRM.</strong> Steve Canning (opp), Matt Carmichael, Neil Durrant — all AU, Unassigned product, entered via CRM rather than marketing. Tagging product / source would sharpen attribution." },

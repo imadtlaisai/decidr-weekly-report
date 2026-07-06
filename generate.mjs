@@ -239,6 +239,7 @@ function metaSection(d) {
             <th class="r" style="width:58px;">${esc(cols.c3)}</th>
             <th class="r" style="width:72px;">${esc(cols.c4)}</th>
             <th class="r" style="width:75px;">${esc(cols.c5)}</th>
+            <th class="r" style="width:75px;">${esc(cols.c6 || 'Cost / MQL')}</th>
           </tr>
         </thead>
         <tbody>
@@ -250,6 +251,7 @@ function metaSection(d) {
             <td class="r ${r.mqlClass || ''}">${esc(r.mql)}</td>
             <td class="r ${r.extra1Class || ''}">${esc(r.extra1)}</td>
             <td class="r">${esc(r.extra2)}</td>
+            <td class="r ${r.extra3Class || ''}">${esc(r.extra3)}</td>
           </tr>`).join('')}
         </tbody>
       </table>
