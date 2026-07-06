@@ -38,7 +38,6 @@ function extractMetrics(d) {
 }
 
 function trendBadge(vals) {
-  const nums = vals.map(v => parseFloat(String(v).replace(/[^0-9.-]/g, ''))).filter(n => !isNaN(n) && n !== 0 || v !== '—');
   const clean = vals.map(v => parseFloat(String(v).replace(/[^0-9.-]/g, ''))).filter(n => !isNaN(n));
   if (clean.length < 2) return { badge: 'gray', badgeText: '—' };
   const [prev, curr] = [clean[clean.length - 2], clean[clean.length - 1]];
