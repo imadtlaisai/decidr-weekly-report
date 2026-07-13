@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decidr — Weekly Marketing Report · 6–12 Jul 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#F7F6F3;--surface:#FFFFFF;--surface2:#F0EEE9;
+    --border:rgba(0,0,0,0.08);--border-strong:rgba(0,0,0,0.15);
+    --text:#1A1916;--text-2:#6B6860;--text-3:#9E9B94;
+    --blue:#1A56E8;--blue-bg:#EBF1FD;--blue-text:#1240C0;
+    --green:#0A7C4A;--green-bg:#E4F5EC;--green-text:#065C37;
+    --amber:#B05E00;--amber-bg:#FDF0E0;--amber-text:#8A4900;
+    --red:#C0291A;--red-bg:#FDECEA;--red-text:#991F14;
+    --purple:#5B3FD4;--purple-bg:#EEEAFC;--purple-text:#3D28A8;
+    --teal:#0B7A6E;--teal-bg:#E2F4F2;--teal-text:#085F55;
+    --coral:#993C1D;--coral-bg:#FAECE7;--coral-text:#712B13;
+    --radius:10px;--radius-sm:6px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  @media print{body{background:#fff;}.section{break-inside:avoid;animation:none!important;opacity:1!important;transform:none!important;}.card{break-inside:avoid;}}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 24px 80px;}
+  .report-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px;padding-bottom:28px;border-bottom:1.5px solid var(--border-strong);}
+  .report-logo{font-size:13px;font-weight:600;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;}
+  .report-title{font-size:26px;font-weight:600;color:var(--text);margin:6px 0 4px;letter-spacing:-.3px;}
+  .report-date{font-size:13px;color:var(--text-2);}
+  .section{margin-bottom:36px;animation:fadeUp .5s ease both;}
+  .section-label{font-size:16px;font-weight:700;color:#000;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:18px 20px;margin-bottom:10px;}
+  .card-title{font-size:13px;font-weight:700;color:#000;margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em;}
+  .mg4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
+  .mg3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+  .mg2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+  @media(max-width:600px){.mg4,.mg3{grid-template-columns:1fr 1fr;}.mg2{grid-template-columns:1fr;}}
+  .metric{background:var(--surface2);border-radius:var(--radius-sm);padding:14px 16px;}
+  .metric-label{font-size:11px;color:var(--text-2);margin-bottom:4px;}
+  .metric-value{font-size:24px;font-weight:600;line-height:1.1;}
+  .metric-sub{font-size:11px;color:var(--text-2);margin-top:3px;}
+  .funnel{display:flex;align-items:stretch;margin-bottom:20px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);}
+  .funnel-stage{flex:1;padding:16px 12px;text-align:center;background:var(--surface);border-right:1px solid var(--border);}
+  .funnel-stage:last-child{border-right:none;}
+  .funnel-stage.alt{background:var(--surface2);}
+  .funnel-num{font-size:28px;font-weight:600;margin:4px 0 2px;line-height:1;}
+  .funnel-label{font-size:11px;color:var(--text-2);}
+  .funnel-conv{font-size:11px;font-weight:500;margin-top:3px;}
+  .badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;white-space:nowrap;}
+  .badge-blue{background:var(--blue-bg);color:var(--blue-text);}
+  .badge-green{background:var(--green-bg);color:var(--green-text);}
+  .badge-amber{background:var(--amber-bg);color:var(--amber-text);}
+  .badge-red{background:var(--red-bg);color:var(--red-text);}
+  .badge-purple{background:var(--purple-bg);color:var(--purple-text);}
+  .badge-teal{background:var(--teal-bg);color:var(--teal-text);}
+  .badge-coral{background:var(--coral-bg);color:var(--coral-text);}
+  .badge-gray{background:var(--surface2);color:var(--text-2);}
+  .badge-up{background:var(--green-bg);color:var(--green-text);}
+  .badge-warn{background:var(--amber-bg);color:var(--amber-text);}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+  .bar-row:last-child{margin-bottom:0;}
+  .bar-label{width:150px;flex-shrink:0;font-size:12px;color:var(--text-2);}
+  .bar-label.sm{width:110px;}
+  .bar-track{flex:1;height:8px;background:var(--surface2);border-radius:4px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:4px;}
+  .bar-num{font-size:12px;font-weight:500;width:30px;text-align:right;flex-shrink:0;}
+  .bar-extra{font-size:11px;color:var(--text-3);width:60px;text-align:right;flex-shrink:0;}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{text-align:left;font-weight:600;font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;padding:0 10px 10px 0;border-bottom:1px solid var(--border);}
+  td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle;}
+  tr:last-child td{border-bottom:none;}
+  tr.alt td{background:var(--surface2);}
+  .r{text-align:right;}
+  .good{color:var(--green);font-weight:500;}
+  .mid{color:var(--amber);font-weight:500;}
+  .bad{color:var(--red);font-weight:500;}
+  .obs{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);}
+  .obs:last-child{border-bottom:none;}
+  .obs-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px;}
+  .obs-text{font-size:13px;color:var(--text);line-height:1.6;flex:1;}
+  .obs-text strong{font-weight:600;}
+  .contact-row{display:flex;align-items:flex-start;gap:8px;padding:6px 8px;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:4px;font-size:12px;}
+  .contact-row:last-child{margin-bottom:0;}
+  .cn{font-weight:500;color:var(--text);flex:1;}
+  .cc{color:var(--text-2);font-size:11px;width:230px;flex-shrink:0;}
+  .score{font-size:11px;font-weight:600;width:36px;text-align:right;flex-shrink:0;}
+  .wow{display:grid;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;}
+  .wow:last-child{border-bottom:none;}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .compare-card{background:var(--surface2);border-radius:var(--radius-sm);padding:14px 16px;text-align:center;}
+  .compare-platform{font-size:11px;color:var(--text-3);margin-bottom:8px;}
+  .compare-rate{font-size:22px;font-weight:600;}
+  .compare-meta{font-size:11px;color:var(--text-2);margin-top:4px;line-height:1.5;}
+  .content-item{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .content-item:last-child{border-bottom:none;}
+  .content-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+  .content-text{flex:1;color:var(--text);}
+  .content-sub{font-size:11px;color:var(--text-3);margin-top:1px;}
+  .next-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);}
+  .next-item:last-child{border-bottom:none;}
+  .next-box{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--border-strong);flex-shrink:0;margin-top:2px;}
+  .next-title{font-size:13px;font-weight:500;color:var(--text);}
+  .next-sub{font-size:11px;color:var(--text-3);margin-top:2px;}
+  .info-box{border-radius:var(--radius-sm);padding:10px 14px;font-size:12px;line-height:1.6;margin-bottom:14px;}
+  .footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+  .footer-text{font-size:11px;color:var(--text-3);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="report-header">
+    <div>
+      <div class="report-logo">Decidr</div>
+      <div class="report-title">Weekly marketing report</div>
+      <div class="report-date">6–12 Jul 2026 &nbsp;·&nbsp; Prepared for CMO</div>
+    </div>
+    <div style="text-align:right;">
+      <span class="badge badge-blue">Week 28, 2026</span>
+      <div style="font-size:11px;color:var(--text-3);margin-top:8px;">DecidrOS · Sugarworks · Partnership</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Lead funnel</div>
+    
+    <div class="funnel">
+      <div class="funnel-stage alt">
+        <div class="funnel-label">Contacts</div>
+        <div class="funnel-num" style="color:var(--purple);">161</div>
+        <div class="funnel-conv" style="color:var(--amber);">136 subs + 24 qualified</div>
+      </div>
+      <div class="funnel-stage">
+        <div class="funnel-label">MQL</div>
+        <div class="funnel-num" style="color:var(--blue);">9</div>
+        <div class="funnel-conv" style="color:var(--blue);">38% of 24 qualified</div>
+      </div>
+      <div class="funnel-stage alt">
+        <div class="funnel-label">SQL</div>
+        <div class="funnel-num" style="color:var(--green);">4</div>
+        <div class="funnel-conv" style="color:var(--green);">SQL+ (incl. 3 opps)</div>
+      </div>
+      <div class="funnel-stage">
+        <div class="funnel-label">Opportunities</div>
+        <div class="funnel-num" style="color:var(--amber);">3</div>
+        <div class="funnel-conv" style="color:var(--amber);">all Unassigned</div>
+      </div></div>
+    
+    <div class="info-box" style="background:var(--amber-bg);color:var(--amber-text);border:1px solid rgba(0,0,0,.06);">
+      <strong>Quiet, subscriber-heavy week — event volume, thin qualification.</strong> 161 new contacts (136 subscribers + 24 on the qualified track), with 9 MQL+, 4 SQL+ and 3 opportunities. The new "State of AI in Australian Businesses" launch event drove 80 Facebook contacts but 0 MQL — pure top-of-funnel. DecidrOS added 3 MQL but no SQLs; all 4 SQL+ were Unassigned. The Facebook "AI Roadmap" demo campaign again converted 3/3 to MQL and produced the week's only marketing SQL (Will Patris) plus an opportunity (Paul Giordano); two more opps were sales-created in-CRM.
+    </div>
+    
+    <div class="mg2">
+      <div class="card">
+        <div class="card-title">SQL by product (MQL+)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;">
+          
+          <div class="metric">
+            <div class="metric-label"><span class="badge badge-blue">DecidrOS</span></div>
+            <div class="metric-value" style="color:var(--blue);">0</div>
+            <div class="metric-sub">3 MQL, no SQL</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label"><span class="badge badge-green">Sugarworks</span></div>
+            <div class="metric-value" style="color:var(--green);">0</div>
+            <div class="metric-sub">1 lead only</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Opportunities</div>
+            <div class="metric-value" style="color:var(--amber);">3</div>
+            <div class="metric-sub">all Unassigned</div>
+          </div>
+        </div>
+        
+        <div class="bar-row">
+          <span class="bar-label sm">Unassigned</span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%;background:#9E9B94;"></div></div>
+          <span class="bar-num">6</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm"><span class="badge badge-blue">DecidrOS</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--blue);"></div></div>
+          <span class="bar-num">3</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm"><span class="badge badge-green">Sugarworks</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:2%;background:var(--green);"></div></div>
+          <span class="bar-num">0</span>
+          
+        </div>
+        <p style="font-size:11px;color:var(--text-3);margin-top:10px;padding-top:8px;border-top:1px solid var(--border);">MQL+ by product. Unassigned 6 (2 MQL + 4 sales-created / AI Roadmap SQL+); DecidrOS 3 MQL (no SQL this week); Sugarworks 0. Product tagging is thin — the AI Roadmap SQL/opp (Will Patris, Paul Giordano) are DecidrOS-intent but tagged Unassigned. 136 subscribers excluded.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Week-on-week trend</div>
+        <div style="display:flex;gap:6px;font-size:10px;color:var(--text-3);font-weight:500;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:4px;">
+          <span style="flex:1.4;"></span>
+          <span style="flex:1;text-align:right;">Wk 26</span><span style="flex:1;text-align:right;">Wk 27</span><span style="flex:1;text-align:right;">Wk 28</span>
+          <span style="width:64px;text-align:right;">Trend</span>
+        </div>
+        
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">Contacts</span>
+          <span style="color:var(--text-2);text-align:right;">244</span><span style="color:var(--text-2);text-align:right;">301</span><span style="color:var(--text-2);text-align:right;">161</span>
+          <span style="font-size:12px;font-weight:600;color:var(--amber);text-align:right;">-47%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">MQL+</span>
+          <span style="color:var(--text-2);text-align:right;">38</span><span style="color:var(--text-2);text-align:right;">14</span><span style="color:var(--text-2);text-align:right;">9</span>
+          <span style="font-size:12px;font-weight:600;color:var(--amber);text-align:right;">-36%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">SQL+</span>
+          <span style="color:var(--text-2);text-align:right;">10</span><span style="color:var(--text-2);text-align:right;">6</span><span style="color:var(--text-2);text-align:right;">4</span>
+          <span style="font-size:12px;font-weight:600;color:var(--amber);text-align:right;">-33%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">Opportunities</span>
+          <span style="color:var(--text-2);text-align:right;">6</span><span style="color:var(--text-2);text-align:right;">1</span><span style="color:var(--text-2);text-align:right;">3</span>
+          <span style="font-size:12px;font-weight:600;color:var(--green);text-align:right;">↑</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">Meta leads</span>
+          <span style="color:var(--text-2);text-align:right;">152</span><span style="color:var(--text-2);text-align:right;">94</span><span style="color:var(--text-2);text-align:right;">123</span>
+          <span style="font-size:12px;font-weight:600;color:var(--green);text-align:right;">↑</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">LinkedIn leads</span>
+          <span style="color:var(--text-2);text-align:right;">8</span><span style="color:var(--text-2);text-align:right;">7</span><span style="color:var(--text-2);text-align:right;">4</span>
+          <span style="font-size:12px;font-weight:600;color:var(--amber);text-align:right;">-43%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">Google conv.</span>
+          <span style="color:var(--text-2);text-align:right;">n/a</span><span style="color:var(--text-2);text-align:right;">n/a</span><span style="color:var(--text-2);text-align:right;">n/a</span>
+          <span style="font-size:12px;font-weight:600;color:var(--text-3);text-align:right;">—</span>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Campaign performance — channel mix &amp; quality</div>
+    
+    <div class="card" style="margin-bottom:10px;">
+      
+        <div class="bar-row">
+          <span class="bar-label"><span class="badge badge-blue">Paid Social</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue);"></div></div>
+          <span class="bar-num">127</span>
+          <span class="bar-extra">79% of total</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label"><span class="badge badge-gray">Offline / Import</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:14%;background:#9E9B94;"></div></div>
+          <span class="bar-num">18</span>
+          <span class="bar-extra">11% of total</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label"><span class="badge badge-gray">Direct Traffic</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:13%;background:#9E9B94;"></div></div>
+          <span class="bar-num">16</span>
+          <span class="bar-extra">10% of total</span>
+        </div>
+    </div><div class="mg2">
+      <div class="card">
+        <div class="card-title">Geography (known)</div>
+        
+        <div class="bar-row">
+          <span class="bar-label sm">Australia</span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue);"></div></div>
+          <span class="bar-num">47</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm">Singapore</span>
+          <div class="bar-track"><div class="bar-fill" style="width:6%;background:var(--green);"></div></div>
+          <span class="bar-num">3</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm">United States</span>
+          <div class="bar-track"><div class="bar-fill" style="width:4%;background:var(--purple);"></div></div>
+          <span class="bar-num">2</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm">Other (DE · MY)</span>
+          <div class="bar-track"><div class="bar-fill" style="width:4%;background:#9E9B94;"></div></div>
+          <span class="bar-num">2</span>
+          
+        </div>
+        <p style="font-size:11px;color:var(--text-3);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);">107 of 161 contacts missing country — mainly the event Lead Ads. Known-country share is AU-dominant (47 of 54).</p>
+      </div>
+      <div class="card">
+        <div class="card-title">LinkedIn vs Facebook</div>
+        <div class="compare">
+          
+          <div class="compare-card">
+            <div class="compare-platform">Facebook · 123 contacts</div>
+            <div class="compare-rate" style="color:var(--green);">32%</div>
+            <div class="compare-meta">MQL rate (ex-sub)<br><strong style="font-size:16px;">6</strong> MQL+ · 2 SQL+<br><span style="color:var(--green);">volume engine</span></div>
+          </div>
+          <div class="compare-card">
+            <div class="compare-platform">LinkedIn · 4 contacts</div>
+            <div class="compare-rate" style="color:var(--red);">0%</div>
+            <div class="compare-meta">MQL rate<br><strong style="font-size:16px;">0</strong> MQL+ · all subs<br><span style="color:var(--red);">awareness only</span></div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--text-3);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);">Facebook drove all qualified flow (6 MQL+, 2 SQL+). LinkedIn's 4 contacts were subscribers. Google brand-search added 0 HubSpot contacts this week.</p>
+      </div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Paid media — spend &amp; cost per lead</div>
+    
+    <div class="mg4"><div class="metric"><p class="metric-label">Total paid spend</p><p class="metric-value" style="color:var(--purple);">$10,131</p><p class="metric-sub">Meta + LinkedIn + Google</p></div><div class="metric"><p class="metric-label">Paid leads</p><p class="metric-value" style="color:var(--blue);">127</p><p class="metric-sub">Paid Social contacts</p></div><div class="metric"><p class="metric-label">Blended cost / lead</p><p class="metric-value" style="color:var(--amber);">$80</p><p class="metric-sub">all paid spend ÷ leads</p></div><div class="metric"><p class="metric-label">Blended MQL rate</p><p class="metric-value" style="color:var(--amber);">5%</p><p class="metric-sub">6 MQL+ of 127</p></div></div>
+    <div class="card">
+      <table>
+        <thead><tr><th style="width:185px;">Platform</th><th class="r">Spend</th><th class="r">Leads</th><th class="r">Cost / lead</th><th class="r">MQL+</th><th class="r">Cost / MQL</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Facebook</td>
+            <td class="r">$8,507</td>
+            <td class="r">123</td>
+            <td class="r good">$69</td>
+            <td class="r">6</td>
+            <td class="r bad">$1,418</td>
+          </tr>
+          <tr class="alt">
+            <td>LinkedIn</td>
+            <td class="r">$1,178</td>
+            <td class="r">4</td>
+            <td class="r mid">$295</td>
+            <td class="r">0</td>
+            <td class="r bad">n/a</td>
+          </tr>
+          <tr>
+            <td>Google (Paid Search)</td>
+            <td class="r">$446</td>
+            <td class="r">—</td>
+            <td class="r ">n/a</td>
+            <td class="r">—</td>
+            <td class="r ">n/a</td>
+          </tr>
+          <tr>
+            <td><strong>Total paid media</strong></td>
+            <td class="r">$10,131</td>
+            <td class="r">127</td>
+            <td class="r ">$80</td>
+            <td class="r">6</td>
+            <td class="r ">$1,689</td>
+          </tr></tbody>
+      </table>
+      <p style="font-size:11px;color:var(--text-3);margin-top:8px;">Meta carried 84% of spend and all qualified paid-social flow (6 MQL+). Cost/MQL is high this week ($1,418 FB) because MQL volume fell while spend held. LinkedIn ran awareness only; Google brand-search produced no HubSpot contacts. Currency: AUD.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Meta Ads — campaigns &amp; cost per lead</div>
+    <div class="mg4"><div class="metric"><p class="metric-label">Meta spend</p><p class="metric-value" style="color:var(--blue);">$8,507</p><p class="metric-sub">84% of paid media</p></div><div class="metric"><p class="metric-label">Leads</p><p class="metric-value" style="color:var(--green);">123</p><p class="metric-sub">FB Paid Social contacts</p></div><div class="metric"><p class="metric-label">Cost / lead</p><p class="metric-value" style="color:var(--amber);">$69</p><p class="metric-sub">spend ÷ FB contacts</p></div><div class="metric"><p class="metric-label">MQL rate</p><p class="metric-value" style="color:var(--amber);">5%</p><p class="metric-sub">6 of 123 (32% of 19 ex-sub)</p></div></div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:200px;">Campaign</th>
+            <th>Type</th>
+            <th class="r" style="width:68px;">Contacts</th>
+            <th class="r" style="width:58px;">MQL%</th>
+            <th class="r" style="width:72px;">Spend</th>
+            <th class="r" style="width:75px;">Cost / lead</th>
+            <th class="r" style="width:75px;">Cost / MQL</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td><strong>AI Roadmap — Demo (Jun 1)</strong></td>
+            <td><span class="badge badge-amber">FB · demo</span></td>
+            <td class="r">3</td>
+            <td class="r good">100%</td>
+            <td class="r ">$2,203</td>
+            <td class="r">$734</td>
+            <td class="r mid">$734</td>
+          </tr>
+          <tr class="alt">
+            <td>Event — State of AI Launch (Jul 23)</td>
+            <td><span class="badge badge-purple">FB · event</span></td>
+            <td class="r">80</td>
+            <td class="r bad">0%</td>
+            <td class="r ">$3,203</td>
+            <td class="r">$40</td>
+            <td class="r ">n/a</td>
+          </tr>
+          <tr>
+            <td>Mercha Case Study — AU (Continued)</td>
+            <td><span class="badge badge-blue">Facebook</span></td>
+            <td class="r">17</td>
+            <td class="r mid">18%</td>
+            <td class="r ">$1,116</td>
+            <td class="r">$66</td>
+            <td class="r mid">$372</td>
+          </tr>
+          <tr class="alt">
+            <td>Event — Boardroom Lunch, Sydney</td>
+            <td><span class="badge badge-purple">FB · event</span></td>
+            <td class="r">8</td>
+            <td class="r bad">0%</td>
+            <td class="r ">$998</td>
+            <td class="r">$125</td>
+            <td class="r ">n/a</td>
+          </tr>
+          <tr>
+            <td>AI Readiness Report — AU (Aug 18)</td>
+            <td><span class="badge badge-blue">Facebook</span></td>
+            <td class="r">14</td>
+            <td class="r bad">0%</td>
+            <td class="r ">$911</td>
+            <td class="r">$65</td>
+            <td class="r ">n/a</td>
+          </tr>
+          <tr class="alt">
+            <td>Technology Partners — Demo (Jul 1)</td>
+            <td><span class="badge badge-amber">FB · demo</span></td>
+            <td class="r">—</td>
+            <td class="r bad">0%</td>
+            <td class="r ">$75</td>
+            <td class="r">n/a</td>
+            <td class="r ">n/a</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--text-3);margin-top:8px;">AI Roadmap again converted every lead (3/3 MQL) but volume dropped to 3 leads for $2,203 — $734/lead as the audience thins. Mercha held at 18% MQL ($372/MQL). The State of AI launch event drove the most volume (80) at 0% near-term MQL — expected for a launch, but watch downstream. Currency: AUD.</p>
+    </div>
+  </div>
+
+
+
+  <div class="section">
+    <div class="section-label">LinkedIn Ads — campaigns &amp; cost per lead</div>
+    <div class="mg4"><div class="metric"><p class="metric-label">LinkedIn spend</p><p class="metric-value" style="color:var(--blue);">$1,178</p><p class="metric-sub">12% of paid media</p></div><div class="metric"><p class="metric-label">Leads (HubSpot)</p><p class="metric-value" style="color:var(--green);">4</p><p class="metric-sub">all subscribers</p></div><div class="metric"><p class="metric-label">Cost / lead</p><p class="metric-value" style="color:var(--amber);">$295</p><p class="metric-sub">spend ÷ 4 contacts</p></div><div class="metric"><p class="metric-label">MQL rate</p><p class="metric-value" style="color:var(--red);">0%</p><p class="metric-sub">0 of 4 reached MQL</p></div></div><div class="card"><table><thead><tr><th class="" style="width:230px;">Campaign</th><th class="r">Spend</th><th class="r">Leads</th><th class="r">Cost / lead</th></tr></thead><tbody><tr><td class="">Global AI Readiness Index — AUS (doc ads)</td><td class="r">$700</td><td class="r">2</td><td class="r mid">$350</td></tr><tr class="alt"><td class="">State of AI Launch (Jul 23)</td><td class="r">$478</td><td class="r">2</td><td class="r mid">$239</td></tr></tbody></table><p style="font-size:11px;color:var(--text-3);margin-top:8px;">LinkedIn spent $1,178 across 2 campaigns; 4 contacts, all subscribers, 0 MQL. Continues the awareness-only pattern. Currency: AUD.</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Google Ads — campaigns &amp; spend</div>
+    <div class="mg4"><div class="metric"><p class="metric-label">Google spend</p><p class="metric-value" style="color:var(--amber);">$446</p><p class="metric-sub">4% of paid media</p></div><div class="metric"><p class="metric-label">Conversions (GA4)</p><p class="metric-value" style="color:var(--text-3);">n/a</p><p class="metric-sub">GA4 pull pending</p></div><div class="metric"><p class="metric-label">HubSpot contacts</p><p class="metric-value" style="color:var(--text-3);">0</p><p class="metric-sub">no attributed leads</p></div><div class="metric"><p class="metric-label">Campaigns live</p><p class="metric-value" style="color:var(--blue);">1</p><p class="metric-sub">brand search only</p></div></div><div class="card"><table><thead><tr><th class="" style="width:260px;">Campaign</th><th class="r">Spend</th><th class="r">HubSpot</th><th class="r">Cost / conv.</th></tr></thead><tbody><tr><td class="">AU Search — Decidr Brand (High Intent)</td><td class="r">$446</td><td class="r">0</td><td class="r">n/a</td></tr></tbody></table><p style="font-size:11px;color:var(--text-3);margin-top:8px;">Google nearly dark again — a single brand-search campaign ($446), 0 HubSpot-attributed contacts. GA4 conversion detail pending (see Website section). Currency: AUD.</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">SQL &amp; opportunity contacts this week</div>
+    <div class="mg2">
+      <div class="card" style="margin-bottom:0;">
+        <div class="card-title"><span class="badge badge-blue">DecidrOS</span> — 0 SQL (3 MQL)</div>
+        <div class="contact-row"><span class="cn">No DecidrOS SQLs</span><span class="cc">3 DecidrOS contacts reached MQL this week but none progressed to SQL. Watch for conversion next week.</span></div>
+      </div>
+      <div class="card" style="margin-bottom:0;">
+        <div class="card-title"><span class="badge badge-amber">Unassigned</span> — 4 SQL+</div>
+        <div class="contact-row"><span class="cn">Will Patris</span><span class="cc">On Tap Australia · AU · FB AI Roadmap · SQL</span></div><div class="contact-row"><span class="cn">Paul Giordano</span><span class="cc">Park Lane Wealth · AU · FB AI Roadmap → <strong style="color:var(--amber);font-weight:500;">Opportunity ✓</strong></span></div><div class="contact-row"><span class="cn">Andrew Deveson</span><span class="cc">AU · sales-created (CRM) · Opportunity</span></div><div class="contact-row"><span class="cn">Caleb Angel</span><span class="cc">US · sales-created (extension) · Opportunity</span></div>
+        
+        <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border);">
+          <div style="font-size:12px;font-weight:500;color:var(--text-2);margin-bottom:8px;">Note</div>
+          <div class="contact-row"><span class="cn">Product tagging</span><span class="cc">Will Patris + Paul Giordano are DecidrOS-intent (FB AI Roadmap) but tagged Unassigned — tag product on the form to fix attribution.</span></div>
+        </div>
+      </div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Website performance — GA4</div>
+    
+    <div class="card" style="border-style:dashed;background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 10px,var(--surface2) 10px,var(--surface2) 20px);">
+      <div class="card-title" style="color:var(--amber-text);">⌛ Pending input</div>
+      <p style="font-size:12px;color:var(--text-2);">GA4 'Decidr website' (property 413653683) via Supermetrics — pull sessions / bounce / avg duration / key-events by channel for 6–12 Jul and fill (remove this placeholder). Google conversions in the section above depend on this pull too.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Key observations</div>
+    <div class="card">
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">1</div><div class="obs-text"><strong>Quiet week after a strong one.</strong> 24 qualified contacts, 9 MQL+, 4 SQL+ — down from Week 26's 38 MQL+ / 10 SQL+. Subscriber-heavy (136 of 161) top of funnel.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">2</div><div class="obs-text"><strong>New "State of AI" launch event: 80 contacts, 0 MQL.</strong> The biggest volume driver ($3,203 Meta) produced zero near-term MQLs — expected for a launch/awareness event, but the downstream conversion is the thing to watch.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--green-bg);color:var(--green-text);">3</div><div class="obs-text"><strong>AI Roadmap still converts — but starving for audience.</strong> 3/3 MQL and the week's only marketing SQL (Will Patris) + an opp (Paul Giordano). Volume fell to 3 leads for $2,203 ($734/lead) — the audience is thinning; refresh creative/targeting to re-scale.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">4</div><div class="obs-text"><strong>DecidrOS: 3 MQL, 0 SQL.</strong> No DecidrOS deals progressed to SQL this week. Watch whether these MQLs convert next week.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">5</div><div class="obs-text"><strong>Product-tagging gap.</strong> All 4 SQL+ are Unassigned, including 2 clearly DecidrOS-intent AI Roadmap contacts (Will Patris, Paul Giordano). Tag product on the AI Roadmap lead form to fix attribution.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">6</div><div class="obs-text"><strong>Paid media $10,131 — Meta $8,507 (84%), LinkedIn $1,178, Google $446.</strong> Blended $80 / paid lead. LinkedIn ran awareness only (0 MQL); Google brand-search only, 0 HubSpot contacts.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--teal-bg);color:var(--teal-text);">7</div><div class="obs-text"><strong>Low junk — 1 disqualified contact.</strong> Only one contact was disqualified this week (DecidrOS-tagged). Lead hygiene is healthy.</div></div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Live last week from marketing</div>
+    
+    <div class="card" style="border-style:dashed;background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 10px,var(--surface2) 10px,var(--surface2) 20px);">
+      <div class="card-title" style="color:var(--amber-text);">⌛ Pending input</div>
+      <p style="font-size:12px;color:var(--text-2);">Narrative — fill in what marketing shipped last week (case studies, blogs, newsletters, partnership assets, download counts). Not derivable from HubSpot/GA4.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What's next this week</div>
+    
+    <div class="card" style="border-style:dashed;background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 10px,var(--surface2) 10px,var(--surface2) 20px);">
+      <div class="card-title" style="color:var(--amber-text);">⌛ Pending input</div>
+      <p style="font-size:12px;color:var(--text-2);">Narrative — list this week's planned launches, events, and campaigns (e.g. State of AI in Australian Businesses launch, 23 July).</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Q2 running total</div>
+    
+    <div class="card" style="border-style:dashed;background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 10px,var(--surface2) 10px,var(--surface2) 20px);">
+      <div class="card-title" style="color:var(--amber-text);">⌛ Pending input</div>
+      <p style="font-size:12px;color:var(--text-2);">Q2 targets: 2,000 MQL / 600 SQL. Actuals pending an agreed source that isolates genuine Q2 marketing-generated MQL/SQL (the 25 May bulk import inflates raw create-date counts). Note: Q2 ended 30 Jun — a Q3 running total may now be more useful. Define a HubSpot saved report, then fill actuals.</p>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-text">Decidr marketing · 6–12 Jul 2026</div>
+    <div class="footer-text">Confidential — for internal use</div>
+  </div>
+</div>
+</body>
+</html>
