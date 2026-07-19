@@ -1,5 +1,5 @@
 {
-  "_comment": "Decidr Weekly Marketing Report — Week 29 (13–19 Jul 2026). HubSpot funnel/product/channel/SQL pulled live 2026-07-20. Meta/LinkedIn spend from Supermetrics (AUD); Google pending (token expired). Geography omitted (country property now permission-restricted). Website/GA4 + creatives placeholder.",
+  "_comment": "Decidr Weekly Marketing Report — Week 29 (13–19 Jul 2026). HubSpot funnel/product/channel/SQL pulled live 2026-07-20. Meta/LinkedIn/Google spend from Supermetrics (AUD). Geography omitted (country property now permission-restricted). Website/GA4 + creatives placeholder.",
   "meta": {
     "logo": "Decidr",
     "title": "Weekly marketing report",
@@ -80,8 +80,21 @@
     }
   },
   "google": {
-    "placeholder": true,
-    "note": "Google Ads spend for 13–19 Jul is unavailable — the Supermetrics Google Ads connection token expired / was revoked mid-pull (invalid_grant). Reconnect the Google Ads data source in Supermetrics and I'll backfill. Prior 2 weeks Google ran brand-search only (~$446), so the paid totals here are near-complete."
+    "metrics": [
+      { "label": "Google spend", "value": "$3,365", "color": "amber", "sub": "25% of paid media" },
+      { "label": "Conversions (GA4)", "value": "n/a", "color": "text-3", "sub": "GA4 pull pending" },
+      { "label": "HubSpot contacts", "value": "0", "color": "text-3", "sub": "no attributed leads" },
+      { "label": "Campaigns live", "value": "2", "color": "blue", "sub": "search + brand search" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "HubSpot", "Cost / conv."],
+      "widths": ["260px", "", "", ""],
+      "rows": [
+        [ { "v": "Website traffic-Search-38" }, "$2,976", { "v": "0" }, { "v": "n/a" } ],
+        [ { "v": "AU_Search_Decidr-Brand_High_Intent" }, "$389", { "v": "0" }, { "v": "n/a" } ]
+      ],
+      "note": "Google Ads reconnected via Supermetrics. Spend jumped to $3,365 — mostly a new non-brand Search campaign ('Website traffic-Search-38', $2,976), plus the recurring brand-search campaign ($389). No HubSpot-attributed contacts yet this week (attribution not independently re-verified this pull; GA4 conversion detail pending). Currency: AUD."
+    }
   },
   "platformCompare": {
     "cards": [
@@ -127,7 +140,7 @@
     { "color": "amber", "html": "<strong>AI Roadmap has dried up.</strong> Just 1 lead this week (from 9 in Week 26, 3 in Week 28) for $1,118 — the audience is exhausted. Refresh creative/targeting or reallocate to the State of AI event, now the stronger performer." },
     { "color": "green", "html": "<strong>DecidrOS volume up sharply.</strong> 51 new DecidrOS leads and 19 MQL+ this week — the State of AI event is feeding the DecidrOS funnel, a clear step up from prior weeks." },
     { "color": "amber", "html": "<strong>All 6 opportunities were sales-created.</strong> KPMG UK, CORE Markets and 4 others entered via CRM / forward / BCC — strong logos, but not marketing-attributed. Tag source/product for clean pipeline reporting." },
-    { "color": "amber", "html": "<strong>Paid media ≥ $9,995 (Google pending).</strong> Meta $6,552, LinkedIn $3,443; Google Ads spend unavailable — the Supermetrics Google connection token expired mid-pull and needs reconnecting (prior weeks ~$446)." }
+    { "color": "amber", "html": "<strong>Total paid media $13,360.</strong> Meta $6,552, LinkedIn $3,443, Google $3,365 — Google jumped from its usual ~$446 brand-search-only baseline due to a new non-brand Search campaign ($2,976), with no HubSpot-attributed leads yet." }
   ],
   "content": {
     "placeholder": true,
@@ -142,20 +155,20 @@
     "note": "Q2 ended 30 Jun — a Q3 running total is now more useful. Define a HubSpot saved report that isolates genuine marketing-generated MQL/SQL (excluding bulk imports like this week's 30 Partnerships), then fill actuals."
   },
   "spend": {
-    "_source": "Meta Ads + LinkedIn Ads via Supermetrics, 13–19 Jul 2026 (AUD). Google Ads pending (connection token expired). Cost/lead = spend ÷ HubSpot paid contacts; Cost/MQL = spend ÷ MQL+ contacts.",
+    "_source": "Meta Ads, LinkedIn Ads, Google Ads via Supermetrics, 13–19 Jul 2026 (AUD). Cost/lead = spend ÷ HubSpot paid contacts; Cost/MQL = spend ÷ MQL+ contacts.",
     "metrics": [
-      { "label": "Total paid spend", "value": "$9,995+", "color": "purple", "sub": "Meta + LinkedIn (Google pending)" },
+      { "label": "Total paid spend", "value": "$13,360", "color": "purple", "sub": "Meta + LinkedIn + Google" },
       { "label": "Paid leads", "value": "100", "color": "blue", "sub": "Paid Social contacts" },
-      { "label": "Blended cost / lead", "value": "$100", "color": "amber", "sub": "ex-Google ÷ leads" },
+      { "label": "Blended cost / lead", "value": "$134", "color": "amber", "sub": "all paid spend ÷ leads" },
       { "label": "Blended MQL rate", "value": "18%", "color": "amber", "sub": "18 MQL+ of 100" }
     ],
     "rows": [
       { "platform": "Facebook", "spend": "$6,552", "leads": "86", "cpl": "$76", "cplClass": "good", "mql": "15", "cpmql": "$437", "cpmqlClass": "mid" },
       { "platform": "LinkedIn", "spend": "$3,443", "leads": "14", "cpl": "$246", "cplClass": "mid", "mql": "3", "cpmql": "$1,148", "cpmqlClass": "bad" },
-      { "platform": "Google (Paid Search)", "spend": "⌛ pending", "leads": "—", "cpl": "n/a", "mql": "—", "cpmql": "n/a" },
-      { "platform": "Total (ex-Google)", "spend": "$9,995", "leads": "100", "cpl": "$100", "mql": "18", "cpmql": "$555", "bold": true }
+      { "platform": "Google (Paid Search)", "spend": "$3,365", "leads": "0", "cpl": "n/a", "mql": "0", "cpmql": "n/a" },
+      { "platform": "Total paid media", "spend": "$13,360", "leads": "100", "cpl": "$134", "mql": "18", "cpmql": "$742", "bold": true }
     ],
-    "note": "Google Ads spend is pending — the Supermetrics Google connection token expired and needs reconnecting (prior weeks: brand-search only, ~$446, so totals here are near-complete). LinkedIn spend jumped to $3,443 (State of AI launch $2,743) and produced 3 MQL — its best week. Currency: AUD."
+    "note": "Google Ads reconnected — spend came in at $3,365 (25% of paid media), driven by a new non-brand Search campaign ($2,976) plus recurring brand search ($389); no HubSpot-attributed leads yet. LinkedIn spend jumped to $3,443 (State of AI launch $2,743) and produced 3 MQL — its best week. Currency: AUD."
   },
   "creativesRoadmap": {
     "placeholder": true,
