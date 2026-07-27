@@ -23,16 +23,17 @@
   },
   "sqlByProduct": {
     "metrics": [
-      { "badge": "blue", "badgeLabel": "DecidrOS", "value": "1", "color": "blue", "sub": "1 SQL (Paid Social)" },
-      { "badge": "amber", "badgeLabel": "Partnerships", "value": "39", "color": "amber", "sub": "⚠ bulk Offline import" },
-      { "label": "Opportunities", "value": "5", "color": "amber", "sub": "all sales-created" }
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": "1", "color": "blue", "sub": "1 SQL · 2 MQL+" },
+      { "badge": "green", "badgeLabel": "Sugarworks", "value": "0", "color": "green", "sub": "1 lead · 0 MQL" },
+      { "badge": "amber", "badgeLabel": "Partnerships", "value": "39", "color": "amber", "sub": "⚠ bulk Offline import" }
     ],
     "bars": [
       { "badge": "amber", "badgeLabel": "Partnerships", "value": 40, "display": "40", "color": "#B05E00", "max": 40 },
       { "label": "Unassigned", "value": 6, "display": "6", "color": "#9E9B94", "max": 40 },
-      { "badge": "blue", "badgeLabel": "DecidrOS", "value": 2, "display": "2", "color": "blue", "max": 40 }
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": 2, "display": "2", "color": "blue", "max": 40 },
+      { "badge": "green", "badgeLabel": "Sugarworks", "value": 0, "display": "0", "color": "green", "max": 40 }
     ],
-    "note": "MQL+ by product. Partnerships 40 is almost entirely a bulk Offline SQL import (39) — not organic; the same thing happened in Week 29. DecidrOS just 2 MQL+ (1 SQL); Unassigned 6 (5 sales-created opps + 1 SQL). Excluding the Partnerships bulk, marketing SQL+ ≈ 7."
+    "note": "MQL+ by product. Partnerships 40 is almost entirely a bulk Offline SQL import (39) — not organic; the same happened in Week 29. DecidrOS 2 MQL+ (1 SQL); Sugarworks just 1 lead this week (0 MQL) — continuing its low volume across recent weeks; Unassigned 6 (5 sales-created opps + 1 SQL). Excluding the Partnerships bulk, marketing SQL+ ≈ 7."
   },
   "channels": {
     "bars": [
