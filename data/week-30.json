@@ -1,0 +1,192 @@
+{
+  "_comment": "Decidr Weekly Marketing Report — Week 30 (20–26 Jul 2026). HubSpot funnel/product/channel/SQL/company-size pulled live 2026-07-27. Meta/LinkedIn/Google spend from Supermetrics (AUD). Geography omitted (country property permission-restricted). Website/GA4 + creatives placeholder. NEW: employeeSize section.",
+  "meta": {
+    "logo": "Decidr",
+    "title": "Weekly marketing report",
+    "dateRange": "20–26 Jul 2026",
+    "preparedFor": "CMO",
+    "weekBadge": "Week 30, 2026",
+    "products": "DecidrOS · Sugarworks · Partnership",
+    "footerLeft": "Decidr marketing · 20–26 Jul 2026",
+    "footerRight": "Confidential — for internal use",
+    "titleTag": "Decidr — Weekly Marketing Report · 20–26 Jul 2026"
+  },
+  "funnel": [
+    { "label": "Contacts", "value": "315", "color": "purple", "conv": "257 subs + 58 qualified", "convColor": "amber", "alt": true },
+    { "label": "MQL", "value": "48", "color": "blue", "conv": "MQL+ (incl. Partnerships)", "convColor": "blue" },
+    { "label": "SQL", "value": "46", "color": "amber", "conv": "⚠ 39 = bulk import", "convColor": "amber", "alt": true },
+    { "label": "Opportunities", "value": "5", "color": "amber", "conv": "all sales-created", "convColor": "amber" }
+  ],
+  "highlight": {
+    "type": "amber",
+    "html": "<strong>A repeat of last week — headline SQLs inflated by a Partnerships bulk import, paid demand quiet.</strong> 315 new contacts (257 subscribers + 58 qualified). The funnel shows 46 SQL+, but <strong>39 are a one-off Partnerships Offline import</strong> (same pattern as Week 29) — strip it out and marketing SQL+ ≈ 7 (1 DecidrOS via Facebook, 6 Unassigned incl. 5 sales-created opps). Paid social was quiet: Meta spend wound down to $3,209 and produced just 1 MQL+; the State of AI event drove 22 contacts but 0 MQL (its qualifying tail has passed), and AI Roadmap is effectively off ($138). Google brand-search reconnected ($405). New this week: a company-size cut shows our captured leads skew to small businesses (1–20 employees), below the 250+ ICP."
+  },
+  "sqlByProduct": {
+    "metrics": [
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": "1", "color": "blue", "sub": "1 SQL (Paid Social)" },
+      { "badge": "amber", "badgeLabel": "Partnerships", "value": "39", "color": "amber", "sub": "⚠ bulk Offline import" },
+      { "label": "Opportunities", "value": "5", "color": "amber", "sub": "all sales-created" }
+    ],
+    "bars": [
+      { "badge": "amber", "badgeLabel": "Partnerships", "value": 40, "display": "40", "color": "#B05E00", "max": 40 },
+      { "label": "Unassigned", "value": 6, "display": "6", "color": "#9E9B94", "max": 40 },
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": 2, "display": "2", "color": "blue", "max": 40 }
+    ],
+    "note": "MQL+ by product. Partnerships 40 is almost entirely a bulk Offline SQL import (39) — not organic; the same thing happened in Week 29. DecidrOS just 2 MQL+ (1 SQL); Unassigned 6 (5 sales-created opps + 1 SQL). Excluding the Partnerships bulk, marketing SQL+ ≈ 7."
+  },
+  "channels": {
+    "bars": [
+      { "badge": "gray", "label": "Offline / Import", "value": 228, "display": "228", "extra": "72% of total", "color": "#9E9B94", "max": 228 },
+      { "badge": "blue", "label": "Paid Social", "value": 58, "display": "58", "extra": "18% of total", "color": "blue", "max": 228 },
+      { "badge": "gray", "label": "Direct Traffic", "value": 28, "display": "28", "extra": "9% of total", "color": "#9E9B94", "max": 228 }
+    ]
+  },
+  "employeeSize": {
+    "metrics": [
+      { "label": "Size captured", "value": "55 / 315", "color": "amber", "sub": "17% — rest blank" },
+      { "label": "Largest band", "value": "1–20", "color": "blue", "sub": "39 contacts (SMB)" },
+      { "label": "500+ employees", "value": "6", "color": "green", "sub": "enterprise ICP end" }
+    ],
+    "bars": [
+      { "label": "1–20", "value": 39, "display": "39", "color": "blue", "max": 39 },
+      { "label": "20–200", "value": 8, "display": "8", "color": "purple", "max": 39 },
+      { "label": "5,000+", "value": 3, "display": "3", "color": "green", "max": 39 },
+      { "label": "1,000–5,000", "value": 2, "display": "2", "color": "teal", "max": 39 },
+      { "label": "200–500", "value": 2, "display": "2", "color": "#9E9B94", "max": 39 },
+      { "label": "500–1,000", "value": 1, "display": "1", "color": "#9E9B94", "max": 39 }
+    ],
+    "note": "Company size is captured for only 55 of 315 contacts (17%) — the other 260 have no size on file. Of known sizes, the vast majority are small businesses (1–20 employees); just 6 sit at 500+, the enterprise end of the 250+ ICP for Sugarworks/DecidrOS. Adding a company-size question to the lead forms would let marketing filter to ICP-fit leads. Source: HubSpot 'total_number_of_employees' (bands normalized from mixed formats)."
+  },
+  "campaigns": {
+    "_note": "Facebook lead-gen campaigns. Contacts/MQL from HubSpot by campaign; Spend from Meta Ads; Cost/lead = spend ÷ HubSpot contacts; Cost/MQL = spend ÷ MQL+ contacts.",
+    "metrics": [
+      { "label": "Meta spend", "value": "$3,209", "color": "blue", "sub": "62% of paid media" },
+      { "label": "Leads", "value": "49", "color": "green", "sub": "FB Paid Social contacts" },
+      { "label": "Cost / lead", "value": "$65", "color": "amber", "sub": "spend ÷ FB contacts" },
+      { "label": "MQL rate", "value": "2%", "color": "red", "sub": "1 of 49 (mostly subscribers)" }
+    ],
+    "rows": [
+      { "name": "Event — State of AI Launch (Jul 23)", "channelBadge": "purple", "channelLabel": "FB · event", "contacts": "22", "mql": "0%", "mqlClass": "bad", "extra1": "$1,683", "extra2": "$76", "extra3": "n/a", "bold": true },
+      { "name": "DecidrOS — Mercha Case Study", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "5", "mql": "0%", "mqlClass": "bad", "extra1": "$689", "extra2": "$138", "extra3": "n/a" },
+      { "name": "AI Readiness Report — AU (Aug 18)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "11", "mql": "0%", "mqlClass": "bad", "extra1": "$422", "extra2": "$38", "extra3": "n/a" },
+      { "name": "Partnerships — AIM Case Study", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "—", "mql": "0%", "mqlClass": "bad", "extra1": "$277", "extra2": "n/a", "extra3": "n/a" },
+      { "name": "AI Roadmap — Demo (Jun 1)", "channelBadge": "amber", "channelLabel": "FB · demo", "contacts": "—", "mql": "0%", "mqlClass": "bad", "extra1": "$138", "extra2": "n/a", "extra3": "n/a" }
+    ],
+    "columns": { "c3": "MQL%", "c4": "Spend", "c5": "Cost / lead", "c6": "Cost / MQL" },
+    "note": "Paid social was very quiet — 49 FB contacts (43 subscribers), just 1 MQL+ (a DecidrOS SQL from the Mercha 'continued' campaign, which had no fresh spend this week). The State of AI event drove volume (22) but 0 MQL as its qualifying tail passed. AI Roadmap effectively off ($138, no contacts). Meta spend nearly halved vs Week 29. Currency: AUD."
+  },
+  "creatives": {
+    "placeholder": true,
+    "note": "Top Meta lead creatives for 20–26 Jul — run scripts/download-creatives.mjs to fetch + base64-embed the thumbnails, then fill."
+  },
+  "linkedin": {
+    "metrics": [
+      { "label": "LinkedIn spend", "value": "$1,594", "color": "blue", "sub": "31% of paid media" },
+      { "label": "Leads (HubSpot)", "value": "9", "color": "green", "sub": "6 subs + 1 lead + 1 MQL" },
+      { "label": "Cost / lead", "value": "$177", "color": "amber", "sub": "spend ÷ 9 contacts" },
+      { "label": "MQL rate", "value": "11%", "color": "amber", "sub": "1 of 9 reached MQL" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "Leads", "Cost / lead"],
+      "widths": ["230px", "", "", ""],
+      "rows": [
+        [ { "v": "State of AI Launch (Jul 23)" }, "$891", "3", { "v": "$297", "cls": "mid" } ],
+        [ { "v": "Global AI Readiness Index — AUS (doc ads)" }, "$703", "6", { "v": "$117", "cls": "mid" } ]
+      ],
+      "note": "LinkedIn spend eased to $1,594. The State of AI campaign produced 1 MQL; doc ads drove 6 subscribers, 0 MQL. Currency: AUD."
+    }
+  },
+  "google": {
+    "metrics": [
+      { "label": "Google spend", "value": "$405", "color": "amber", "sub": "8% of paid media" },
+      { "label": "Conversions (GA4)", "value": "n/a", "color": "text-3", "sub": "GA4 pull pending" },
+      { "label": "HubSpot contacts", "value": "0", "color": "text-3", "sub": "no attributed leads" },
+      { "label": "Campaigns live", "value": "1", "color": "blue", "sub": "brand search only" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "HubSpot", "Cost / conv."],
+      "widths": ["260px", "", "", ""],
+      "rows": [
+        [ { "v": "AU Search — DecidrOS Brand (High Intent)" }, "$405", { "v": "0" }, { "v": "n/a" } ]
+      ],
+      "note": "Google Ads reconnected after last week's token expiry — brand-search only ($405), 0 HubSpot-attributed contacts. GA4 conversion detail pending. Currency: AUD."
+    }
+  },
+  "platformCompare": {
+    "cards": [
+      { "platform": "Facebook · 49 contacts", "rate": "17%", "rateColor": "amber", "metaHtml": "MQL rate (ex-sub)<br><strong style=\"font-size:16px;\">1</strong> MQL+ · 1 SQL<br><span style=\"color:var(--amber);\">subscriber-heavy</span>" },
+      { "platform": "LinkedIn · 9 contacts", "rate": "33%", "rateColor": "green", "metaHtml": "MQL rate (ex-sub)<br><strong style=\"font-size:16px;\">1</strong> MQL+ · State of AI<br><span style=\"color:var(--green);\">small but qualifying</span>" }
+    ],
+    "note": "Both channels were low-volume this week. Neither includes the 39 bulk Partnerships SQLs (Offline import). Paid social produced only 2 MQL+ total — the quietest paid week in the series."
+  },
+  "sqlContacts": {
+    "left": {
+      "titleBadge": "blue",
+      "titleBadgeLabel": "DecidrOS",
+      "titleSuffix": "— 1 SQL (marketing)",
+      "contacts": [
+        { "name": "1 DecidrOS SQL", "detail": "via Facebook Paid Social (Mercha case study). The only marketing-attributed SQL this week." }
+      ]
+    },
+    "right": {
+      "titleBadge": "amber",
+      "titleBadgeLabel": "Bulk / sales-created",
+      "titleSuffix": "— dominates the week",
+      "contacts": [
+        { "name": "39 Partnerships SQLs", "detail": "⚠ Bulk Offline import — the same pattern as Week 29. Not organic marketing; excluded from campaign attribution." }
+      ],
+      "oppsTitle": "5 opportunities — all sales-created",
+      "opps": [
+        { "name": "James (JC) Hinsley", "detail": "via CRM · Opportunity" },
+        { "name": "Allan Dajano", "detail": "via extension · Opportunity" },
+        { "name": "Markus Cohnen", "detail": "via extension · Opportunity" },
+        { "name": "Nathan Reeves", "detail": "BCC-to-CRM · Opportunity (+1 more)" }
+      ]
+    }
+  },
+  "website": {
+    "placeholder": true,
+    "note": "GA4 'Decidr website' (property 413653683) via Supermetrics — pull sessions / bounce / avg duration / key-events by channel for 20–26 Jul and fill. Note: HubSpot 'country' is permission-restricted, so Geography was omitted this week."
+  },
+  "observations": [
+    { "color": "amber", "html": "<strong>Partnerships bulk import — again.</strong> 39 of 46 SQL+ are a repeat Offline bulk (same as Week 29). Real marketing SQL+ ≈ 7. These imports should be tagged/excluded from the weekly SQL headline, or the funnel reads far healthier than organic demand actually is." },
+    { "color": "amber", "html": "<strong>NEW — lead quality skews below ICP.</strong> Where company size is known (only 17% of contacts), the largest band is 1–20 employees (small business). Only 6 known contacts are 500+ employees — the Sugarworks/DecidrOS ICP is 250+. Paid targeting may be pulling in sub-ICP small businesses." },
+    { "color": "amber", "html": "<strong>NEW — company size is 83% blank.</strong> 260 of 315 contacts have no employee count captured. Adding a company-size field to the lead forms would let marketing filter and report on ICP fit — currently impossible for most leads." },
+    { "color": "amber", "html": "<strong>Paid social went quiet.</strong> 58 contacts, just 2 MQL+ (the quietest paid week in the series). Meta spend nearly halved to $3,209; the State of AI event drove 22 contacts but 0 MQL as its qualifying tail passed." },
+    { "color": "amber", "html": "<strong>AI Roadmap is effectively off.</strong> $138 spend and no contacts this week — the wind-down from Week 29 (1 lead) is now complete. Decide whether to retire it or relaunch with fresh creative." },
+    { "color": "teal", "html": "<strong>Google reconnected.</strong> After last week's token expiry, Google brand-search is flowing again — $405, 0 HubSpot contacts (brand search rarely captures new leads directly)." },
+    { "color": "amber", "html": "<strong>All 5 opportunities were sales-created.</strong> James Hinsley, Allan Dajano, Markus Cohnen, Nathan Reeves (+1) entered via CRM / extension / BCC — no marketing-sourced opportunities this week." }
+  ],
+  "content": {
+    "placeholder": true,
+    "note": "Narrative — fill in what marketing shipped last week (case studies, blogs, newsletters, partnership assets, download counts). Not derivable from HubSpot/GA4."
+  },
+  "whatsNext": {
+    "placeholder": true,
+    "note": "Narrative — list this week's planned launches, events, and campaigns."
+  },
+  "q2": {
+    "placeholder": true,
+    "note": "Q2 ended 30 Jun — a Q3 running total is now more useful. Define a HubSpot saved report that isolates genuine marketing-generated MQL/SQL (excluding the recurring Partnerships bulk imports), then fill actuals."
+  },
+  "spend": {
+    "_source": "Meta Ads + LinkedIn Ads + Google Ads via Supermetrics, 20–26 Jul 2026 (AUD). Cost/lead = spend ÷ HubSpot paid contacts; Cost/MQL = spend ÷ MQL+ contacts.",
+    "metrics": [
+      { "label": "Total paid spend", "value": "$5,208", "color": "purple", "sub": "Meta + LinkedIn + Google" },
+      { "label": "Paid leads", "value": "58", "color": "blue", "sub": "Paid Social contacts" },
+      { "label": "Blended cost / lead", "value": "$90", "color": "amber", "sub": "all paid spend ÷ leads" },
+      { "label": "Blended MQL rate", "value": "3%", "color": "red", "sub": "2 MQL+ of 58" }
+    ],
+    "rows": [
+      { "platform": "Facebook", "spend": "$3,209", "leads": "49", "cpl": "$65", "cplClass": "good", "mql": "1", "cpmql": "$3,209", "cpmqlClass": "bad" },
+      { "platform": "LinkedIn", "spend": "$1,594", "leads": "9", "cpl": "$177", "cplClass": "mid", "mql": "1", "cpmql": "$1,594", "cpmqlClass": "bad" },
+      { "platform": "Google (Paid Search)", "spend": "$405", "leads": "—", "cpl": "n/a", "mql": "—", "cpmql": "n/a" },
+      { "platform": "Total paid media", "spend": "$5,208", "leads": "58", "cpl": "$90", "mql": "2", "cpmql": "$2,604", "bold": true }
+    ],
+    "note": "Total paid spend fell to $5,208 (from ~$10k the prior week) and produced only 2 paid MQL+ — a weak efficiency week. Google brand-search reconnected ($405). Currency: AUD."
+  },
+  "creativesRoadmap": {
+    "placeholder": true,
+    "note": "AI Roadmap ran only $138 with no contacts this week — effectively paused. Run scripts/download-creatives.mjs if relaunching with fresh creative."
+  }
+}

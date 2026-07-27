@@ -223,6 +223,18 @@ function campaignSection(d) {
   return section('Campaign performance — channel mix & quality', channelBars + grid);
 }
 
+function employeeSizeSection(d) {
+  if (!d.employeeSize) return '';
+  const es = d.employeeSize;
+  const metrics = es.metrics ? `<div class="mg3">${es.metrics.map(mt => `<div class="metric"><p class="metric-label">${esc(mt.label)}</p><p class="metric-value" style="color:${col(mt.color)};">${esc(mt.value)}</p><p class="metric-sub">${esc(mt.sub)}</p></div>`).join('')}</div>` : '';
+  const bars = `<div class="card">
+    <div class="card-title">Known company size (by employees)</div>
+    ${es.bars.map(b => bar({ ...b, sm: true })).join('')}
+    ${es.note ? `<p style="font-size:11px;color:var(--text-3);margin-top:10px;padding-top:8px;border-top:1px solid var(--border);">${esc(es.note)}</p>` : ''}
+  </div>`;
+  return section('Contacts by company size', metrics + bars);
+}
+
 function metaSection(d) {
   if (!d.campaigns) return '';
   const cols = d.campaigns.columns || { c3: 'MQL%', c4: 'Spend', c5: 'Cost / lead' };
@@ -532,6 +544,7 @@ const html = `<!DOCTYPE html>
 ${header(data.meta)}
 ${funnelSection(data)}
 ${campaignSection(data)}
+${employeeSizeSection(data)}
 ${spendSection(data)}
 ${metaSection(data)}
 ${creativesSection(data.creatives)}
