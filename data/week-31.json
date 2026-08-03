@@ -1,0 +1,190 @@
+{
+  "_comment": "Decidr Weekly Marketing Report — Week 31 (27 Jul – 2 Aug 2026). HubSpot funnel/product/channel/SQL pulled live 2026-08-03. Meta/LinkedIn/Google spend from Supermetrics (AUD). NEW: stateOfAiSize section (Meta vs LinkedIn by employee size, coalesced across all employee properties). Geography omitted (country permission-restricted).",
+  "meta": {
+    "logo": "Decidr",
+    "title": "Weekly marketing report",
+    "dateRange": "27 Jul – 2 Aug 2026",
+    "preparedFor": "CMO",
+    "weekBadge": "Week 31, 2026",
+    "products": "DecidrOS · Sugarworks · Partnership",
+    "footerLeft": "Decidr marketing · 27 Jul – 2 Aug 2026",
+    "footerRight": "Confidential — for internal use",
+    "titleTag": "Decidr — Weekly Marketing Report · 27 Jul – 2 Aug 2026"
+  },
+  "funnel": [
+    { "label": "Contacts", "value": "98", "color": "purple", "conv": "86 subs + 12 non-sub", "convColor": "amber", "alt": true },
+    { "label": "MQL", "value": "7", "color": "blue", "conv": "MQL+ (mostly opps)", "convColor": "blue" },
+    { "label": "SQL", "value": "6", "color": "green", "conv": "SQL+ = 6 opps", "convColor": "green", "alt": true },
+    { "label": "Opportunities", "value": "6", "color": "amber", "conv": "all sales-created", "convColor": "amber" }
+  ],
+  "highlight": {
+    "type": "amber",
+    "html": "<strong>Quiet week — no new SQLs, spend winding down; the story is a firmographic split in the State of AI campaign.</strong> 98 new contacts (86 subscribers + 12 non-subscriber), 7 MQL+, 6 opportunities (all sales-created), and no new marketing SQLs. Paid social drove 53 contacts — all still subscriber-stage (the State of AI 2026 Report qualifying tail is expected next week, as we saw with the July launch). DecidrOS was silent (0 contacts). The standout finding: <strong>LinkedIn's State of AI leads are far larger companies than Meta's — 90% at 200+ employees (median 1k–5k) vs Meta's 19% (median 1–20)</strong>. LinkedIn is the enterprise/ICP channel; Meta drives SMB volume."
+  },
+  "sqlByProduct": {
+    "metrics": [
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": "0", "color": "blue", "sub": "0 contacts this week" },
+      { "badge": "green", "badgeLabel": "Sugarworks", "value": "0", "color": "green", "sub": "1 lead · 0 MQL" },
+      { "badge": "teal", "badgeLabel": "Partnerships", "value": "1", "color": "teal", "sub": "1 MQL" }
+    ],
+    "bars": [
+      { "label": "Unassigned", "value": 6, "display": "6", "color": "#9E9B94", "max": 6 },
+      { "badge": "teal", "badgeLabel": "Partnerships", "value": 1, "display": "1", "color": "#0B7A6E", "max": 6 },
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": 0, "display": "0", "color": "blue", "max": 6 },
+      { "badge": "green", "badgeLabel": "Sugarworks", "value": 0, "display": "0", "color": "green", "max": 6 }
+    ],
+    "note": "MQL+ by product. All 6 marketing-qualified+ this week are Unassigned — the 6 sales-created opportunities (no product tag). Partnerships 1 MQL; DecidrOS had no contacts at all; Sugarworks 1 lead. No product-attributed SQLs this week."
+  },
+  "channels": {
+    "bars": [
+      { "badge": "blue", "label": "Paid Social", "value": 53, "display": "53", "extra": "54% of total", "color": "blue", "max": 53 },
+      { "badge": "gray", "label": "Offline / Import", "value": 36, "display": "36", "extra": "37% of total", "color": "#9E9B94", "max": 53 },
+      { "badge": "gray", "label": "Direct Traffic", "value": 9, "display": "9", "extra": "9% of total", "color": "#9E9B94", "max": 53 }
+    ]
+  },
+  "stateOfAiSize": {
+    "verdict": "<strong>LinkedIn pulls far larger companies.</strong> 90% of LinkedIn's State of AI leads are 200+ employees (median 1k–5k) vs just 19% on Meta (median 1–20). LinkedIn is the enterprise/ICP channel; Meta drives SMB volume. If the 250+ employee ICP is the priority, weight State-of-AI budget toward LinkedIn.",
+    "columns": [
+      { "platform": "Meta (Facebook)", "badge": "blue", "leads": 32, "big": "19%", "bigLabel": "at 200+ employees", "median": "1–20", "statColor": "amber", "bars": [
+        { "label": "1–20", "value": 21, "color": "#C8C5BE" },
+        { "label": "20–200", "value": 5, "color": "#9E9B94" },
+        { "label": "200–500", "value": 3, "color": "teal" },
+        { "label": "500–1k", "value": 1, "color": "blue" },
+        { "label": "1k–5k", "value": 2, "color": "purple" },
+        { "label": "5k+", "value": 0, "color": "green" }
+      ] },
+      { "platform": "LinkedIn", "badge": "purple", "leads": 10, "big": "90%", "bigLabel": "at 200+ employees", "median": "1k–5k", "statColor": "green", "bars": [
+        { "label": "1–20", "value": 1, "color": "#C8C5BE" },
+        { "label": "20–200", "value": 0, "color": "#9E9B94" },
+        { "label": "200–500", "value": 0, "color": "teal" },
+        { "label": "500–1k", "value": 2, "color": "blue" },
+        { "label": "1k–5k", "value": 3, "color": "purple" },
+        { "label": "5k+", "value": 4, "color": "green" }
+      ] }
+    ],
+    "note": "State of AI 2026 Report leads (42 total: Meta 32, LinkedIn 10), bucketed by company size. Size coalesced across EVERY employee property — company_size, total_number_of_employees, and the LinkedIn domain-verified count (roadmap_audit_li_employee_count) — giving 0 of 42 missing (company_size alone would be ~1% populated). Grey bands = small business, coloured bands = 200+ employees. Bars scale within each column; the % at 200+ is the direct comparison."
+  },
+  "campaigns": {
+    "_note": "Facebook lead-gen campaigns. Contacts/MQL from HubSpot by campaign; Spend from Meta Ads; Cost/lead = spend ÷ HubSpot contacts.",
+    "metrics": [
+      { "label": "Meta spend", "value": "$2,006", "color": "blue", "sub": "60% of paid media" },
+      { "label": "Leads", "value": "38", "color": "green", "sub": "FB Paid Social contacts" },
+      { "label": "Cost / lead", "value": "$53", "color": "amber", "sub": "spend ÷ FB contacts" },
+      { "label": "MQL rate", "value": "0%", "color": "red", "sub": "all 38 subscriber-stage" }
+    ],
+    "rows": [
+      { "name": "State of AI 2026 — CBO (Jul 28)", "channelBadge": "purple", "channelLabel": "FB · event", "contacts": "20", "mql": "0%", "mqlClass": "bad", "extra1": "$898", "extra2": "$45", "extra3": "n/a", "bold": true },
+      { "name": "State of AI 2026 — ABO (Jul 29)", "channelBadge": "purple", "channelLabel": "FB · event", "contacts": "12", "mql": "0%", "mqlClass": "bad", "extra1": "$471", "extra2": "$39", "extra3": "n/a" },
+      { "name": "Partnerships — AIM Case Study", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "3", "mql": "0%", "mqlClass": "bad", "extra1": "$521", "extra2": "$174", "extra3": "n/a" },
+      { "name": "AI Readiness Report — AU (Aug 18)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "2", "mql": "0%", "mqlClass": "bad", "extra1": "$96", "extra2": "$48", "extra3": "n/a" },
+      { "name": "DecidrOS — Mercha Case Study", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "1", "mql": "0%", "mqlClass": "bad", "extra1": "$20", "extra2": "$20", "extra3": "n/a" }
+    ],
+    "columns": { "c3": "MQL%", "c4": "Spend", "c5": "Cost / lead", "c6": "Cost / MQL" },
+    "note": "The State of AI 2026 Report relaunched with a CBO-vs-ABO budget test on Meta — 32 FB leads at ~$43/lead, all still subscriber-stage (qualifying tail expected next week). No paid MQLs this week. See the company-size section for the Meta-vs-LinkedIn firmographic split. Currency: AUD."
+  },
+  "creatives": {
+    "placeholder": true,
+    "note": "Top Meta lead creatives for 27 Jul–2 Aug — run scripts/download-creatives.mjs to fetch + base64-embed the thumbnails, then fill."
+  },
+  "linkedin": {
+    "metrics": [
+      { "label": "LinkedIn spend", "value": "$1,101", "color": "blue", "sub": "33% of paid media" },
+      { "label": "Leads (HubSpot)", "value": "15", "color": "green", "sub": "all subscriber-stage" },
+      { "label": "Cost / lead", "value": "$73", "color": "amber", "sub": "spend ÷ 15 contacts" },
+      { "label": "MQL rate", "value": "0%", "color": "red", "sub": "0 of 15 (tail pending)" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "Leads", "Cost / lead"],
+      "widths": ["230px", "", "", ""],
+      "rows": [
+        [ { "v": "State of AI 2026 Report | Leads" }, "$751", "10", { "v": "$75", "cls": "mid" } ],
+        [ { "v": "Global AI Readiness Index — AUS (doc ads)" }, "$350", "5", { "v": "$70", "cls": "mid" } ]
+      ],
+      "note": "LinkedIn's State of AI leads are enterprise-heavy (see company-size section) — 10 leads, all subscriber-stage this week. Currency: AUD."
+    }
+  },
+  "google": {
+    "metrics": [
+      { "label": "Google spend", "value": "$223", "color": "amber", "sub": "7% of paid media" },
+      { "label": "Conversions (GA4)", "value": "n/a", "color": "text-3", "sub": "GA4 pull pending" },
+      { "label": "HubSpot contacts", "value": "0", "color": "text-3", "sub": "no attributed leads" },
+      { "label": "Campaigns live", "value": "1", "color": "blue", "sub": "brand search only" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "HubSpot", "Cost / conv."],
+      "widths": ["260px", "", "", ""],
+      "rows": [
+        [ { "v": "AU Search — DecidrOS Brand (High Intent)" }, "$223", { "v": "0" }, { "v": "n/a" } ]
+      ],
+      "note": "Google brand-search only ($223), 0 HubSpot-attributed contacts. Currency: AUD."
+    }
+  },
+  "platformCompare": {
+    "cards": [
+      { "platform": "Facebook · 38 contacts", "rate": "0%", "rateColor": "amber", "metaHtml": "MQL rate<br><strong style=\"font-size:16px;\">0</strong> MQL+ · all subs<br><span style=\"color:var(--amber);\">SMB volume</span>" },
+      { "platform": "LinkedIn · 15 contacts", "rate": "0%", "rateColor": "amber", "metaHtml": "MQL rate<br><strong style=\"font-size:16px;\">0</strong> MQL+ · all subs<br><span style=\"color:var(--teal);\">enterprise fit</span>" }
+    ],
+    "note": "All paid-social contacts were subscriber-stage this week — the qualifying tail is expected next week. The meaningful split is firmographic, not funnel: LinkedIn = enterprise, Meta = SMB (see the State of AI company-size section)."
+  },
+  "sqlContacts": {
+    "left": {
+      "titleBadge": "blue",
+      "titleBadgeLabel": "DecidrOS",
+      "titleSuffix": "— 0 SQL (marketing)",
+      "contacts": [
+        { "name": "No marketing SQLs", "detail": "No product-attributed SQLs this week; the 53 paid-social leads are still subscriber-stage. DecidrOS had 0 new contacts." }
+      ]
+    },
+    "right": {
+      "titleBadge": "amber",
+      "titleBadgeLabel": "Unassigned",
+      "titleSuffix": "— 6 opportunities (sales-created)",
+      "contacts": [
+        { "name": "Yoko Okano", "detail": "via CRM · Opportunity" },
+        { "name": "Mike Montgomery", "detail": "via extension · Opportunity" },
+        { "name": "Bethany Mah", "detail": "via extension · Opportunity" },
+        { "name": "Bill Herman", "detail": "via extension · Opportunity" }
+      ],
+      "oppsTitle": "Also opportunities",
+      "opps": [
+        { "name": "Niosha Kayhani", "detail": "via CRM · Opportunity" },
+        { "name": "Matt Hanrahan", "detail": "via CRM · Opportunity" }
+      ]
+    }
+  },
+  "website": {
+    "placeholder": true,
+    "note": "GA4 'Decidr website' (property 413653683) via Supermetrics — pull sessions / bounce / avg duration / key-events by channel for 27 Jul–2 Aug and fill. HubSpot 'country' is permission-restricted, so Geography was omitted."
+  },
+  "observations": [
+    { "color": "teal", "html": "<strong>NEW — LinkedIn pulls enterprise, Meta pulls SMB.</strong> On the State of AI campaign, 90% of LinkedIn leads are 200+ employees (median 1k–5k) vs 19% on Meta (median 1–20). If the 250+ employee ICP is the target, LinkedIn is the channel to scale — Meta is efficient for volume but sub-ICP." },
+    { "color": "green", "html": "<strong>Coalescing filled 100% of the size data.</strong> company_size alone is ~1% populated, but combining it with total_number_of_employees and the LinkedIn domain-verified count filled all 42 State-of-AI leads. Standardising on the LinkedIn-verified field would make this repeatable every week." },
+    { "color": "amber", "html": "<strong>Quiet week, no marketing SQLs.</strong> 98 contacts (86 subscribers), 7 MQL+, 6 opportunities — all sales-created. Paid social (53) is entirely subscriber-stage; expect the State of AI qualifying tail next week." },
+    { "color": "amber", "html": "<strong>DecidrOS was silent.</strong> 0 DecidrOS contacts this week — with AI Roadmap off and no replacement demand engine, the DecidrOS top-of-funnel has stalled. Worth prioritising a new DecidrOS-specific campaign." },
+    { "color": "amber", "html": "<strong>Spend winding down again — $3,331.</strong> Meta $2,006, LinkedIn $1,101, Google $223 — the lowest paid week in the series. Combined with 0 paid MQL, efficiency can't be judged until the State of AI tail lands." },
+    { "color": "amber", "html": "<strong>All 6 opportunities were sales-created.</strong> Yoko Okano, Mike Montgomery, Bethany Mah, Bill Herman, Niosha Kayhani, Matt Hanrahan — via CRM/extension, none marketing-sourced or product-tagged." }
+  ],
+  "content": { "placeholder": true, "note": "Narrative — fill in what marketing shipped last week (case studies, blogs, newsletters, partnership assets, download counts)." },
+  "whatsNext": { "placeholder": true, "note": "Narrative — list this week's planned launches, events, and campaigns." },
+  "q2": { "placeholder": true, "note": "Q2 ended 30 Jun — a Q3 running total is now more useful. Define a HubSpot saved report that isolates genuine marketing-generated MQL/SQL (excluding the recurring Partnerships bulk imports), then fill actuals." },
+  "spend": {
+    "_source": "Meta Ads + LinkedIn Ads + Google Ads via Supermetrics, 27 Jul – 2 Aug 2026 (AUD). Cost/lead = spend ÷ HubSpot paid contacts.",
+    "metrics": [
+      { "label": "Total paid spend", "value": "$3,331", "color": "purple", "sub": "Meta + LinkedIn + Google" },
+      { "label": "Paid leads", "value": "53", "color": "blue", "sub": "Paid Social contacts" },
+      { "label": "Blended cost / lead", "value": "$63", "color": "amber", "sub": "all paid spend ÷ leads" },
+      { "label": "Blended MQL rate", "value": "0%", "color": "red", "sub": "0 paid MQL+ (tail pending)" }
+    ],
+    "rows": [
+      { "platform": "Facebook", "spend": "$2,006", "leads": "38", "cpl": "$53", "cplClass": "good", "mql": "0", "cpmql": "n/a", "cpmqlClass": "bad" },
+      { "platform": "LinkedIn", "spend": "$1,101", "leads": "15", "cpl": "$73", "cplClass": "good", "mql": "0", "cpmql": "n/a", "cpmqlClass": "bad" },
+      { "platform": "Google (Paid Search)", "spend": "$223", "leads": "—", "cpl": "n/a", "mql": "—", "cpmql": "n/a" },
+      { "platform": "Total paid media", "spend": "$3,331", "leads": "53", "cpl": "$63", "mql": "0", "cpmql": "n/a", "bold": true }
+    ],
+    "note": "The lowest paid-spend week in the series ($3,331). Paid social produced 0 MQL+ (all subscriber-stage) — efficiency can't be judged until the State of AI qualifying tail lands next week. Currency: AUD."
+  },
+  "creativesRoadmap": {
+    "placeholder": true,
+    "note": "AI Roadmap effectively off. Run scripts/download-creatives.mjs if relaunching."
+  }
+}

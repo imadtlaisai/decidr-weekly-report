@@ -235,6 +235,26 @@ function employeeSizeSection(d) {
   return section('Contacts by company size', metrics + bars);
 }
 
+function soaSizeSection(d) {
+  if (!d.stateOfAiSize) return '';
+  const s = d.stateOfAiSize;
+  const colCard = (c) => {
+    const maxv = Math.max(1, ...c.bars.map(b => b.value));
+    const bars = c.bars.map(b => bar({ label: b.label, value: b.value, display: String(b.value), color: b.color, max: maxv, sm: true })).join('');
+    return `<div class="card" style="margin-bottom:0;">
+        <div class="card-title">${badge(c.badge, c.platform)} · ${esc(c.leads)} leads</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:12px;">
+          <span style="font-size:26px;font-weight:600;color:var(--${c.statColor || 'text'});">${esc(c.big)}</span>
+          <span style="font-size:12px;color:var(--text-2);">${esc(c.bigLabel)} · median ${esc(c.median)}</span>
+        </div>
+        ${bars}
+      </div>`;
+  };
+  const verdict = s.verdict ? `<div class="info-box" style="background:var(--teal-bg);color:var(--teal-text);border:1px solid rgba(0,0,0,.06);margin-bottom:14px;">${s.verdict}</div>` : '';
+  const note = s.note ? `<p style="font-size:11px;color:var(--text-3);margin-top:10px;">${esc(s.note)}</p>` : '';
+  return section('State of AI — company size by channel', verdict + `<div class="mg2">${colCard(s.columns[0])}${colCard(s.columns[1])}</div>` + note);
+}
+
 function metaSection(d) {
   if (!d.campaigns) return '';
   const cols = d.campaigns.columns || { c3: 'MQL%', c4: 'Spend', c5: 'Cost / lead' };
@@ -545,6 +565,7 @@ ${header(data.meta)}
 ${funnelSection(data)}
 ${campaignSection(data)}
 ${employeeSizeSection(data)}
+${soaSizeSection(data)}
 ${spendSection(data)}
 ${metaSection(data)}
 ${creativesSection(data.creatives)}
