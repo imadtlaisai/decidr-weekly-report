@@ -575,9 +575,6 @@ ${genericSection('Google Ads — campaigns & spend', data.google)}
 ${sqlContactsSection(data)}
 ${websiteSection(data)}
 ${observationsSection(data)}
-${contentSection(data)}
-${whatsNextSection(data)}
-${q2Section(data)}
   <div class="footer">
     <div class="footer-text">${esc(data.meta.footerLeft)}</div>
     <div class="footer-text">${esc(data.meta.footerRight)}</div>
