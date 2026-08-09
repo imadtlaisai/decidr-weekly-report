@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decidr — Weekly Marketing Report · 3–9 Aug 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#F7F6F3;--surface:#FFFFFF;--surface2:#F0EEE9;
+    --border:rgba(0,0,0,0.08);--border-strong:rgba(0,0,0,0.15);
+    --text:#1A1916;--text-2:#6B6860;--text-3:#9E9B94;
+    --blue:#1A56E8;--blue-bg:#EBF1FD;--blue-text:#1240C0;
+    --green:#0A7C4A;--green-bg:#E4F5EC;--green-text:#065C37;
+    --amber:#B05E00;--amber-bg:#FDF0E0;--amber-text:#8A4900;
+    --red:#C0291A;--red-bg:#FDECEA;--red-text:#991F14;
+    --purple:#5B3FD4;--purple-bg:#EEEAFC;--purple-text:#3D28A8;
+    --teal:#0B7A6E;--teal-bg:#E2F4F2;--teal-text:#085F55;
+    --coral:#993C1D;--coral-bg:#FAECE7;--coral-text:#712B13;
+    --radius:10px;--radius-sm:6px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  @media print{body{background:#fff;}.section{break-inside:avoid;animation:none!important;opacity:1!important;transform:none!important;}.card{break-inside:avoid;}}
+  .wrap{max-width:900px;margin:0 auto;padding:48px 24px 80px;}
+  .report-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:40px;padding-bottom:28px;border-bottom:1.5px solid var(--border-strong);}
+  .report-logo{font-size:13px;font-weight:600;color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;}
+  .report-title{font-size:26px;font-weight:600;color:var(--text);margin:6px 0 4px;letter-spacing:-.3px;}
+  .report-date{font-size:13px;color:var(--text-2);}
+  .section{margin-bottom:36px;animation:fadeUp .5s ease both;}
+  .section-label{font-size:16px;font-weight:700;color:#000;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:18px 20px;margin-bottom:10px;}
+  .card-title{font-size:13px;font-weight:700;color:#000;margin-bottom:14px;text-transform:uppercase;letter-spacing:.05em;}
+  .mg4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
+  .mg3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+  .mg2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+  @media(max-width:600px){.mg4,.mg3{grid-template-columns:1fr 1fr;}.mg2{grid-template-columns:1fr;}}
+  .metric{background:var(--surface2);border-radius:var(--radius-sm);padding:14px 16px;}
+  .metric-label{font-size:11px;color:var(--text-2);margin-bottom:4px;}
+  .metric-value{font-size:24px;font-weight:600;line-height:1.1;}
+  .metric-sub{font-size:11px;color:var(--text-2);margin-top:3px;}
+  .funnel{display:flex;align-items:stretch;margin-bottom:20px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);}
+  .funnel-stage{flex:1;padding:16px 12px;text-align:center;background:var(--surface);border-right:1px solid var(--border);}
+  .funnel-stage:last-child{border-right:none;}
+  .funnel-stage.alt{background:var(--surface2);}
+  .funnel-num{font-size:28px;font-weight:600;margin:4px 0 2px;line-height:1;}
+  .funnel-label{font-size:11px;color:var(--text-2);}
+  .funnel-conv{font-size:11px;font-weight:500;margin-top:3px;}
+  .badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;white-space:nowrap;}
+  .badge-blue{background:var(--blue-bg);color:var(--blue-text);}
+  .badge-green{background:var(--green-bg);color:var(--green-text);}
+  .badge-amber{background:var(--amber-bg);color:var(--amber-text);}
+  .badge-red{background:var(--red-bg);color:var(--red-text);}
+  .badge-purple{background:var(--purple-bg);color:var(--purple-text);}
+  .badge-teal{background:var(--teal-bg);color:var(--teal-text);}
+  .badge-coral{background:var(--coral-bg);color:var(--coral-text);}
+  .badge-gray{background:var(--surface2);color:var(--text-2);}
+  .badge-up{background:var(--green-bg);color:var(--green-text);}
+  .badge-warn{background:var(--amber-bg);color:var(--amber-text);}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+  .bar-row:last-child{margin-bottom:0;}
+  .bar-label{width:150px;flex-shrink:0;font-size:12px;color:var(--text-2);}
+  .bar-label.sm{width:110px;}
+  .bar-track{flex:1;height:8px;background:var(--surface2);border-radius:4px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:4px;}
+  .bar-num{font-size:12px;font-weight:500;width:30px;text-align:right;flex-shrink:0;}
+  .bar-extra{font-size:11px;color:var(--text-3);width:60px;text-align:right;flex-shrink:0;}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{text-align:left;font-weight:600;font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;padding:0 10px 10px 0;border-bottom:1px solid var(--border);}
+  td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle;}
+  tr:last-child td{border-bottom:none;}
+  tr.alt td{background:var(--surface2);}
+  .r{text-align:right;}
+  .good{color:var(--green);font-weight:500;}
+  .mid{color:var(--amber);font-weight:500;}
+  .bad{color:var(--red);font-weight:500;}
+  .obs{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);}
+  .obs:last-child{border-bottom:none;}
+  .obs-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px;}
+  .obs-text{font-size:13px;color:var(--text);line-height:1.6;flex:1;}
+  .obs-text strong{font-weight:600;}
+  .contact-row{display:flex;align-items:flex-start;gap:8px;padding:6px 8px;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:4px;font-size:12px;}
+  .contact-row:last-child{margin-bottom:0;}
+  .cn{font-weight:500;color:var(--text);flex:1;}
+  .cc{color:var(--text-2);font-size:11px;width:230px;flex-shrink:0;}
+  .score{font-size:11px;font-weight:600;width:36px;text-align:right;flex-shrink:0;}
+  .wow{display:grid;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;}
+  .wow:last-child{border-bottom:none;}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .compare-card{background:var(--surface2);border-radius:var(--radius-sm);padding:14px 16px;text-align:center;}
+  .compare-platform{font-size:11px;color:var(--text-3);margin-bottom:8px;}
+  .compare-rate{font-size:22px;font-weight:600;}
+  .compare-meta{font-size:11px;color:var(--text-2);margin-top:4px;line-height:1.5;}
+  .content-item{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .content-item:last-child{border-bottom:none;}
+  .content-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+  .content-text{flex:1;color:var(--text);}
+  .content-sub{font-size:11px;color:var(--text-3);margin-top:1px;}
+  .next-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);}
+  .next-item:last-child{border-bottom:none;}
+  .next-box{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--border-strong);flex-shrink:0;margin-top:2px;}
+  .next-title{font-size:13px;font-weight:500;color:var(--text);}
+  .next-sub{font-size:11px;color:var(--text-3);margin-top:2px;}
+  .info-box{border-radius:var(--radius-sm);padding:10px 14px;font-size:12px;line-height:1.6;margin-bottom:14px;}
+  .footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+  .footer-text{font-size:11px;color:var(--text-3);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="report-header">
+    <div>
+      <div class="report-logo">Decidr</div>
+      <div class="report-title">Weekly marketing report</div>
+      <div class="report-date">3–9 Aug 2026 &nbsp;·&nbsp; Prepared for CMO</div>
+    </div>
+    <div style="text-align:right;">
+      <span class="badge badge-blue">Week 32, 2026</span>
+      <div style="font-size:11px;color:var(--text-3);margin-top:8px;">DecidrOS · Sugarworks · Partnership</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Lead funnel</div>
+    
+    <div class="funnel">
+      <div class="funnel-stage alt">
+        <div class="funnel-label">Contacts</div>
+        <div class="funnel-num" style="color:var(--purple);">227</div>
+        <div class="funnel-conv" style="color:var(--green);">+132% vs last week</div>
+      </div>
+      <div class="funnel-stage">
+        <div class="funnel-label">MQL+</div>
+        <div class="funnel-num" style="color:var(--blue);">16</div>
+        <div class="funnel-conv" style="color:var(--blue);">7% of contacts</div>
+      </div>
+      <div class="funnel-stage alt">
+        <div class="funnel-label">SQL+</div>
+        <div class="funnel-num" style="color:var(--green);">1</div>
+        <div class="funnel-conv" style="color:var(--amber);">sales-created</div>
+      </div>
+      <div class="funnel-stage">
+        <div class="funnel-label">Opportunities</div>
+        <div class="funnel-num" style="color:var(--amber);">1</div>
+        <div class="funnel-conv" style="color:var(--amber);">Ben Criddle · AU</div>
+      </div></div>
+    
+    <div class="info-box" style="background:var(--amber-bg);color:var(--amber-text);border:1px solid rgba(0,0,0,.06);">
+      <strong>Volume rebounded hard, quality didn't follow.</strong> 227 new contacts (+132% vs Week 31), but the increase is almost entirely the Facebook "State of AI 2026" relaunch (127 contacts, 0 MQL) plus a wave of Sugarworks case-study campaigns (40 contacts, ~33% MQL). 187 of 227 are newsletter subscribers. MQL+ landed at just 16 (7% of contacts) — including 2 internal QA/test records. The week's only opportunity, Ben Criddle (Group Sourcing Manager, AU), was sales-created via CRM, not marketing-attributed. DecidrOS produced zero contacts for a third straight week.
+    </div>
+    
+    <div class="mg2">
+      <div class="card">
+        <div class="card-title">SQL by product (MQL+)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;">
+          
+          <div class="metric">
+            <div class="metric-label"><span class="badge badge-blue">DecidrOS</span></div>
+            <div class="metric-value" style="color:var(--blue);">0</div>
+            <div class="metric-sub">0 contacts this week</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label"><span class="badge badge-green">Sugarworks</span></div>
+            <div class="metric-value" style="color:var(--green);">11</div>
+            <div class="metric-sub">11 of 33 leads (33%)</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Opportunities</div>
+            <div class="metric-value" style="color:var(--amber);">1</div>
+            <div class="metric-sub">sales-created · AU</div>
+          </div>
+        </div>
+        
+        <div class="bar-row">
+          <span class="bar-label sm"><span class="badge badge-green">Sugarworks</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--green);"></div></div>
+          <span class="bar-num">11</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm"><span class="badge badge-purple">Partnerships</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:27%;background:var(--purple);"></div></div>
+          <span class="bar-num">3</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm"><span class="badge badge-gray">Unassigned</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:18%;background:#9E9B94;"></div></div>
+          <span class="bar-num">2</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm"><span class="badge badge-blue">DecidrOS</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:2%;background:var(--blue);"></div></div>
+          <span class="bar-num">0</span>
+          
+        </div>
+        <p style="font-size:11px;color:var(--text-3);margin-top:10px;padding-top:8px;border-top:1px solid var(--border);">MQL+ by product. Sugarworks led with 11 MQL+ (33% of 33 leads) from case-study campaigns. DecidrOS: zero contacts — demand engine remains paused. The 1 opportunity (Ben Criddle) was sales-created, no product tag.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">Week-on-week trend</div>
+        <div style="display:flex;gap:6px;font-size:10px;color:var(--text-3);font-weight:500;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:4px;">
+          <span style="flex:1.4;"></span>
+          <span style="flex:1;text-align:right;">Wk 29</span><span style="flex:1;text-align:right;">Wk 30</span><span style="flex:1;text-align:right;">Wk 31</span><span style="flex:1;text-align:right;">Wk 32</span>
+          <span style="width:64px;text-align:right;">Trend</span>
+        </div>
+        
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">Contacts</span>
+          <span style="color:var(--text-2);text-align:right;">179</span><span style="color:var(--text-2);text-align:right;">157</span><span style="color:var(--text-2);text-align:right;">98</span><span style="color:var(--text-2);text-align:right;">227</span>
+          <span style="font-size:12px;font-weight:600;color:var(--green);text-align:right;">+132%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">MQL+</span>
+          <span style="color:var(--text-2);text-align:right;">6</span><span style="color:var(--text-2);text-align:right;">14</span><span style="color:var(--text-2);text-align:right;">7</span><span style="color:var(--text-2);text-align:right;">16</span>
+          <span style="font-size:12px;font-weight:600;color:var(--green);text-align:right;">+129%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">SQL+</span>
+          <span style="color:var(--text-2);text-align:right;">4</span><span style="color:var(--text-2);text-align:right;">14</span><span style="color:var(--text-2);text-align:right;">6</span><span style="color:var(--text-2);text-align:right;">1</span>
+          <span style="font-size:12px;font-weight:600;color:var(--amber);text-align:right;">−83%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">Opportunities</span>
+          <span style="color:var(--text-2);text-align:right;">6</span><span style="color:var(--text-2);text-align:right;">5</span><span style="color:var(--text-2);text-align:right;">6</span><span style="color:var(--text-2);text-align:right;">1</span>
+          <span style="font-size:12px;font-weight:600;color:var(--amber);text-align:right;">−83%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">Meta leads</span>
+          <span style="color:var(--text-2);text-align:right;">86</span><span style="color:var(--text-2);text-align:right;">49</span><span style="color:var(--text-2);text-align:right;">38</span><span style="color:var(--text-2);text-align:right;">171</span>
+          <span style="font-size:12px;font-weight:600;color:var(--green);text-align:right;">+350%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">LinkedIn leads</span>
+          <span style="color:var(--text-2);text-align:right;">1</span><span style="color:var(--text-2);text-align:right;">4</span><span style="color:var(--text-2);text-align:right;">15</span><span style="color:var(--text-2);text-align:right;">13</span>
+          <span style="font-size:12px;font-weight:600;color:var(--amber);text-align:right;">−13%</span>
+        </div>
+        <div class="wow" style="grid-template-columns:1.3fr 1fr 1fr 1fr 1fr 56px;">
+          <span style="font-weight:500;">Google conv.</span>
+          <span style="color:var(--text-2);text-align:right;">n/a</span><span style="color:var(--text-2);text-align:right;">n/a</span><span style="color:var(--text-2);text-align:right;">n/a</span><span style="color:var(--text-2);text-align:right;">0</span>
+          <span style="font-size:12px;font-weight:600;color:var(--text-3);text-align:right;">—</span>
+        </div>
+        <p style="font-size:11px;color:var(--text-3);margin-top:10px;padding-top:8px;border-top:1px solid var(--border);">Rolling 4-week window. Wk 29–31 figures carried from the published Wk 31 report.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Campaign performance — channel mix &amp; quality</div>
+    
+    <div class="card" style="margin-bottom:10px;">
+      
+        <div class="bar-row">
+          <span class="bar-label"><span class="badge badge-blue">Paid Social</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue);"></div></div>
+          <span class="bar-num">140</span>
+          <span class="bar-extra">62% of total</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label"><span class="badge badge-gray">Offline / Import</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:57%;background:#9E9B94;"></div></div>
+          <span class="bar-num">80</span>
+          <span class="bar-extra">35% of total</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label"><span class="badge badge-gray">Direct Traffic</span></span>
+          <div class="bar-track"><div class="bar-fill" style="width:5%;background:#9E9B94;"></div></div>
+          <span class="bar-num">7</span>
+          <span class="bar-extra">3% of total</span>
+        </div>
+    </div><div class="mg2">
+      <div class="card">
+        <div class="card-title">Geography (known)</div>
+        
+        <div class="bar-row">
+          <span class="bar-label sm">Australia</span>
+          <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue);"></div></div>
+          <span class="bar-num">49</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm">United States</span>
+          <div class="bar-track"><div class="bar-fill" style="width:94%;background:var(--purple);"></div></div>
+          <span class="bar-num">46</span>
+          
+        </div>
+        <div class="bar-row">
+          <span class="bar-label sm">Other (DE, SG, IE, NZ)</span>
+          <div class="bar-track"><div class="bar-fill" style="width:18%;background:#9E9B94;"></div></div>
+          <span class="bar-num">9</span>
+          
+        </div>
+        <p style="font-size:11px;color:var(--text-3);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);">123 of 227 contacts missing country — mainly Facebook Lead Ads. Of the 104 with a known country, AU and US are roughly even (49 vs 46).</p>
+      </div>
+      <div class="card">
+        <div class="card-title">LinkedIn vs Facebook</div>
+        <div class="compare">
+          
+          <div class="compare-card">
+            <div class="compare-platform">LinkedIn · 13 contacts</div>
+            <div class="compare-rate" style="color:var(--text-3);">0%</div>
+            <div class="compare-meta">MQL rate<br><strong style="font-size:16px;">0</strong> MQL+ · low volume<br><span style="color:var(--text-3);">no qualifying leads this week</span></div>
+          </div>
+          <div class="compare-card">
+            <div class="compare-platform">Facebook · 127 contacts</div>
+            <div class="compare-rate" style="color:var(--amber);">9%</div>
+            <div class="compare-meta">MQL rate<br><strong style="font-size:16px;">12</strong> MQL+ · volume up sharply<br><span style="color:var(--amber);">State of AI relaunch diluted quality</span></div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--text-3);margin-top:10px;padding-top:10px;border-top:1px solid var(--border);">Facebook's volume surge (State of AI relaunch) came with a quality dip — 9% MQL rate vs recent weeks' 40–60% range. LinkedIn contributed no qualifying leads this week.</p>
+      </div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Paid media — spend &amp; cost per lead</div>
+    
+    <div class="mg4"><div class="metric"><p class="metric-label">Total known paid spend</p><p class="metric-value" style="color:var(--purple);">$8,999</p><p class="metric-sub">FB + Google (LinkedIn spend excluded — see note)</p></div><div class="metric"><p class="metric-label">Paid Social leads</p><p class="metric-value" style="color:var(--blue);">140</p><p class="metric-sub">HubSpot contacts, FB + LinkedIn</p></div><div class="metric"><p class="metric-label">Blended cost / lead</p><p class="metric-value" style="color:var(--amber);">$64</p><p class="metric-sub">known spend ÷ Paid Social contacts</p></div><div class="metric"><p class="metric-label">Blended MQL rate</p><p class="metric-value" style="color:var(--amber);">9%</p><p class="metric-sub">12 MQL+ of 140 Paid Social contacts</p></div></div>
+    <div class="card">
+      <table>
+        <thead><tr><th style="width:185px;">Platform</th><th class="r">Spend</th><th class="r">Leads</th><th class="r">Cost / lead</th><th class="r">MQL+</th><th class="r">Cost / MQL</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Facebook</td>
+            <td class="r">$8,323</td>
+            <td class="r">127</td>
+            <td class="r mid">$66</td>
+            <td class="r">12</td>
+            <td class="r mid">$694</td>
+          </tr>
+          <tr class="alt">
+            <td>LinkedIn</td>
+            <td class="r">pending*</td>
+            <td class="r">13</td>
+            <td class="r ">n/a</td>
+            <td class="r">0</td>
+            <td class="r ">n/a</td>
+          </tr>
+          <tr>
+            <td>Google (Paid Search)</td>
+            <td class="r">$676</td>
+            <td class="r">—</td>
+            <td class="r ">n/a</td>
+            <td class="r">—</td>
+            <td class="r ">n/a</td>
+          </tr>
+          <tr>
+            <td><strong>Total known paid media</strong></td>
+            <td class="r">$8,999*</td>
+            <td class="r">140</td>
+            <td class="r ">$64</td>
+            <td class="r">12</td>
+            <td class="r ">$750</td>
+          </tr></tbody>
+      </table>
+      <p style="font-size:11px;color:var(--text-3);margin-top:8px;">*Excludes LinkedIn ad spend — the Supermetrics LinkedIn Ads connection failed for both accounts this week ('Member is restricted'); re-authentication needed at hub.supermetrics.com. Facebook cost/lead and cost/MQL use HubSpot-attributed contacts (127), not the higher on-platform lead count (171), for consistency with prior weeks' methodology.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Meta Ads — campaigns &amp; cost per lead</div>
+    <div class="mg4"><div class="metric"><p class="metric-label">Meta spend</p><p class="metric-value" style="color:var(--blue);">$8,323</p><p class="metric-sub">11 campaigns, 2 ad accounts</p></div><div class="metric"><p class="metric-label">Platform leads</p><p class="metric-value" style="color:var(--green);">171</p><p class="metric-sub">on-Facebook lead ads</p></div><div class="metric"><p class="metric-label">Cost / lead</p><p class="metric-value" style="color:var(--amber);">$49</p><p class="metric-sub">spend ÷ platform leads</p></div><div class="metric"><p class="metric-label">MQL rate</p><p class="metric-value" style="color:var(--amber);">9%</p><p class="metric-sub">12 of 127 HubSpot FB contacts</p></div></div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:200px;">Campaign</th>
+            <th>Type</th>
+            <th class="r" style="width:68px;">Contacts</th>
+            <th class="r" style="width:58px;">MQL%</th>
+            <th class="r" style="width:72px;">Spend</th>
+            <th class="r" style="width:75px;">Cost / lead</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td><strong>State of AI 2026 Report — ABO (Jul 29)</strong></td>
+            <td><span class="badge badge-blue">Facebook</span></td>
+            <td class="r">109</td>
+            <td class="r bad">0%</td>
+            <td class="r ">$2,353</td>
+            <td class="r">$22</td>
+          </tr>
+          <tr class="alt">
+            <td>State of AI 2026 Report — CBO (Jul 28)</td>
+            <td><span class="badge badge-blue">Facebook</span></td>
+            <td class="r">24</td>
+            <td class="r bad">0%</td>
+            <td class="r ">$985</td>
+            <td class="r">$41</td>
+          </tr>
+          <tr>
+            <td>Technology Partners — Demo Leads (Jul 1)</td>
+            <td><span class="badge badge-amber">FB · demo·HubSpot</span></td>
+            <td class="r">3</td>
+            <td class="r good">100%</td>
+            <td class="r ">$774</td>
+            <td class="r">$258</td>
+          </tr>
+          <tr class="alt">
+            <td>Sugarwork AUS — Subsea Case Study · ABO (6 Aug)</td>
+            <td><span class="badge badge-purple">Facebook</span></td>
+            <td class="r">11</td>
+            <td class="r mid">36%</td>
+            <td class="r ">$847</td>
+            <td class="r">$77</td>
+          </tr>
+          <tr>
+            <td>Sugarwork AUS — Case Study · CBO (4 Aug)</td>
+            <td><span class="badge badge-purple">Facebook</span></td>
+            <td class="r">12</td>
+            <td class="r mid">17%</td>
+            <td class="r ">$835</td>
+            <td class="r">$70</td>
+          </tr>
+          <tr class="alt">
+            <td>Sugarwork AUS — Case Study · ABO (4 Aug)</td>
+            <td><span class="badge badge-purple">Facebook</span></td>
+            <td class="r">5</td>
+            <td class="r mid">20%</td>
+            <td class="r ">$538</td>
+            <td class="r">$108</td>
+          </tr>
+          <tr>
+            <td>Sugarwork USA — Case Study · ABO (30 Jul)</td>
+            <td><span class="badge badge-purple">Facebook</span></td>
+            <td class="r">8</td>
+            <td class="r mid">25%</td>
+            <td class="r ">$537</td>
+            <td class="r">$67</td>
+          </tr>
+          <tr class="alt">
+            <td>Partnerships — AIM Case Study DL (AU)</td>
+            <td><span class="badge badge-blue">Facebook</span></td>
+            <td class="r">2</td>
+            <td class="r bad">0%</td>
+            <td class="r ">$277</td>
+            <td class="r">$138</td>
+          </tr>
+          <tr>
+            <td>Book a Demo / Leads campaigns (AUS + USA, 3)</td>
+            <td><span class="badge badge-gray">Facebook</span></td>
+            <td class="r">0</td>
+            <td class="r ">n/a</td>
+            <td class="r ">$1,177</td>
+            <td class="r">n/a</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+
+
+
+  <div class="section">
+    <div class="section-label">LinkedIn Ads — campaigns &amp; cost per lead</div>
+    <div class="mg4"><div class="metric"><p class="metric-label">LinkedIn spend</p><p class="metric-value" style="color:var(--text-3);">pending</p><p class="metric-sub">Supermetrics connection restricted</p></div><div class="metric"><p class="metric-label">Leads (HubSpot)</p><p class="metric-value" style="color:var(--green);">13</p><p class="metric-sub">6 AUS doc ads + 7 report leads</p></div><div class="metric"><p class="metric-label">Cost / lead</p><p class="metric-value" style="color:var(--text-3);">n/a</p><p class="metric-sub">spend unavailable this week</p></div><div class="metric"><p class="metric-label">MQL rate</p><p class="metric-value" style="color:var(--amber);">0%</p><p class="metric-sub">0 of 13 HubSpot contacts</p></div></div><div class="card"><table><thead><tr><th class="" style="width:260px;">Campaign</th><th class="r">Spend</th><th class="r">Leads (HubSpot)</th><th class="r">Cost / lead</th></tr></thead><tbody><tr><td class="">State of AI 2026 Report | Leads</td><td class="r">n/a</td><td class="r">7</td><td class="r">n/a</td></tr><tr class="alt"><td class="">Global AI Readiness Index Report (doc ads, AUS)</td><td class="r">n/a</td><td class="r">6</td><td class="r">n/a</td></tr></tbody></table><p style="font-size:11px;color:var(--text-3);margin-top:8px;">LinkedIn Ads spend could not be pulled this week — Supermetrics returned 'LinkedIn Ads failure (Member is restricted)' for both connected accounts (Decidr.ai and Sugarwork). Lead counts are HubSpot platform attribution only. Recommend re-authenticating the LinkedIn connection at hub.supermetrics.com.</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Google Ads — campaigns &amp; spend</div>
+    <div class="mg4"><div class="metric"><p class="metric-label">Google spend</p><p class="metric-value" style="color:var(--amber);">$676</p><p class="metric-sub">3 campaigns, 2 accounts</p></div><div class="metric"><p class="metric-label">Platform conversions</p><p class="metric-value" style="color:var(--blue);">0</p><p class="metric-sub">GA4 pull unavailable — see note</p></div><div class="metric"><p class="metric-label">Cost / conversion</p><p class="metric-value" style="color:var(--amber);">n/a</p><p class="metric-sub">0 conversions recorded</p></div><div class="metric"><p class="metric-label">MQL rate</p><p class="metric-value" style="color:var(--text-3);">n/a</p><p class="metric-sub">0 HubSpot contacts from Google</p></div></div><div class="card"><table><thead><tr><th class="" style="width:260px;">Campaign</th><th class="r">Spend</th><th class="r">Clicks</th><th class="r">Conversions</th></tr></thead><tbody><tr><td class="">Sugarwork US v2</td><td class="r">$247</td><td class="r">58</td><td class="r bad">0</td></tr><tr class="alt"><td class="">AU Search — DecidrOS Brand (High Intent)</td><td class="r">$220</td><td class="r">95</td><td class="r bad">0</td></tr><tr><td class="">Sugarwork Generic — Search — US</td><td class="r">$209</td><td class="r">16</td><td class="r bad">0</td></tr></tbody></table><p style="font-size:11px;color:var(--text-3);margin-top:8px;">169 clicks across 3 search campaigns, 0 platform conversions and 0 HubSpot-attributed contacts. GA4 session/conversion figures unavailable — the Supermetrics GA4 connection ('Decidr website' property) has been on an expired trial since 3 Jul 2026, same gap affecting the Website Performance section below.</p></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">SQL &amp; opportunity contacts this week</div>
+    <div class="mg2">
+      <div class="card" style="margin-bottom:0;">
+        <div class="card-title"><span class="badge badge-blue">DecidrOS</span> — 0 contacts this week</div>
+        <div class="contact-row"><span class="cn">No DecidrOS contacts</span><span class="cc">Third consecutive week with zero DecidrOS contacts — the AI Roadmap demand engine remains off with no replacement campaign live.</span></div>
+      </div>
+      <div class="card" style="margin-bottom:0;">
+        <div class="card-title"><span class="badge badge-green">Sugarworks</span> — 0 SQL despite 11 MQL</div>
+        <div class="contact-row"><span class="cn">No Sugarworks SQL</span><span class="cc">11 of 33 new Sugarworks leads reached MQL (33%) via case-study campaigns — the week's best-converting product — but none progressed to SQL.</span></div>
+        
+        <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border);">
+          <div style="font-size:12px;font-weight:500;color:var(--text-2);margin-bottom:8px;">1 Opportunity this week (sales-created)</div>
+          <div class="contact-row"><span class="cn">Ben Criddle</span><span class="cc">Group Sourcing Manager · AU · created via CRM_UI — sales-sourced, not marketing-attributed, no product tag</span></div>
+        </div>
+      </div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Lead quality — direct SQL vs. paid campaigns</div>
+    <div class="card"><div style="font-size:13px;color:var(--text);line-height:1.6;"><strong>No marketing-sourced SQL this week — the story is volume vs. quality across campaigns.</strong> Compare the two paid pushes that drove this week's volume:<br><br><strong>High volume, no qualification:</strong> "State of AI 2026" Facebook relaunch (ABO + CBO) — 133 platform leads, $3,338 spend, <strong>0% MQL</strong>. A broad-reach report download that hasn't yet produced a qualified lead.<br><strong>Lower volume, real quality:</strong> Sugarworks subsea-company case-study campaigns (5 variants, AUS + USA) — 36 platform leads, $2,757 spend, <strong>17–36% MQL</strong> per campaign, best of the week.<br><strong>Highest intent:</strong> Technology Partners demo-leads campaign — just 3 contacts, but <strong>100% MQL</strong>, consistent with direct demo requests outperforming awareness/report downloads.<br><br>Sales generated this week's only opportunity (Ben Criddle) independent of any campaign — a reminder that marketing volume and sales pipeline moved on separate tracks this week.</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Website performance — GA4</div>
+    
+    <div class="card" style="border-style:dashed;background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 10px,var(--surface2) 10px,var(--surface2) 20px);">
+      <div class="card-title" style="color:var(--amber-text);">⌛ Pending input</div>
+      <p style="font-size:12px;color:var(--text-2);">GA4 'Decidr website' (property 413653683) via Supermetrics — connection has been on an expired trial since 3 Jul 2026, so no session/bounce/event data is pullable this week (same gap as recent weeks). Renew the Supermetrics subscription to resume this section.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Key observations</div>
+    <div class="card">
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">1</div><div class="obs-text"><strong>Volume rebounded but quality didn't follow.</strong> 227 contacts (+132% vs Wk 31) yet MQL+ rate fell to 7% (16 of 227) — the lowest since the HubSpot org went live.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">2</div><div class="obs-text"><strong>"State of AI 2026" Facebook relaunch drove 127 of 227 contacts (56%) but produced zero MQLs</strong> — pure top-of-funnel volume with no immediate pipeline value yet.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--green-bg);color:var(--green-text);">3</div><div class="obs-text"><strong>Sugarworks case-study campaigns were the week's quality bright spot.</strong> 5 Facebook variants converted 11 of 33 new Sugarworks leads to MQL (33%), well above the blended 9% rate.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">4</div><div class="obs-text"><strong>DecidrOS produced zero new contacts for a third straight week.</strong> The demand engine remains paused with no replacement campaign in market.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">5</div><div class="obs-text"><strong>No marketing-sourced SQL or opportunity this week.</strong> The lone opportunity, Ben Criddle (Group Sourcing Manager, AU), was sales-created via CRM.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--teal-bg);color:var(--teal-text);">6</div><div class="obs-text"><strong>Channel concentration: Paid Social is 62% of contacts (140 of 227).</strong> Offline/import contributes 35% (80, mostly the ongoing bulk-import tail), Direct just 3%.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">7</div><div class="obs-text"><strong>2 of the 16 MQL+ contacts are internal QA/test records</strong> ("QA-HMS Test", "QA-Fixed Test") — flag for CRM hygiene; organic MQL+ excluding them is 14.</div></div>
+      <div class="obs"><div class="obs-num" style="background:var(--amber-bg);color:var(--amber-text);">8</div><div class="obs-text"><strong>LinkedIn Ads spend data was unavailable this week</strong> — Supermetrics returned "Member is restricted" for both connected LinkedIn accounts. Lead counts (13) are HubSpot-only; re-authenticate the connection to restore spend/cost-per-lead reporting.</div></div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Live last week from marketing</div>
+    
+    <div class="card" style="border-style:dashed;background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 10px,var(--surface2) 10px,var(--surface2) 20px);">
+      <div class="card-title" style="color:var(--amber-text);">⌛ Pending input</div>
+      <p style="font-size:12px;color:var(--text-2);">Narrative — fill in what marketing shipped last week (case studies, blogs, newsletters, partnership assets, download counts). Not derivable from HubSpot/Supermetrics.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What's next this week</div>
+    
+    <div class="card" style="border-style:dashed;background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 10px,var(--surface2) 10px,var(--surface2) 20px);">
+      <div class="card-title" style="color:var(--amber-text);">⌛ Pending input</div>
+      <p style="font-size:12px;color:var(--text-2);">Narrative — list this week's planned launches, events, and campaigns.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Q2 running total</div>
+    
+    <div class="card" style="border-style:dashed;background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 10px,var(--surface2) 10px,var(--surface2) 20px);">
+      <div class="card-title" style="color:var(--amber-text);">⌛ Pending input</div>
+      <p style="font-size:12px;color:var(--text-2);">Q3 targets and actuals pending an agreed HubSpot saved report that isolates genuine marketing-generated MQL/SQL from the 20 May 2026 bulk-import tail. Unchanged from prior weeks.</p>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-text">Decidr marketing · 3–9 Aug 2026</div>
+    <div class="footer-text">Confidential — for internal use</div>
+  </div>
+</div>
+</body>
+</html>

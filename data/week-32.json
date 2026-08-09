@@ -1,0 +1,216 @@
+{
+  "_comment": "Decidr Weekly Marketing Report — Week 32 (3–9 Aug 2026). Funnel/products/channels/campaigns/geo/SQL contacts pulled live from HubSpot. Meta spend/leads from Supermetrics (Facebook Ads). Google spend/clicks from Supermetrics (Google Ads). LinkedIn Ads spend from Supermetrics FAILED this week ('Member is restricted' on both connected accounts) — LinkedIn lead counts below are HubSpot-only. GA4/website data unavailable — Supermetrics free trial expired 2026-07-03 (same gap as prior weeks).",
+
+  "meta": {
+    "logo": "Decidr",
+    "title": "Weekly marketing report",
+    "dateRange": "3–9 Aug 2026",
+    "preparedFor": "CMO",
+    "weekBadge": "Week 32, 2026",
+    "products": "DecidrOS · Sugarworks · Partnership",
+    "footerLeft": "Decidr marketing · 3–9 Aug 2026",
+    "footerRight": "Confidential — for internal use",
+    "titleTag": "Decidr — Weekly Marketing Report · 3–9 Aug 2026"
+  },
+
+  "funnel": [
+    { "label": "Contacts", "value": "227", "color": "purple", "conv": "+132% vs last week", "convColor": "green", "alt": true },
+    { "label": "MQL+", "value": "16", "color": "blue", "conv": "7% of contacts", "convColor": "blue" },
+    { "label": "SQL+", "value": "1", "color": "green", "conv": "sales-created", "convColor": "amber", "alt": true },
+    { "label": "Opportunities", "value": "1", "color": "amber", "conv": "Ben Criddle · AU", "convColor": "amber" }
+  ],
+
+  "highlight": {
+    "type": "amber",
+    "html": "<strong>Volume rebounded hard, quality didn't follow.</strong> 227 new contacts (+132% vs Week 31), but the increase is almost entirely the Facebook \"State of AI 2026\" relaunch (127 contacts, 0 MQL) plus a wave of Sugarworks case-study campaigns (40 contacts, ~33% MQL). 187 of 227 are newsletter subscribers. MQL+ landed at just 16 (7% of contacts) — including 2 internal QA/test records. The week's only opportunity, Ben Criddle (Group Sourcing Manager, AU), was sales-created via CRM, not marketing-attributed. DecidrOS produced zero contacts for a third straight week."
+  },
+
+  "sqlByProduct": {
+    "metrics": [
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": "0", "color": "blue", "sub": "0 contacts this week" },
+      { "badge": "green", "badgeLabel": "Sugarworks", "value": "11", "color": "green", "sub": "11 of 33 leads (33%)" },
+      { "label": "Opportunities", "value": "1", "color": "amber", "sub": "sales-created · AU" }
+    ],
+    "bars": [
+      { "badge": "green", "badgeLabel": "Sugarworks", "value": 11, "display": "11", "color": "green", "max": 11 },
+      { "badge": "purple", "badgeLabel": "Partnerships", "value": 3, "display": "3", "color": "purple", "max": 11 },
+      { "badge": "gray", "badgeLabel": "Unassigned", "value": 2, "display": "2", "color": "#9E9B94", "max": 11 },
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": 0, "display": "0", "color": "blue", "max": 11 }
+    ],
+    "note": "MQL+ by product. Sugarworks led with 11 MQL+ (33% of 33 leads) from case-study campaigns. DecidrOS: zero contacts — demand engine remains paused. The 1 opportunity (Ben Criddle) was sales-created, no product tag."
+  },
+
+  "trend": {
+    "headers": ["Wk 29", "Wk 30", "Wk 31", "Wk 32"],
+    "note": "Rolling 4-week window. Wk 29–31 figures carried from the published Wk 31 report.",
+    "rows": [
+      { "label": "Contacts", "values": ["179", "157", "98", "227"], "badge": "up", "badgeText": "+132%" },
+      { "label": "MQL+", "values": ["6", "14", "7", "16"], "badge": "up", "badgeText": "+129%" },
+      { "label": "SQL+", "values": ["4", "14", "6", "1"], "badge": "warn", "badgeText": "−83%" },
+      { "label": "Opportunities", "values": ["6", "5", "6", "1"], "badge": "warn", "badgeText": "−83%" },
+      { "label": "Meta leads", "values": ["86", "49", "38", "171"], "badge": "up", "badgeText": "+350%" },
+      { "label": "LinkedIn leads", "values": ["1", "4", "15", "13"], "badge": "warn", "badgeText": "−13%" },
+      { "label": "Google conv.", "values": ["n/a", "n/a", "n/a", "0"], "badge": "gray", "badgeText": "—" }
+    ]
+  },
+
+  "channels": {
+    "bars": [
+      { "badge": "blue", "label": "Paid Social", "value": 140, "display": "140", "extra": "62% of total", "color": "blue", "max": 140 },
+      { "badge": "gray", "label": "Offline / Import", "value": 80, "display": "80", "extra": "35% of total", "color": "#9E9B94", "max": 140 },
+      { "badge": "gray", "label": "Direct Traffic", "value": 7, "display": "7", "extra": "3% of total", "color": "#9E9B94", "max": 140 }
+    ]
+  },
+
+  "campaigns": {
+    "_note": "Facebook lead-gen campaigns (Decidr.ai + Sugarwork ad accounts). 'Contacts' = on-Facebook platform leads from Supermetrics (3 rows fall back to HubSpot contact counts where the campaign has no on-platform lead metric, noted per row). MQL% = HubSpot MQL+ ÷ leads shown. Spend via Supermetrics Facebook Ads, 3–9 Aug 2026.",
+    "metrics": [
+      { "label": "Meta spend", "value": "$8,323", "color": "blue", "sub": "11 campaigns, 2 ad accounts" },
+      { "label": "Platform leads", "value": "171", "color": "green", "sub": "on-Facebook lead ads" },
+      { "label": "Cost / lead", "value": "$49", "color": "amber", "sub": "spend ÷ platform leads" },
+      { "label": "MQL rate", "value": "9%", "color": "amber", "sub": "12 of 127 HubSpot FB contacts" }
+    ],
+    "rows": [
+      { "name": "State of AI 2026 Report — ABO (Jul 29)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "109", "mql": "0%", "mqlClass": "bad", "extra1": "$2,353", "extra2": "$22", "bold": true },
+      { "name": "State of AI 2026 Report — CBO (Jul 28)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "24", "mql": "0%", "mqlClass": "bad", "extra1": "$985", "extra2": "$41" },
+      { "name": "Technology Partners — Demo Leads (Jul 1)", "channelBadge": "amber", "channelLabel": "FB · demo·HubSpot", "contacts": "3", "mql": "100%", "mqlClass": "good", "extra1": "$774", "extra2": "$258" },
+      { "name": "Sugarwork AUS — Subsea Case Study · ABO (6 Aug)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "11", "mql": "36%", "mqlClass": "mid", "extra1": "$847", "extra2": "$77" },
+      { "name": "Sugarwork AUS — Case Study · CBO (4 Aug)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "12", "mql": "17%", "mqlClass": "mid", "extra1": "$835", "extra2": "$70" },
+      { "name": "Sugarwork AUS — Case Study · ABO (4 Aug)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "5", "mql": "20%", "mqlClass": "mid", "extra1": "$538", "extra2": "$108" },
+      { "name": "Sugarwork USA — Case Study · ABO (30 Jul)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "8", "mql": "25%", "mqlClass": "mid", "extra1": "$537", "extra2": "$67" },
+      { "name": "Partnerships — AIM Case Study DL (AU)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "2", "mql": "0%", "mqlClass": "bad", "extra1": "$277", "extra2": "$138" },
+      { "name": "Book a Demo / Leads campaigns (AUS + USA, 3)", "channelBadge": "gray", "channelLabel": "Facebook", "contacts": "0", "mql": "n/a", "extra1": "$1,177", "extra2": "n/a" }
+    ],
+    "columns": { "c3": "MQL%", "c4": "Spend", "c5": "Cost / lead" }
+  },
+
+  "linkedin": {
+    "placeholder": false,
+    "metrics": [
+      { "label": "LinkedIn spend", "value": "pending", "color": "text-3", "sub": "Supermetrics connection restricted" },
+      { "label": "Leads (HubSpot)", "value": "13", "color": "green", "sub": "6 AUS doc ads + 7 report leads" },
+      { "label": "Cost / lead", "value": "n/a", "color": "text-3", "sub": "spend unavailable this week" },
+      { "label": "MQL rate", "value": "0%", "color": "amber", "sub": "0 of 13 HubSpot contacts" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "Leads (HubSpot)", "Cost / lead"],
+      "widths": ["260px", "", "", ""],
+      "rows": [
+        [{ "v": "State of AI 2026 Report | Leads" }, "n/a", "7", "n/a"],
+        [{ "v": "Global AI Readiness Index Report (doc ads, AUS)" }, "n/a", "6", "n/a"]
+      ],
+      "note": "LinkedIn Ads spend could not be pulled this week — Supermetrics returned 'LinkedIn Ads failure (Member is restricted)' for both connected accounts (Decidr.ai and Sugarwork). Lead counts are HubSpot platform attribution only. Recommend re-authenticating the LinkedIn connection at hub.supermetrics.com."
+    }
+  },
+
+  "google": {
+    "metrics": [
+      { "label": "Google spend", "value": "$676", "color": "amber", "sub": "3 campaigns, 2 accounts" },
+      { "label": "Platform conversions", "value": "0", "color": "blue", "sub": "GA4 pull unavailable — see note" },
+      { "label": "Cost / conversion", "value": "n/a", "color": "amber", "sub": "0 conversions recorded" },
+      { "label": "MQL rate", "value": "n/a", "color": "text-3", "sub": "0 HubSpot contacts from Google" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "Clicks", "Conversions"],
+      "widths": ["260px", "", "", ""],
+      "rows": [
+        [{ "v": "Sugarwork US v2" }, "$247", "58", { "v": "0", "cls": "bad" }],
+        [{ "v": "AU Search — DecidrOS Brand (High Intent)" }, "$220", "95", { "v": "0", "cls": "bad" }],
+        [{ "v": "Sugarwork Generic — Search — US" }, "$209", "16", { "v": "0", "cls": "bad" }]
+      ],
+      "note": "169 clicks across 3 search campaigns, 0 platform conversions and 0 HubSpot-attributed contacts. GA4 session/conversion figures unavailable — the Supermetrics GA4 connection ('Decidr website' property) has been on an expired trial since 3 Jul 2026, same gap affecting the Website Performance section below."
+    }
+  },
+
+  "geography": {
+    "bars": [
+      { "label": "Australia", "value": 49, "display": "49", "color": "blue", "max": 49 },
+      { "label": "United States", "value": 46, "display": "46", "color": "purple", "max": 49 },
+      { "label": "Other (DE, SG, IE, NZ)", "value": 9, "display": "9", "color": "#9E9B94", "max": 49 }
+    ],
+    "note": "123 of 227 contacts missing country — mainly Facebook Lead Ads. Of the 104 with a known country, AU and US are roughly even (49 vs 46)."
+  },
+
+  "platformCompare": {
+    "cards": [
+      { "platform": "LinkedIn · 13 contacts", "rate": "0%", "rateColor": "text-3", "metaHtml": "MQL rate<br><strong style=\"font-size:16px;\">0</strong> MQL+ · low volume<br><span style=\"color:var(--text-3);\">no qualifying leads this week</span>" },
+      { "platform": "Facebook · 127 contacts", "rate": "9%", "rateColor": "amber", "metaHtml": "MQL rate<br><strong style=\"font-size:16px;\">12</strong> MQL+ · volume up sharply<br><span style=\"color:var(--amber);\">State of AI relaunch diluted quality</span>" }
+    ],
+    "note": "Facebook's volume surge (State of AI relaunch) came with a quality dip — 9% MQL rate vs recent weeks' 40–60% range. LinkedIn contributed no qualifying leads this week."
+  },
+
+  "sqlContacts": {
+    "left": {
+      "titleBadge": "blue",
+      "titleBadgeLabel": "DecidrOS",
+      "titleSuffix": "— 0 contacts this week",
+      "contacts": [
+        { "name": "No DecidrOS contacts", "detail": "Third consecutive week with zero DecidrOS contacts — the AI Roadmap demand engine remains off with no replacement campaign live." }
+      ]
+    },
+    "right": {
+      "titleBadge": "green",
+      "titleBadgeLabel": "Sugarworks",
+      "titleSuffix": "— 0 SQL despite 11 MQL",
+      "contacts": [
+        { "name": "No Sugarworks SQL", "detail": "11 of 33 new Sugarworks leads reached MQL (33%) via case-study campaigns — the week's best-converting product — but none progressed to SQL." }
+      ],
+      "oppsTitle": "1 Opportunity this week (sales-created)",
+      "opps": [
+        { "name": "Ben Criddle", "detail": "Group Sourcing Manager · AU · created via CRM_UI — sales-sourced, not marketing-attributed, no product tag" }
+      ]
+    }
+  },
+
+  "website": {
+    "placeholder": true,
+    "note": "GA4 'Decidr website' (property 413653683) via Supermetrics — connection has been on an expired trial since 3 Jul 2026, so no session/bounce/event data is pullable this week (same gap as recent weeks). Renew the Supermetrics subscription to resume this section."
+  },
+
+  "observations": [
+    { "color": "amber", "html": "<strong>Volume rebounded but quality didn't follow.</strong> 227 contacts (+132% vs Wk 31) yet MQL+ rate fell to 7% (16 of 227) — the lowest since the HubSpot org went live." },
+    { "color": "amber", "html": "<strong>\"State of AI 2026\" Facebook relaunch drove 127 of 227 contacts (56%) but produced zero MQLs</strong> — pure top-of-funnel volume with no immediate pipeline value yet." },
+    { "color": "green", "html": "<strong>Sugarworks case-study campaigns were the week's quality bright spot.</strong> 5 Facebook variants converted 11 of 33 new Sugarworks leads to MQL (33%), well above the blended 9% rate." },
+    { "color": "amber", "html": "<strong>DecidrOS produced zero new contacts for a third straight week.</strong> The demand engine remains paused with no replacement campaign in market." },
+    { "color": "amber", "html": "<strong>No marketing-sourced SQL or opportunity this week.</strong> The lone opportunity, Ben Criddle (Group Sourcing Manager, AU), was sales-created via CRM." },
+    { "color": "teal", "html": "<strong>Channel concentration: Paid Social is 62% of contacts (140 of 227).</strong> Offline/import contributes 35% (80, mostly the ongoing bulk-import tail), Direct just 3%." },
+    { "color": "amber", "html": "<strong>2 of the 16 MQL+ contacts are internal QA/test records</strong> (\"QA-HMS Test\", \"QA-Fixed Test\") — flag for CRM hygiene; organic MQL+ excluding them is 14." },
+    { "color": "amber", "html": "<strong>LinkedIn Ads spend data was unavailable this week</strong> — Supermetrics returned \"Member is restricted\" for both connected LinkedIn accounts. Lead counts (13) are HubSpot-only; re-authenticate the connection to restore spend/cost-per-lead reporting." }
+  ],
+
+  "leadQuality": {
+    "html": "<strong>No marketing-sourced SQL this week — the story is volume vs. quality across campaigns.</strong> Compare the two paid pushes that drove this week's volume:<br><br><strong>High volume, no qualification:</strong> \"State of AI 2026\" Facebook relaunch (ABO + CBO) — 133 platform leads, $3,338 spend, <strong>0% MQL</strong>. A broad-reach report download that hasn't yet produced a qualified lead.<br><strong>Lower volume, real quality:</strong> Sugarworks subsea-company case-study campaigns (5 variants, AUS + USA) — 36 platform leads, $2,757 spend, <strong>17–36% MQL</strong> per campaign, best of the week.<br><strong>Highest intent:</strong> Technology Partners demo-leads campaign — just 3 contacts, but <strong>100% MQL</strong>, consistent with direct demo requests outperforming awareness/report downloads.<br><br>Sales generated this week's only opportunity (Ben Criddle) independent of any campaign — a reminder that marketing volume and sales pipeline moved on separate tracks this week."
+  },
+
+  "content": {
+    "placeholder": true,
+    "note": "Narrative — fill in what marketing shipped last week (case studies, blogs, newsletters, partnership assets, download counts). Not derivable from HubSpot/Supermetrics."
+  },
+
+  "whatsNext": {
+    "placeholder": true,
+    "note": "Narrative — list this week's planned launches, events, and campaigns."
+  },
+
+  "q2": {
+    "placeholder": true,
+    "note": "Q3 targets and actuals pending an agreed HubSpot saved report that isolates genuine marketing-generated MQL/SQL from the 20 May 2026 bulk-import tail. Unchanged from prior weeks."
+  },
+
+  "spend": {
+    "_source": "Facebook Ads and Google Ads via Supermetrics, 3–9 Aug 2026. LinkedIn Ads spend unavailable ('Member is restricted' error on both connected accounts) — LinkedIn row uses HubSpot lead counts only. Amounts in ad-account currency (AUD assumed). Cost/lead = spend ÷ HubSpot contacts for the channel; Cost/MQL = spend ÷ MQL+ contacts.",
+    "metrics": [
+      { "label": "Total known paid spend", "value": "$8,999", "color": "purple", "sub": "FB + Google (LinkedIn spend excluded — see note)" },
+      { "label": "Paid Social leads", "value": "140", "color": "blue", "sub": "HubSpot contacts, FB + LinkedIn" },
+      { "label": "Blended cost / lead", "value": "$64", "color": "amber", "sub": "known spend ÷ Paid Social contacts" },
+      { "label": "Blended MQL rate", "value": "9%", "color": "amber", "sub": "12 MQL+ of 140 Paid Social contacts" }
+    ],
+    "rows": [
+      { "platform": "Facebook", "spend": "$8,323", "leads": "127", "cpl": "$66", "cplClass": "mid", "mql": "12", "cpmql": "$694", "cpmqlClass": "mid" },
+      { "platform": "LinkedIn", "spend": "pending*", "leads": "13", "cpl": "n/a", "mql": "0", "cpmql": "n/a" },
+      { "platform": "Google (Paid Search)", "spend": "$676", "leads": "—", "cpl": "n/a", "mql": "—", "cpmql": "n/a" },
+      { "platform": "Total known paid media", "spend": "$8,999*", "leads": "140", "cpl": "$64", "mql": "12", "cpmql": "$750", "bold": true }
+    ],
+    "note": "*Excludes LinkedIn ad spend — the Supermetrics LinkedIn Ads connection failed for both accounts this week ('Member is restricted'); re-authentication needed at hub.supermetrics.com. Facebook cost/lead and cost/MQL use HubSpot-attributed contacts (127), not the higher on-platform lead count (171), for consistency with prior weeks' methodology."
+  }
+}
