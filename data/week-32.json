@@ -62,6 +62,29 @@
     ]
   },
 
+  "stateOfAiSize": {
+    "verdict": "<strong>LinkedIn pulls enterprise, Meta pulls SMB — sharply.</strong> 100% of LinkedIn's State of AI leads are 200+ employees (median 5k+) vs 13% on Meta (median 1–20). Meta delivers cheap SMB volume (84 of 103 at 1–20); LinkedIn is small but entirely enterprise/ICP. To reach the 250+ ICP, scale LinkedIn — though Meta still has a real enterprise tail (12 leads at 500+).",
+    "columns": [
+      { "platform": "Meta (Facebook)", "badge": "blue", "leads": 103, "big": "13%", "bigLabel": "at 200+ employees", "median": "1–20", "statColor": "amber", "bars": [
+        { "label": "1–20", "value": 84, "color": "#C8C5BE" },
+        { "label": "20–200", "value": 6, "color": "#9E9B94" },
+        { "label": "200–500", "value": 1, "color": "teal" },
+        { "label": "500–1k", "value": 3, "color": "blue" },
+        { "label": "1k–5k", "value": 9, "color": "purple" },
+        { "label": "5k+", "value": 0, "color": "green" }
+      ] },
+      { "platform": "LinkedIn", "badge": "purple", "leads": 7, "big": "100%", "bigLabel": "at 200+ employees", "median": "5k+", "statColor": "green", "bars": [
+        { "label": "1–20", "value": 0, "color": "#C8C5BE" },
+        { "label": "20–200", "value": 0, "color": "#9E9B94" },
+        { "label": "200–500", "value": 0, "color": "teal" },
+        { "label": "500–1k", "value": 1, "color": "blue" },
+        { "label": "1k–5k", "value": 2, "color": "purple" },
+        { "label": "5k+", "value": 4, "color": "green" }
+      ] }
+    ],
+    "note": "State of AI 2026 Report leads (110: Meta 103, LinkedIn 7), by company size. Size coalesced across every employee property — company_size, total_number_of_employees, and the LinkedIn domain-verified count — 0 of 110 missing. Grey bands = small business, coloured = 200+ employees. Same UTC create-date window as the rest of Week 32."
+  },
+
   "campaigns": {
     "_note": "Facebook lead-gen campaigns (Decidr.ai + Sugarwork ad accounts). 'Contacts' = on-Facebook platform leads from Supermetrics (3 rows fall back to HubSpot contact counts where the campaign has no on-platform lead metric, noted per row). MQL% = HubSpot MQL+ ÷ leads shown. Spend via Supermetrics Facebook Ads, 3–9 Aug 2026. State of AI ABO/CBO rows' 7 MQLs are from a manual ICP-fit promotion (100+ employees, senior-or-above), not organic lifecycle progression — 2 of the CBO row's MQLs (Liem Nguyen, James Tidey) were created before this week and included at explicit user direction — see top-level note.",
     "metrics": [

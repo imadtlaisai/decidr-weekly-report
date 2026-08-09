@@ -235,6 +235,11 @@ function employeeSizeSection(d) {
   return section('Contacts by company size', metrics + bars);
 }
 
+function leadQualitySection(d) {
+  if (!d.leadQuality || !d.leadQuality.html) return '';
+  return section('Lead quality — volume vs qualification', `<div class="card" style="font-size:13px;line-height:1.6;">${d.leadQuality.html}</div>`);
+}
+
 function soaSizeSection(d) {
   if (!d.stateOfAiSize) return '';
   const s = d.stateOfAiSize;
@@ -572,6 +577,7 @@ ${creativesSection(data.creatives)}
 ${creativesSection(data.creativesRoadmap)}
 ${genericSection('LinkedIn Ads — campaigns & cost per lead', data.linkedin)}
 ${genericSection('Google Ads — campaigns & spend', data.google)}
+${leadQualitySection(data)}
 ${sqlContactsSection(data)}
 ${websiteSection(data)}
 ${observationsSection(data)}
