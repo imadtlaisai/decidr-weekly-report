@@ -1,0 +1,177 @@
+{
+  "_comment": "Decidr Weekly Marketing Report — Week 29 (13–19 Jul 2026). HubSpot funnel/product/channel/SQL pulled live 2026-07-20. Meta/LinkedIn/Google spend from Supermetrics (AUD). Geography omitted (country property now permission-restricted). Website/GA4 + creatives placeholder.",
+  "meta": {
+    "logo": "Decidr",
+    "title": "Weekly marketing report",
+    "dateRange": "13–19 Jul 2026",
+    "preparedFor": "CMO",
+    "weekBadge": "Week 29, 2026",
+    "products": "DecidrOS · Sugarworks · Partnership",
+    "footerLeft": "Decidr marketing · 13–19 Jul 2026",
+    "footerRight": "Confidential — for internal use",
+    "titleTag": "Decidr — Weekly Marketing Report · 13–19 Jul 2026"
+  },
+  "funnel": [
+    { "label": "Contacts", "value": "179", "color": "purple", "conv": "60 subs + 119 qualified", "convColor": "amber", "alt": true },
+    { "label": "MQL", "value": "61", "color": "blue", "conv": "MQL+ (incl. Partnerships)", "convColor": "blue" },
+    { "label": "SQL", "value": "41", "color": "amber", "conv": "⚠ 30 = bulk import", "convColor": "amber", "alt": true },
+    { "label": "Opportunities", "value": "6", "color": "amber", "conv": "all sales-created", "convColor": "amber" }
+  ],
+  "highlight": {
+    "type": "amber",
+    "html": "<strong>Headline SQLs are inflated by a Partnerships bulk import — but underneath, the State of AI event is converting.</strong> 179 new contacts (60 subscribers + 119 qualified). The funnel shows 41 SQL+, but <strong>30 of those are a one-off Partnerships qualification via Offline import</strong>, not organic marketing — strip it out and marketing SQL+ ≈ 11. The real story: the \"State of AI in Australian Businesses\" launch event (Facebook), which produced 0 MQL last week, matured into <strong>12 MQL+ and 2 DecidrOS SQLs</strong> (Jess Browne · Biz Elevation, Varusha Chetty · Impact vibe). LinkedIn's State of AI campaign added 3 MQL — its best of the series. DecidrOS drove 51 new leads and 19 MQL+. The AI Roadmap demo has nearly dried up (1 lead). All 6 opportunities were sales-created (incl. KPMG UK, CORE Markets)."
+  },
+  "sqlByProduct": {
+    "metrics": [
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": "3", "color": "blue", "sub": "SQL (State of AI event)" },
+      { "badge": "amber", "badgeLabel": "Partnerships", "value": "30", "color": "amber", "sub": "⚠ bulk Offline import" },
+      { "label": "Opportunities", "value": "6", "color": "amber", "sub": "all sales-created" }
+    ],
+    "bars": [
+      { "badge": "blue", "badgeLabel": "DecidrOS", "value": 19, "display": "19", "color": "blue", "max": 32 },
+      { "badge": "amber", "badgeLabel": "Partnerships", "value": 32, "display": "32", "color": "#B05E00", "max": 32 },
+      { "label": "Unassigned", "value": 10, "display": "10", "color": "#9E9B94", "max": 32 }
+    ],
+    "note": "MQL+ by product. Partnerships 32 is almost entirely a bulk Offline SQL import (30) — not organic; treat with caution. DecidrOS 19 MQL+ (of 70 ex-sub) with 3 SQLs from the State of AI event; Unassigned 10 (incl. 6 sales-created opps + 2 SQLs). Excluding the Partnerships bulk, marketing SQL+ ≈ 11."
+  },
+  "channels": {
+    "bars": [
+      { "badge": "blue", "label": "Paid Social", "value": 100, "display": "100", "extra": "56% of total", "color": "blue", "max": 100 },
+      { "badge": "gray", "label": "Offline / Import", "value": 59, "display": "59", "extra": "33% of total", "color": "#9E9B94", "max": 100 },
+      { "badge": "gray", "label": "Direct Traffic", "value": 20, "display": "20", "extra": "11% of total", "color": "#9E9B94", "max": 100 }
+    ]
+  },
+  "campaigns": {
+    "_note": "Facebook lead-gen campaigns. Contacts/MQL from HubSpot by campaign; Spend from Meta Ads; Cost/lead = spend ÷ HubSpot contacts; Cost/MQL = spend ÷ MQL+ contacts.",
+    "metrics": [
+      { "label": "Meta spend", "value": "$6,552", "color": "blue", "sub": "66% of paid (ex-Google)" },
+      { "label": "Leads", "value": "86", "color": "green", "sub": "FB Paid Social contacts" },
+      { "label": "Cost / lead", "value": "$76", "color": "amber", "sub": "spend ÷ FB contacts" },
+      { "label": "MQL rate", "value": "17%", "color": "amber", "sub": "15 of 86 (28% of 54 ex-sub)" }
+    ],
+    "rows": [
+      { "name": "Event — State of AI Launch (Jul 23)", "channelBadge": "purple", "channelLabel": "FB · event", "contacts": "53", "mql": "23%", "mqlClass": "mid", "extra1": "$3,852", "extra2": "$73", "extra3": "$321", "extra3Class": "mid", "bold": true },
+      { "name": "Mercha Case Study — AU (Continued)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "23", "mql": "13%", "mqlClass": "mid", "extra1": "$1,065", "extra2": "$46", "extra3": "$355", "extra3Class": "mid" },
+      { "name": "AI Readiness Report — AU (Aug 18)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "9", "mql": "0%", "mqlClass": "bad", "extra1": "$517", "extra2": "$57", "extra3": "n/a" },
+      { "name": "AI Roadmap — Demo (Jun 1)", "channelBadge": "amber", "channelLabel": "FB · demo", "contacts": "1", "mql": "0%", "mqlClass": "bad", "extra1": "$1,118", "extra2": "$1,118", "extra3": "n/a" }
+    ],
+    "columns": { "c3": "MQL%", "c4": "Spend", "c5": "Cost / lead", "c6": "Cost / MQL" },
+    "note": "The State of AI launch event is now the top performer — 53 contacts, 23% MQL, $321/MQL, and 2 DecidrOS SQLs. Mercha steady (13% MQL). AI Roadmap has collapsed to 1 lead for $1,118 — the audience is exhausted; reallocate or refresh. Currency: AUD."
+  },
+  "creatives": {
+    "placeholder": true,
+    "note": "Top Meta lead creatives (leads / cost-per-lead / spend + images) for 13–19 Jul — run scripts/download-creatives.mjs to fetch + base64-embed the thumbnails, then fill."
+  },
+  "linkedin": {
+    "metrics": [
+      { "label": "LinkedIn spend", "value": "$3,443", "color": "blue", "sub": "34% of paid (ex-Google)" },
+      { "label": "Leads (HubSpot)", "value": "14", "color": "green", "sub": "9 subs + 2 lead + 3 MQL" },
+      { "label": "Cost / lead", "value": "$246", "color": "amber", "sub": "spend ÷ 14 contacts" },
+      { "label": "MQL rate", "value": "21%", "color": "green", "sub": "3 of 14 reached MQL" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "Leads", "Cost / lead"],
+      "widths": ["230px", "", "", ""],
+      "rows": [
+        [ { "v": "State of AI Launch (Jul 23)" }, "$2,743", "7", { "v": "$392", "cls": "mid" } ],
+        [ { "v": "Global AI Readiness Index — AUS (doc ads)" }, "$700", "7", { "v": "$100", "cls": "mid" } ]
+      ],
+      "note": "LinkedIn leaned into the State of AI launch ($2,743) — 7 contacts, 3 MQL, its best qualified week in the series. The doc-ads campaign ($700) drove 7 subscribers, 0 MQL. Currency: AUD."
+    }
+  },
+  "google": {
+    "metrics": [
+      { "label": "Google spend", "value": "$3,365", "color": "amber", "sub": "25% of paid media" },
+      { "label": "Conversions (GA4)", "value": "n/a", "color": "text-3", "sub": "GA4 pull pending" },
+      { "label": "HubSpot contacts", "value": "0", "color": "text-3", "sub": "no attributed leads" },
+      { "label": "Campaigns live", "value": "2", "color": "blue", "sub": "search + brand search" }
+    ],
+    "table": {
+      "headers": ["Campaign", "Spend", "HubSpot", "Cost / conv."],
+      "widths": ["260px", "", "", ""],
+      "rows": [
+        [ { "v": "Website traffic-Search-38" }, "$2,976", { "v": "0" }, { "v": "n/a" } ],
+        [ { "v": "AU_Search_Decidr-Brand_High_Intent" }, "$389", { "v": "0" }, { "v": "n/a" } ]
+      ],
+      "note": "Google Ads reconnected via Supermetrics. Spend jumped to $3,365 — mostly a new non-brand Search campaign ('Website traffic-Search-38', $2,976), plus the recurring brand-search campaign ($389). No HubSpot-attributed contacts yet this week (attribution not independently re-verified this pull; GA4 conversion detail pending). Currency: AUD."
+    }
+  },
+  "platformCompare": {
+    "cards": [
+      { "platform": "Facebook · 86 contacts", "rate": "28%", "rateColor": "green", "metaHtml": "MQL rate (ex-sub)<br><strong style=\"font-size:16px;\">15</strong> MQL+ · 4 SQL+<br><span style=\"color:var(--green);\">volume + quality</span>" },
+      { "platform": "LinkedIn · 14 contacts", "rate": "21%", "rateColor": "green", "metaHtml": "MQL rate<br><strong style=\"font-size:16px;\">3</strong> MQL+ · State of AI<br><span style=\"color:var(--green);\">best LI week yet</span>" }
+    ],
+    "note": "Both channels produced qualified flow this week — Facebook 15 MQL+, LinkedIn 3 MQL (a first). Neither includes the 30 bulk Partnerships SQLs, which came via Offline import."
+  },
+  "sqlContacts": {
+    "left": {
+      "titleBadge": "blue",
+      "titleBadgeLabel": "DecidrOS",
+      "titleSuffix": "— 3 SQL (State of AI event)",
+      "contacts": [
+        { "name": "Jess Browne", "detail": "Biz Elevation · FB State of AI event · SQL" },
+        { "name": "Varusha Chetty", "detail": "Impact vibe · FB State of AI event · SQL" },
+        { "name": "+ 1 more DecidrOS SQL", "detail": "plus 2 Unassigned SQLs sales-created (Fiona Turnbull, David Cox)" }
+      ]
+    },
+    "right": {
+      "titleBadge": "amber",
+      "titleBadgeLabel": "Bulk / sales-created",
+      "titleSuffix": "— dominates the week",
+      "contacts": [
+        { "name": "30 Partnerships SQLs", "detail": "⚠ Bulk Offline import / manual qualification — not organic marketing. Drives the headline SQL jump; excluded from campaign attribution." }
+      ],
+      "oppsTitle": "6 opportunities — all sales-created",
+      "opps": [
+        { "name": "Andrew Leslie", "detail": "KPMG UK · forwarded-to-CRM · Opportunity" },
+        { "name": "Emily Smith", "detail": "CORE Markets · integration · Opportunity" },
+        { "name": "+ 4 more", "detail": "Craig Nettelbeck, Sharon Andrews, Kevin Pegels, Ciara Fitzmaurice, Joe Kelly — via CRM / BCC / forward" }
+      ]
+    }
+  },
+  "website": {
+    "placeholder": true,
+    "note": "GA4 'Decidr website' (property 413653683) via Supermetrics — pull sessions / bounce / avg duration / key-events by channel for 13–19 Jul and fill. Note: the HubSpot 'country' property is now permission-restricted, so the Geography breakdown was omitted this week."
+  },
+  "observations": [
+    { "color": "amber", "html": "<strong>Headline SQLs are inflated by a bulk import.</strong> 30 of the 41 SQL+ are Partnerships contacts qualified via a one-off Offline import/list — not organic marketing. Judge the week on the ~11 marketing-driven SQL+ (DecidrOS 3, Unassigned 8 incl. 6 sales-created opps)." },
+    { "color": "green", "html": "<strong>The State of AI launch event is now converting.</strong> After 0 MQL in Week 28, the Facebook State of AI event produced 53 contacts, 12 MQL+ and 2 DecidrOS SQLs (Jess Browne · Biz Elevation, Varusha Chetty · Impact vibe) — the delayed payoff from the launch." },
+    { "color": "green", "html": "<strong>LinkedIn's best MQL week.</strong> The LinkedIn State of AI campaign ($2,743) produced 3 MQL — LinkedIn's first real qualified flow in the series. Worth watching whether it sustains before scaling." },
+    { "color": "amber", "html": "<strong>AI Roadmap has dried up.</strong> Just 1 lead this week (from 9 in Week 26, 3 in Week 28) for $1,118 — the audience is exhausted. Refresh creative/targeting or reallocate to the State of AI event, now the stronger performer." },
+    { "color": "green", "html": "<strong>DecidrOS volume up sharply.</strong> 51 new DecidrOS leads and 19 MQL+ this week — the State of AI event is feeding the DecidrOS funnel, a clear step up from prior weeks." },
+    { "color": "amber", "html": "<strong>All 6 opportunities were sales-created.</strong> KPMG UK, CORE Markets and 4 others entered via CRM / forward / BCC — strong logos, but not marketing-attributed. Tag source/product for clean pipeline reporting." },
+    { "color": "amber", "html": "<strong>Total paid media $13,360.</strong> Meta $6,552, LinkedIn $3,443, Google $3,365 — Google jumped from its usual ~$446 brand-search-only baseline due to a new non-brand Search campaign ($2,976), with no HubSpot-attributed leads yet." }
+  ],
+  "content": {
+    "placeholder": true,
+    "note": "Narrative — fill in what marketing shipped last week (case studies, blogs, newsletters, partnership assets, download counts). Not derivable from HubSpot/GA4."
+  },
+  "whatsNext": {
+    "placeholder": true,
+    "note": "Narrative — list this week's planned launches, events, and campaigns (e.g. State of AI in Australian Businesses launch, 23 July)."
+  },
+  "q2": {
+    "placeholder": true,
+    "note": "Q2 ended 30 Jun — a Q3 running total is now more useful. Define a HubSpot saved report that isolates genuine marketing-generated MQL/SQL (excluding bulk imports like this week's 30 Partnerships), then fill actuals."
+  },
+  "spend": {
+    "_source": "Meta Ads, LinkedIn Ads, Google Ads via Supermetrics, 13–19 Jul 2026 (AUD). Cost/lead = spend ÷ HubSpot paid contacts; Cost/MQL = spend ÷ MQL+ contacts.",
+    "metrics": [
+      { "label": "Total paid spend", "value": "$13,360", "color": "purple", "sub": "Meta + LinkedIn + Google" },
+      { "label": "Paid leads", "value": "100", "color": "blue", "sub": "Paid Social contacts" },
+      { "label": "Blended cost / lead", "value": "$134", "color": "amber", "sub": "all paid spend ÷ leads" },
+      { "label": "Blended MQL rate", "value": "18%", "color": "amber", "sub": "18 MQL+ of 100" }
+    ],
+    "rows": [
+      { "platform": "Facebook", "spend": "$6,552", "leads": "86", "cpl": "$76", "cplClass": "good", "mql": "15", "cpmql": "$437", "cpmqlClass": "mid" },
+      { "platform": "LinkedIn", "spend": "$3,443", "leads": "14", "cpl": "$246", "cplClass": "mid", "mql": "3", "cpmql": "$1,148", "cpmqlClass": "bad" },
+      { "platform": "Google (Paid Search)", "spend": "$3,365", "leads": "0", "cpl": "n/a", "mql": "0", "cpmql": "n/a" },
+      { "platform": "Total paid media", "spend": "$13,360", "leads": "100", "cpl": "$134", "mql": "18", "cpmql": "$742", "bold": true }
+    ],
+    "note": "Google Ads reconnected — spend came in at $3,365 (25% of paid media), driven by a new non-brand Search campaign ($2,976) plus recurring brand search ($389); no HubSpot-attributed leads yet. LinkedIn spend jumped to $3,443 (State of AI launch $2,743) and produced 3 MQL — its best week. Currency: AUD."
+  },
+  "creativesRoadmap": {
+    "placeholder": true,
+    "note": "Top AI Roadmap Meta creatives for 13–19 Jul — but the campaign ran just 1 lead for $1,118 this week; the State of AI event is now the creative set worth analysing. Run scripts/download-creatives.mjs to fill."
+  }
+}

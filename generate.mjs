@@ -38,7 +38,6 @@ function extractMetrics(d) {
 }
 
 function trendBadge(vals) {
-  const nums = vals.map(v => parseFloat(String(v).replace(/[^0-9.-]/g, ''))).filter(n => !isNaN(n) && n !== 0 || v !== '—');
   const clean = vals.map(v => parseFloat(String(v).replace(/[^0-9.-]/g, ''))).filter(n => !isNaN(n));
   if (clean.length < 2) return { badge: 'gray', badgeText: '—' };
   const [prev, curr] = [clean[clean.length - 2], clean[clean.length - 1]];
@@ -224,6 +223,38 @@ function campaignSection(d) {
   return section('Campaign performance — channel mix & quality', channelBars + grid);
 }
 
+function employeeSizeSection(d) {
+  if (!d.employeeSize) return '';
+  const es = d.employeeSize;
+  const metrics = es.metrics ? `<div class="mg3">${es.metrics.map(mt => `<div class="metric"><p class="metric-label">${esc(mt.label)}</p><p class="metric-value" style="color:${col(mt.color)};">${esc(mt.value)}</p><p class="metric-sub">${esc(mt.sub)}</p></div>`).join('')}</div>` : '';
+  const bars = `<div class="card">
+    <div class="card-title">Known company size (by employees)</div>
+    ${es.bars.map(b => bar({ ...b, sm: true })).join('')}
+    ${es.note ? `<p style="font-size:11px;color:var(--text-3);margin-top:10px;padding-top:8px;border-top:1px solid var(--border);">${esc(es.note)}</p>` : ''}
+  </div>`;
+  return section('Contacts by company size', metrics + bars);
+}
+
+function soaSizeSection(d) {
+  if (!d.stateOfAiSize) return '';
+  const s = d.stateOfAiSize;
+  const colCard = (c) => {
+    const maxv = Math.max(1, ...c.bars.map(b => b.value));
+    const bars = c.bars.map(b => bar({ label: b.label, value: b.value, display: String(b.value), color: b.color, max: maxv, sm: true })).join('');
+    return `<div class="card" style="margin-bottom:0;">
+        <div class="card-title">${badge(c.badge, c.platform)} · ${esc(c.leads)} leads</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:12px;">
+          <span style="font-size:26px;font-weight:600;color:var(--${c.statColor || 'text'});">${esc(c.big)}</span>
+          <span style="font-size:12px;color:var(--text-2);">${esc(c.bigLabel)} · median ${esc(c.median)}</span>
+        </div>
+        ${bars}
+      </div>`;
+  };
+  const verdict = s.verdict ? `<div class="info-box" style="background:var(--teal-bg);color:var(--teal-text);border:1px solid rgba(0,0,0,.06);margin-bottom:14px;">${s.verdict}</div>` : '';
+  const note = s.note ? `<p style="font-size:11px;color:var(--text-3);margin-top:10px;">${esc(s.note)}</p>` : '';
+  return section('State of AI — company size by channel', verdict + `<div class="mg2">${colCard(s.columns[0])}${colCard(s.columns[1])}</div>` + note);
+}
+
 function metaSection(d) {
   if (!d.campaigns) return '';
   const cols = d.campaigns.columns || { c3: 'MQL%', c4: 'Spend', c5: 'Cost / lead' };
@@ -240,6 +271,7 @@ function metaSection(d) {
             <th class="r" style="width:58px;">${esc(cols.c3)}</th>
             <th class="r" style="width:72px;">${esc(cols.c4)}</th>
             <th class="r" style="width:75px;">${esc(cols.c5)}</th>
+            <th class="r" style="width:75px;">${esc(cols.c6 || 'Cost / MQL')}</th>
           </tr>
         </thead>
         <tbody>
@@ -251,6 +283,7 @@ function metaSection(d) {
             <td class="r ${r.mqlClass || ''}">${esc(r.mql)}</td>
             <td class="r ${r.extra1Class || ''}">${esc(r.extra1)}</td>
             <td class="r">${esc(r.extra2)}</td>
+            <td class="r ${r.extra3Class || ''}">${esc(r.extra3)}</td>
           </tr>`).join('')}
         </tbody>
       </table>
@@ -531,6 +564,8 @@ const html = `<!DOCTYPE html>
 ${header(data.meta)}
 ${funnelSection(data)}
 ${campaignSection(data)}
+${employeeSizeSection(data)}
+${soaSizeSection(data)}
 ${spendSection(data)}
 ${metaSection(data)}
 ${creativesSection(data.creatives)}
@@ -540,9 +575,6 @@ ${genericSection('Google Ads — campaigns & spend', data.google)}
 ${sqlContactsSection(data)}
 ${websiteSection(data)}
 ${observationsSection(data)}
-${contentSection(data)}
-${whatsNextSection(data)}
-${q2Section(data)}
   <div class="footer">
     <div class="footer-text">${esc(data.meta.footerLeft)}</div>
     <div class="footer-text">${esc(data.meta.footerRight)}</div>

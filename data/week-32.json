@@ -71,17 +71,17 @@
       { "label": "MQL rate", "value": "9%", "color": "amber", "sub": "12 of 127 HubSpot FB contacts" }
     ],
     "rows": [
-      { "name": "State of AI 2026 Report — ABO (Jul 29)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "109", "mql": "0%", "mqlClass": "bad", "extra1": "$2,353", "extra2": "$22", "bold": true },
-      { "name": "State of AI 2026 Report — CBO (Jul 28)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "24", "mql": "0%", "mqlClass": "bad", "extra1": "$985", "extra2": "$41" },
-      { "name": "Technology Partners — Demo Leads (Jul 1)", "channelBadge": "amber", "channelLabel": "FB · demo·HubSpot", "contacts": "3", "mql": "100%", "mqlClass": "good", "extra1": "$774", "extra2": "$258" },
-      { "name": "Sugarwork AUS — Subsea Case Study · ABO (6 Aug)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "11", "mql": "36%", "mqlClass": "mid", "extra1": "$847", "extra2": "$77" },
-      { "name": "Sugarwork AUS — Case Study · CBO (4 Aug)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "12", "mql": "17%", "mqlClass": "mid", "extra1": "$835", "extra2": "$70" },
-      { "name": "Sugarwork AUS — Case Study · ABO (4 Aug)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "5", "mql": "20%", "mqlClass": "mid", "extra1": "$538", "extra2": "$108" },
-      { "name": "Sugarwork USA — Case Study · ABO (30 Jul)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "8", "mql": "25%", "mqlClass": "mid", "extra1": "$537", "extra2": "$67" },
-      { "name": "Partnerships — AIM Case Study DL (AU)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "2", "mql": "0%", "mqlClass": "bad", "extra1": "$277", "extra2": "$138" },
-      { "name": "Book a Demo / Leads campaigns (AUS + USA, 3)", "channelBadge": "gray", "channelLabel": "Facebook", "contacts": "0", "mql": "n/a", "extra1": "$1,177", "extra2": "n/a" }
+      { "name": "State of AI 2026 Report — ABO (Jul 29)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "109", "mql": "0%", "mqlClass": "bad", "extra1": "$2,353", "extra2": "$22", "extra3": "n/a", "bold": true },
+      { "name": "State of AI 2026 Report — CBO (Jul 28)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "24", "mql": "0%", "mqlClass": "bad", "extra1": "$985", "extra2": "$41", "extra3": "n/a" },
+      { "name": "Technology Partners — Demo Leads (Jul 1)", "channelBadge": "amber", "channelLabel": "FB · demo·HubSpot", "contacts": "3", "mql": "100%", "mqlClass": "good", "extra1": "$774", "extra2": "$258", "extra3Class": "good", "extra3": "$258" },
+      { "name": "Sugarwork AUS — Subsea Case Study · ABO (6 Aug)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "11", "mql": "36%", "mqlClass": "mid", "extra1": "$847", "extra2": "$77", "extra3Class": "good", "extra3": "$212" },
+      { "name": "Sugarwork AUS — Case Study · CBO (4 Aug)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "12", "mql": "17%", "mqlClass": "mid", "extra1": "$835", "extra2": "$70", "extra3Class": "mid", "extra3": "$417" },
+      { "name": "Sugarwork AUS — Case Study · ABO (4 Aug)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "5", "mql": "20%", "mqlClass": "mid", "extra1": "$538", "extra2": "$108", "extra3Class": "mid", "extra3": "$538" },
+      { "name": "Sugarwork USA — Case Study · ABO (30 Jul)", "channelBadge": "purple", "channelLabel": "Facebook", "contacts": "8", "mql": "25%", "mqlClass": "mid", "extra1": "$537", "extra2": "$67", "extra3Class": "good", "extra3": "$269" },
+      { "name": "Partnerships — AIM Case Study DL (AU)", "channelBadge": "blue", "channelLabel": "Facebook", "contacts": "2", "mql": "0%", "mqlClass": "bad", "extra1": "$277", "extra2": "$138", "extra3": "n/a" },
+      { "name": "Book a Demo / Leads campaigns (AUS + USA, 3)", "channelBadge": "gray", "channelLabel": "Facebook", "contacts": "0", "mql": "n/a", "extra1": "$1,177", "extra2": "n/a", "extra3": "n/a" }
     ],
-    "columns": { "c3": "MQL%", "c4": "Spend", "c5": "Cost / lead" }
+    "columns": { "c3": "MQL%", "c4": "Spend", "c5": "Cost / lead", "c6": "Cost / MQL" }
   },
 
   "linkedin": {
