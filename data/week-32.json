@@ -7,7 +7,7 @@
     "dateRange": "3–9 Aug 2026",
     "preparedFor": "CMO",
     "weekBadge": "Week 32, 2026",
-    "products": "DecidrOS · Sugarworks · Partnership",
+    "products": "DecidrOS · Sugarwork · Partnership",
     "footerLeft": "Decidr marketing · 3–9 Aug 2026",
     "footerRight": "Confidential — for internal use",
     "titleTag": "Decidr — Weekly Marketing Report · 3–9 Aug 2026"
@@ -22,22 +22,22 @@
 
   "highlight": {
     "type": "amber",
-    "html": "<strong>Volume rebounded hard, quality didn't follow.</strong> 227 new contacts (+132% vs Week 31), but the increase is almost entirely the Facebook \"State of AI 2026\" relaunch (127 contacts, 0 MQL) plus a wave of Sugarworks case-study campaigns (40 contacts, ~33% MQL). 187 of 227 are newsletter subscribers. MQL+ landed at just 16 (7% of contacts) — including 2 internal QA/test records. The week's only opportunity, Ben Criddle (Group Sourcing Manager, AU), was sales-created via CRM, not marketing-attributed. DecidrOS produced zero contacts for a third straight week."
+    "html": "<strong>Volume rebounded hard, quality didn't follow.</strong> 227 new contacts (+132% vs Week 31), but the increase is almost entirely the Facebook \"State of AI 2026\" relaunch (127 contacts, 0 MQL) plus a wave of Sugarwork case-study campaigns (40 contacts, ~33% MQL). 187 of 227 are newsletter subscribers. MQL+ landed at just 16 (7% of contacts) — including 2 internal QA/test records. The week's only opportunity, Ben Criddle (Group Sourcing Manager, AU), was sales-created via CRM, not marketing-attributed. DecidrOS produced zero contacts for a third straight week."
   },
 
   "sqlByProduct": {
     "metrics": [
       { "badge": "blue", "badgeLabel": "DecidrOS", "value": "0", "color": "blue", "sub": "0 contacts this week" },
-      { "badge": "green", "badgeLabel": "Sugarworks", "value": "11", "color": "green", "sub": "11 of 33 leads (33%)" },
+      { "badge": "green", "badgeLabel": "Sugarwork", "value": "11", "color": "green", "sub": "11 of 33 leads (33%)" },
       { "label": "Opportunities", "value": "1", "color": "amber", "sub": "sales-created · AU" }
     ],
     "bars": [
-      { "badge": "green", "badgeLabel": "Sugarworks", "value": 11, "display": "11", "color": "green", "max": 11 },
+      { "badge": "green", "badgeLabel": "Sugarwork", "value": 11, "display": "11", "color": "green", "max": 11 },
       { "badge": "purple", "badgeLabel": "Partnerships", "value": 3, "display": "3", "color": "purple", "max": 11 },
       { "badge": "gray", "badgeLabel": "Unassigned", "value": 2, "display": "2", "color": "#9E9B94", "max": 11 },
       { "badge": "blue", "badgeLabel": "DecidrOS", "value": 0, "display": "0", "color": "blue", "max": 11 }
     ],
-    "note": "MQL+ by product. Sugarworks led with 11 MQL+ (33% of 33 leads) from case-study campaigns. DecidrOS: zero contacts — demand engine remains paused. The 1 opportunity (Ben Criddle) was sales-created, no product tag."
+    "note": "MQL+ by product. Sugarwork led with 11 MQL+ (33% of 33 leads) from case-study campaigns. DecidrOS: zero contacts — demand engine remains paused. The 1 opportunity (Ben Criddle) was sales-created, no product tag."
   },
 
   "trend": {
@@ -150,10 +150,10 @@
     },
     "right": {
       "titleBadge": "green",
-      "titleBadgeLabel": "Sugarworks",
+      "titleBadgeLabel": "Sugarwork",
       "titleSuffix": "— 0 SQL despite 11 MQL",
       "contacts": [
-        { "name": "No Sugarworks SQL", "detail": "11 of 33 new Sugarworks leads reached MQL (33%) via case-study campaigns — the week's best-converting product — but none progressed to SQL." }
+        { "name": "No Sugarwork SQL", "detail": "11 of 33 new Sugarwork leads reached MQL (33%) via case-study campaigns — the week's best-converting product — but none progressed to SQL." }
       ],
       "oppsTitle": "1 Opportunity this week (sales-created)",
       "opps": [
@@ -170,7 +170,7 @@
   "observations": [
     { "color": "amber", "html": "<strong>Volume rebounded but quality didn't follow.</strong> 227 contacts (+132% vs Wk 31) yet MQL+ rate fell to 7% (16 of 227) — the lowest since the HubSpot org went live." },
     { "color": "amber", "html": "<strong>\"State of AI 2026\" Facebook relaunch drove 127 of 227 contacts (56%) but produced zero MQLs</strong> — pure top-of-funnel volume with no immediate pipeline value yet." },
-    { "color": "green", "html": "<strong>Sugarworks case-study campaigns were the week's quality bright spot.</strong> 5 Facebook variants converted 11 of 33 new Sugarworks leads to MQL (33%), well above the blended 9% rate." },
+    { "color": "green", "html": "<strong>Sugarwork case-study campaigns were the week's quality bright spot.</strong> 5 Facebook variants converted 11 of 33 new Sugarwork leads to MQL (33%), well above the blended 9% rate." },
     { "color": "amber", "html": "<strong>DecidrOS produced zero new contacts for a third straight week.</strong> The demand engine remains paused with no replacement campaign in market." },
     { "color": "amber", "html": "<strong>No marketing-sourced SQL or opportunity this week.</strong> The lone opportunity, Ben Criddle (Group Sourcing Manager, AU), was sales-created via CRM." },
     { "color": "teal", "html": "<strong>Channel concentration: Paid Social is 62% of contacts (140 of 227).</strong> Offline/import contributes 35% (80, mostly the ongoing bulk-import tail), Direct just 3%." },
@@ -179,7 +179,7 @@
   ],
 
   "leadQuality": {
-    "html": "<strong>No marketing-sourced SQL this week — the story is volume vs. quality across campaigns.</strong> Compare the two paid pushes that drove this week's volume:<br><br><strong>High volume, no qualification:</strong> \"State of AI 2026\" Facebook relaunch (ABO + CBO) — 133 platform leads, $3,338 spend, <strong>0% MQL</strong>. A broad-reach report download that hasn't yet produced a qualified lead.<br><strong>Lower volume, real quality:</strong> Sugarworks subsea-company case-study campaigns (5 variants, AUS + USA) — 36 platform leads, $2,757 spend, <strong>17–36% MQL</strong> per campaign, best of the week.<br><strong>Highest intent:</strong> Technology Partners demo-leads campaign — just 3 contacts, but <strong>100% MQL</strong>, consistent with direct demo requests outperforming awareness/report downloads.<br><br>Sales generated this week's only opportunity (Ben Criddle) independent of any campaign — a reminder that marketing volume and sales pipeline moved on separate tracks this week."
+    "html": "<strong>No marketing-sourced SQL this week — the story is volume vs. quality across campaigns.</strong> Compare the two paid pushes that drove this week's volume:<br><br><strong>High volume, no qualification:</strong> \"State of AI 2026\" Facebook relaunch (ABO + CBO) — 133 platform leads, $3,338 spend, <strong>0% MQL</strong>. A broad-reach report download that hasn't yet produced a qualified lead.<br><strong>Lower volume, real quality:</strong> Sugarwork subsea-company case-study campaigns (5 variants, AUS + USA) — 36 platform leads, $2,757 spend, <strong>17–36% MQL</strong> per campaign, best of the week.<br><strong>Highest intent:</strong> Technology Partners demo-leads campaign — just 3 contacts, but <strong>100% MQL</strong>, consistent with direct demo requests outperforming awareness/report downloads.<br><br>Sales generated this week's only opportunity (Ben Criddle) independent of any campaign — a reminder that marketing volume and sales pipeline moved on separate tracks this week."
   },
 
   "content": {
